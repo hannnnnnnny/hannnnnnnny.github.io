@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yi Han - Business Analytics student and business analyst focused on machine learning, databases, and full-stack systems.">
+  <title>Yi Han | Business Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Yi Han homepage">Yi Han</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="petal-field" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="hero-content">
+        <div class="hero-id">
+          <img src="assets/profile.jpg" alt="Portrait of Yi Han">
+          <div>
+            <strong>Yi Han</strong>
+            <span>Business Analyst</span>
+          </div>
+        </div>
+        <p class="eyebrow">Business Analytics · Machine Learning · Full-Stack Systems</p>
+        <h1>Yi Han</h1>
+        <p class="hero-copy">
+          Business Analytics student at the University of Auckland with experience in machine learning,
+          database management, statistical analysis, and separated front-end/back-end development.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#projects">View Projects</a>
+          <a class="button secondary" href="assets/CV_YiHan.pdf" download>Download CV</a>
+        </div>
+      </div>
+      <aside class="ml-lab" aria-label="Interactive machine learning visual">
+        <div class="lab-topline">
+          <span>Live Skill Map</span>
+          <strong id="active-skill">Business Analytics</strong>
+        </div>
+        <canvas id="network-canvas" width="560" height="420" aria-label="Animated neural network"></canvas>
+        <div class="metric-strip" aria-label="Model metrics">
+          <div>
+            <span>Accuracy</span>
+            <strong id="metric-accuracy">92%</strong>
+          </div>
+          <div>
+            <span>Signal</span>
+            <strong id="metric-signal">High</strong>
+          </div>
+          <div>
+            <span>Stack</span>
+            <strong id="metric-stack">Python</strong>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="profile-panel" aria-label="Profile highlights">
+        <img class="profile-photo" src="assets/profile.jpg" alt="Portrait of Yi Han">
+        <dl>
+          <div>
+            <dt>Based in</dt>
+            <dd>Auckland, New Zealand</dd>
+          </div>
+          <div>
+            <dt>Degree</dt>
+            <dd>B.S. Business Analytics</dd>
+          </div>
+          <div>
+            <dt>Focus</dt>
+            <dd>Predictive analytics and practical business systems</dd>
+          </div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="section intro-section" aria-labelledby="about-title">
+      <div>
+        <p class="section-kicker">About</p>
+        <h2 id="about-title">Analytical, technical, and business-minded.</h2>
+      </div>
+      <p>
+        I enjoy turning messy data and operational requirements into clear analysis, useful models,
+        and reliable software. My background combines Python, R, SQL, Java, web development, and
+        office productivity tools, with a strong interest in solving business problems through data.
+      </p>
+    </section>
+
+    <section class="section" id="skills" aria-labelledby="skills-title">
+      <div class="section-heading">
+        <p class="section-kicker">Skills</p>
+        <h2 id="skills-title">Technical Toolkit</h2>
+      </div>
+      <div class="skill-grid" id="skill-grid">
+        <article class="skill-card" data-skill="Python" data-accuracy="94" data-signal="Modeling" data-stack="Pandas">
+          <h3>Programming</h3>
+          <p>Python, R, SQL, Java, HTML</p>
+        </article>
+        <article class="skill-card" data-skill="Machine Learning" data-accuracy="92" data-signal="Predictive" data-stack="Scikit-learn">
+          <h3>Data & ML</h3>
+          <p>NumPy, Pandas, Scikit-learn, dataset preprocessing, predictive analytics</p>
+        </article>
+        <article class="skill-card" data-skill="Full-Stack Systems" data-accuracy="89" data-signal="REST APIs" data-stack="Spring">
+          <h3>Web Systems</h3>
+          <p>Java, Spring, Hibernate, MySQL, RESTful APIs, HTML, CSS, JavaScript</p>
+        </article>
+        <article class="skill-card" data-skill="Business Analysis" data-accuracy="91" data-signal="Insights" data-stack="R">
+          <h3>Business Analysis</h3>
+          <p>Statistical analysis, visual reporting, coordination, problem solving, fast learning</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section playground-section" aria-labelledby="playground-title">
+      <div class="section-heading">
+        <p class="section-kicker">Interactive Lab</p>
+        <h2 id="playground-title">A Small Data Playground</h2>
+      </div>
+      <div class="playground">
+        <div class="code-window" aria-label="Animated code sample">
+          <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
+          <pre><code id="code-stream"></code></pre>
+        </div>
+        <div class="model-panel">
+          <label for="model-slider">Model Confidence</label>
+          <input id="model-slider" type="range" min="40" max="98" value="82">
+          <div class="bar-chart" aria-label="Animated feature importance chart">
+            <span style="--value: 78%"><em>Data Quality</em></span>
+            <span style="--value: 66%"><em>Feature Fit</em></span>
+            <span style="--value: 84%"><em>Business Logic</em></span>
+            <span style="--value: 58%"><em>Model Choice</em></span>
+          </div>
+          <p id="model-readout">Predicted business value: 82%</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="section-kicker">Projects</p>
+        <h2 id="projects-title">Selected Work</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span>Mar 2025 - Jun 2025</span>
+            <strong>Python · SQL · Excel</strong>
+          </div>
+          <div class="timeline-content">
+            <h3>Video Game Dataset Analysis</h3>
+            <p>
+              Trained and deployed machine learning models on structured datasets to support
+              predictive analytics and business-oriented reporting.
+            </p>
+            <ul>
+              <li>Completed dataset preprocessing and feature matching.</li>
+              <li>Optimized model-data matching based on business needs.</li>
+              <li>Created visual reports to communicate insights clearly.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span>Jul 2023 - May 2024</span>
+            <strong>Java · Spring · MySQL · HTML/CSS/JS</strong>
+          </div>
+          <div class="timeline-content">
+            <h3>Teacher Information Management System</h3>
+            <p>
+              Built a web-based management system with separated front-end and back-end layers,
+              RESTful APIs, and database-backed workflows.
+            </p>
+            <ul>
+              <li>Implemented front-end interfaces using HTML, CSS, and JavaScript.</li>
+              <li>Developed backend services with Java and the Spring framework.</li>
+              <li>Used Hibernate and MySQL for persistent data operations.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split-section" id="experience" aria-labelledby="experience-title">
+      <div class="section-heading">
+        <p class="section-kicker">Experience</p>
+        <h2 id="experience-title">Development Engineer</h2>
+      </div>
+      <div class="detail-panel">
+        <p class="role-line">Beijing Zhongke Hengye Technology Co., Ltd. · Full-time</p>
+        <p class="date-line">Jul 2023 - May 2024 · Beijing, China</p>
+        <ul>
+          <li>Implemented database operations using MySQL and Hibernate.</li>
+          <li>Developed B/S architecture systems with HTML, CSS, JavaScript, Java, and Spring.</li>
+          <li>Built an online approval module for teacher transfers using RESTful APIs.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section split-section" aria-labelledby="education-title">
+      <div class="section-heading">
+        <p class="section-kicker">Education</p>
+        <h2 id="education-title">University of Auckland</h2>
+      </div>
+      <div class="detail-panel">
+        <p class="role-line">B.S. in Business Analytics</p>
+        <p class="date-line">Jul 2022 - Nov 2025 · Auckland, New Zealand</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <p class="section-kicker">Contact</p>
+      <h2 id="contact-title">Let’s connect.</h2>
+      <div class="contact-links">
+        <a href="mailto:harryhaber606@gmail.com">harryhaber606@gmail.com</a>
+        <a href="tel:+642885196968">028-8519-6968</a>
+        <a href="https://www.linkedin.com/in/yi-han-29ab28323" target="_blank" rel="noreferrer">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Yi Han. Built for data, business, and useful software.</p>
+  </footer>
+</body>
+</html>
