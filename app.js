@@ -1,5 +1,5 @@
 const canvas = document.querySelector("#network-canvas");
-const ctx = canvas.getContext("2d");
+const ctx = canvas ? canvas.getContext("2d") : null;
 const activeSkill = document.querySelector("#active-skill");
 const metricAccuracy = document.querySelector("#metric-accuracy");
 const metricSignal = document.querySelector("#metric-signal");
@@ -24,6 +24,7 @@ let pulses = [];
 let activeIndex = 0;
 
 function resizeCanvas() {
+  if (!canvas || !ctx) return;
   const rect = canvas.getBoundingClientRect();
   const scale = window.devicePixelRatio || 1;
   canvas.width = Math.max(1, Math.floor(rect.width * scale));
@@ -56,6 +57,7 @@ function buildNodes(width, height) {
 }
 
 function drawNetwork(time = 0) {
+  if (!canvas || !ctx) return;
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
   ctx.clearRect(0, 0, width, height);
@@ -170,8 +172,10 @@ function updateModelPanel() {
 window.addEventListener("resize", resizeCanvas);
 slider.addEventListener("input", updateModelPanel);
 
-activateSkill(skillCards[3], 3);
+activateSkill(skillCards[1], 1);
 resizeCanvas();
 updateModelPanel();
 setInterval(typeCode, 42);
-requestAnimationFrame(drawNetwork);
+if (canvas && ctx) {
+  requestAnimationFrame(drawNetwork);
+}
