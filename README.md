@@ -1,7 +1,23 @@
-# Yi Han Portfolio
+# Yi Han Personal Website
 
-An English personal homepage for Yi Han, built as a static GitHub Pages site.
+This repository contains the source for my personal GitHub Pages website:
 
-The page highlights business analytics, machine learning, full-stack project experience, education, contact details, a downloadable CV, and data-themed visuals.
+https://hannnnnnnny.github.io
 
-The KNN distribution image is backed by a reproducible Python script in `scripts/knn_visualization.py`.
+The site is intentionally simple. It uses plain HTML and CSS so it is easy to read, edit, and publish through GitHub Pages.
+
+## Structure
+
+- `index.html` contains the page content.
+- `styles.css` contains the layout and visual styling.
+- `assets/` contains the profile image and CV PDF.
+
+## Local Preview
+
+Open `index.html` directly in a browser, or serve the folder with any static file server.
+
+```bash
+npx http-server .
+```
+
+No build step is required.
