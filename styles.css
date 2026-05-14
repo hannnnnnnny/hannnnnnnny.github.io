@@ -193,14 +193,14 @@ p {
 
 .hero-links a::after,
 .project-link::after {
-  content: "↗";
+  content: " ->";
   margin-left: 0.25rem;
   color: var(--subtle);
   font-size: 0.9em;
 }
 
 .hero-links a[href^="#"]::after {
-  content: "↓";
+  content: " v";
 }
 
 .profile-card {
