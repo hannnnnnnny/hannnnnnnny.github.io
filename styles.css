@@ -277,6 +277,12 @@ p {
   margin-bottom: 0;
 }
 
+.project-note {
+  margin-top: 0.7rem;
+  color: var(--subtle);
+  font-size: 0.95rem;
+}
+
 .project-link {
   justify-self: end;
   white-space: nowrap;
