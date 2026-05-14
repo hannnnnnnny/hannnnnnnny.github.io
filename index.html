@@ -3,242 +3,219 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yi Han - Business Analytics student and business analyst focused on machine learning, databases, and full-stack systems.">
-  <title>Yi Han | Business Analyst</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="description" content="Yi Han is a student developer building practical web applications, backend systems, and full-stack projects.">
+  <title>Yi Han | Student Developer</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Yi Han homepage">Yi Han</a>
-    <nav class="nav-links" aria-label="Primary navigation">
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Yi Han home">Yi Han</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#notes">Notes</a>
+        <a href="#contact">Contact</a>
+      </div>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="petal-field" aria-hidden="true">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="hero-content">
-        <div class="hero-id">
-          <img src="assets/profile.jpg" alt="Portrait of Yi Han">
-          <div>
-            <strong>Yi Han</strong>
-            <span>Business Analyst</span>
-          </div>
-        </div>
-        <p class="eyebrow">Business Analytics · Machine Learning · Full-Stack Systems</p>
-        <h1>Yi Han</h1>
-        <p class="hero-copy">
-          Business Analytics student at the University of Auckland with experience in machine learning,
-          database management, statistical analysis, and separated front-end/back-end development.
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <p class="eyebrow">Student developer in Auckland</p>
+        <h1 id="hero-title">Hi, I’m Yi Han.</h1>
+        <p class="intro">
+          I’m learning software development by building practical web applications,
+          backend systems, and full-stack projects.
         </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects">View Projects</a>
-          <a class="button secondary" href="assets/CV_YiHan.pdf" download>Download CV</a>
+        <p>
+          Recently I’ve been working with Java, Spring Boot, Vue, Svelte, Node.js,
+          REST APIs, and databases. This site is a place to collect my projects,
+          notes, and progress.
+        </p>
+        <div class="hero-links" aria-label="Primary links">
+          <a href="https://github.com/hannnnnnnny">GitHub</a>
+          <a href="#projects">Projects</a>
+          <a href="mailto:harryhaber606@gmail.com">Email</a>
+          <a href="assets/CV_YiHan.pdf">CV</a>
         </div>
       </div>
-      <aside class="ml-lab knn-lab" aria-label="KNN machine learning visualization">
-        <div class="lab-topline">
-          <span>Real Model Visual</span>
-          <strong id="active-skill">KNN Classification</strong>
-        </div>
-        <img class="knn-image" src="assets/knn-distribution.png" alt="KNN decision boundary with three predicted class regions and sample points">
-        <div class="metric-strip" aria-label="Model metrics">
-          <div>
-            <span>Metric</span>
-            <strong id="metric-accuracy">KNN</strong>
-          </div>
-          <div>
-            <span>Signal</span>
-            <strong id="metric-signal">7</strong>
-          </div>
-          <div>
-            <span>Tool</span>
-            <strong id="metric-stack">Python</strong>
-          </div>
-        </div>
-      </aside>
 
-      <aside class="profile-panel" aria-label="Profile highlights">
-        <img class="profile-photo" src="assets/profile.jpg" alt="Portrait of Yi Han">
-        <dl>
-          <div>
-            <dt>Based in</dt>
-            <dd>Auckland, New Zealand</dd>
-          </div>
-          <div>
-            <dt>Degree</dt>
-            <dd>B.S. Business Analytics</dd>
-          </div>
-          <div>
-            <dt>Focus</dt>
-            <dd>Predictive analytics and practical business systems</dd>
-          </div>
-        </dl>
+      <aside class="profile-card" aria-label="Profile summary">
+        <img src="assets/profile.jpg" alt="Portrait of Yi Han">
+        <div>
+          <p class="profile-name">Yi Han</p>
+          <p>Business Analytics student at the University of Auckland.</p>
+        </div>
       </aside>
     </section>
 
-    <section class="section intro-section" aria-labelledby="about-title">
+    <section class="section two-column" id="about" aria-labelledby="about-title">
       <div>
-        <p class="section-kicker">About</p>
-        <h2 id="about-title">Analytical, technical, and business-minded.</h2>
+        <p class="section-label">About</p>
+        <h2 id="about-title">I like building things that work end to end.</h2>
       </div>
-      <p>
-        I enjoy turning messy data and operational requirements into clear analysis, useful models,
-        and reliable software. My background combines Python, R, SQL, Java, web development, and
-        office productivity tools, with a strong interest in solving business problems through data.
-      </p>
-    </section>
-
-    <section class="section" id="skills" aria-labelledby="skills-title">
-      <div class="section-heading">
-        <p class="section-kicker">Skills</p>
-        <h2 id="skills-title">Technical Toolkit</h2>
-      </div>
-      <div class="skill-grid" id="skill-grid">
-        <article class="skill-card" data-skill="Python" data-accuracy="94" data-signal="Modeling" data-stack="Pandas">
-          <h3>Programming</h3>
-          <p>Python, R, SQL, Java, HTML</p>
-        </article>
-        <article class="skill-card" data-skill="Machine Learning" data-accuracy="92" data-signal="Predictive" data-stack="Scikit-learn">
-          <h3>Data & ML</h3>
-          <p>NumPy, Pandas, Scikit-learn, dataset preprocessing, predictive analytics</p>
-        </article>
-        <article class="skill-card" data-skill="Full-Stack Systems" data-accuracy="89" data-signal="REST APIs" data-stack="Spring">
-          <h3>Web Systems</h3>
-          <p>Java, Spring, Hibernate, MySQL, RESTful APIs, HTML, CSS, JavaScript</p>
-        </article>
-        <article class="skill-card" data-skill="Business Analysis" data-accuracy="91" data-signal="Insights" data-stack="R">
-          <h3>Business Analysis</h3>
-          <p>Statistical analysis, visual reporting, coordination, problem solving, fast learning</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section playground-section" aria-labelledby="playground-title">
-      <div class="section-heading">
-        <p class="section-kicker">Interactive Lab</p>
-        <h2 id="playground-title">A Small Data Playground</h2>
-      </div>
-      <div class="playground">
-        <div class="code-window" aria-label="Animated code sample">
-          <div class="window-controls" aria-hidden="true"><span></span><span></span><span></span></div>
-          <pre><code id="code-stream"></code></pre>
-        </div>
-        <div class="model-panel">
-          <label for="model-slider">Model Confidence</label>
-          <input id="model-slider" type="range" min="40" max="98" value="82">
-          <div class="bar-chart" aria-label="Animated feature importance chart">
-            <span style="--value: 78%"><em>Data Quality</em></span>
-            <span style="--value: 66%"><em>Feature Fit</em></span>
-            <span style="--value: 84%"><em>Business Logic</em></span>
-            <span style="--value: 58%"><em>Model Choice</em></span>
-          </div>
-          <p id="model-readout">Predicted business value: 82%</p>
-        </div>
+      <div class="section-copy">
+        <p>
+          I’m studying Business Analytics and spending more of my time learning how
+          real software systems are put together. I enjoy the practical parts of
+          development: shaping a small idea, building the frontend, designing an API,
+          connecting a database, and debugging the details until it works.
+        </p>
+        <p>
+          I care about writing code that is clear enough to come back to later. I’m
+          still early in my path, so I try to learn by building projects, reading
+          docs carefully, and keeping notes on what I understand.
+        </p>
       </div>
     </section>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
-        <p class="section-kicker">Projects</p>
-        <h2 id="projects-title">Selected Work</h2>
+        <p class="section-label">Projects</p>
+        <h2 id="projects-title">Selected projects</h2>
+        <p>
+          A few projects and project ideas that reflect what I’m learning now:
+          backend structure, APIs, databases, and practical web interfaces.
+        </p>
       </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span>Mar 2025 - Jun 2025</span>
-            <strong>Python · SQL · Excel</strong>
-          </div>
-          <div class="timeline-content">
-            <h3>Video Game Dataset Analysis</h3>
+
+      <div class="project-list">
+        <article class="project-card">
+          <div>
+            <h3>NovaCart Ecommerce</h3>
             <p>
-              Trained and deployed machine learning models on structured datasets to support
-              predictive analytics and business-oriented reporting.
+              A full-stack online store system built with Spring Boot, Vue 3, and MySQL.
             </p>
-            <ul>
-              <li>Completed dataset preprocessing and feature matching.</li>
-              <li>Optimized model-data matching based on business needs.</li>
-              <li>Created visual reports to communicate insights clearly.</li>
-            </ul>
           </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Vue</li>
+            <li>MySQL</li>
+            <li>REST API</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/novacart-ecommerce">View repository</a>
         </article>
 
-        <article class="timeline-item">
-          <div class="timeline-meta">
-            <span>Jul 2023 - May 2024</span>
-            <strong>Java · Spring · MySQL · HTML/CSS/JS</strong>
-          </div>
-          <div class="timeline-content">
-            <h3>Teacher Information Management System</h3>
+        <article class="project-card">
+          <div>
+            <h3>Todo API</h3>
             <p>
-              Built a web-based management system with separated front-end and back-end layers,
-              RESTful APIs, and database-backed workflows.
+              A RESTful todo API project focused on routing, filtering, validation,
+              and clean backend structure.
             </p>
-            <ul>
-              <li>Implemented front-end interfaces using HTML, CSS, and JavaScript.</li>
-              <li>Developed backend services with Java and the Spring framework.</li>
-              <li>Used Hibernate and MySQL for persistent data operations.</li>
-            </ul>
           </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>REST API</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h3>Study Room Booking System</h3>
+            <p>
+              A concept for a real-time study room booking system with availability,
+              reservations, and user-friendly scheduling.
+            </p>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Web App</li>
+            <li>Booking System</li>
+            <li>UI/UX</li>
+          </ul>
+        </article>
+
+        <article class="project-card">
+          <div>
+            <h3>Learning Notes</h3>
+            <p>
+              Notes and small experiments from learning frontend, backend, testing,
+              and software engineering fundamentals.
+            </p>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>Svelte</li>
+            <li>Testing</li>
+          </ul>
         </article>
       </div>
     </section>
 
-    <section class="section split-section" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading">
-        <p class="section-kicker">Experience</p>
-        <h2 id="experience-title">Development Engineer</h2>
+    <section class="section two-column" id="skills" aria-labelledby="skills-title">
+      <div>
+        <p class="section-label">Skills</p>
+        <h2 id="skills-title">Tools I’m working with</h2>
       </div>
-      <div class="detail-panel">
-        <p class="role-line">Beijing Zhongke Hengye Technology Co., Ltd. · Full-time</p>
-        <p class="date-line">Jul 2023 - May 2024 · Beijing, China</p>
-        <ul>
-          <li>Implemented database operations using MySQL and Hibernate.</li>
-          <li>Developed B/S architecture systems with HTML, CSS, JavaScript, Java, and Spring.</li>
-          <li>Built an online approval module for teacher transfers using RESTful APIs.</li>
+      <div class="skills-grid">
+        <section aria-labelledby="frontend-title">
+          <h3 id="frontend-title">Frontend</h3>
+          <p>Vue, Svelte, HTML, CSS, JavaScript</p>
+        </section>
+        <section aria-labelledby="backend-title">
+          <h3 id="backend-title">Backend</h3>
+          <p>Java, Spring Boot, Node.js, Express</p>
+        </section>
+        <section aria-labelledby="database-title">
+          <h3 id="database-title">Database</h3>
+          <p>MySQL, SQL</p>
+        </section>
+        <section aria-labelledby="tools-title">
+          <h3 id="tools-title">Tools</h3>
+          <p>Git, GitHub, Maven, Vite, npm</p>
+        </section>
+        <section aria-labelledby="practices-title">
+          <h3 id="practices-title">Practices</h3>
+          <p>REST APIs, testing basics, debugging, clean project structure</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="section notes-section" id="notes" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <p class="section-label">Writing</p>
+        <h2 id="notes-title">Notes I want to write</h2>
+        <p>
+          I’m gradually turning my learning notes into short technical posts.
+        </p>
+      </div>
+      <ul class="notes-list">
+        <li>Understanding REST APIs</li>
+        <li>Notes on Svelte and Vue</li>
+        <li>Java backend learning</li>
+        <li>Debugging small projects</li>
+        <li>Building full-stack apps step by step</li>
+      </ul>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Say hello</h2>
+      </div>
+      <div class="section-copy">
+        <p>
+          I’m open to learning opportunities, collaboration, and feedback on my projects.
+        </p>
+        <ul class="contact-list">
+          <li><a href="mailto:harryhaber606@gmail.com">harryhaber606@gmail.com</a></li>
+          <li><a href="https://github.com/hannnnnnnny">github.com/hannnnnnnny</a></li>
+          <li><a href="https://www.linkedin.com/in/yi-han-29ab28323">LinkedIn</a></li>
         </ul>
-      </div>
-    </section>
-
-    <section class="section split-section" aria-labelledby="education-title">
-      <div class="section-heading">
-        <p class="section-kicker">Education</p>
-        <h2 id="education-title">University of Auckland</h2>
-      </div>
-      <div class="detail-panel">
-        <p class="role-line">B.S. in Business Analytics</p>
-        <p class="date-line">Jul 2022 - Nov 2025 · Auckland, New Zealand</p>
-      </div>
-    </section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title">
-      <p class="section-kicker">Contact</p>
-      <h2 id="contact-title">Let’s connect.</h2>
-      <div class="contact-links">
-        <a href="mailto:harryhaber606@gmail.com">harryhaber606@gmail.com</a>
-        <a href="tel:+642885196968">028-8519-6968</a>
-        <a href="https://www.linkedin.com/in/yi-han-29ab28323" target="_blank" rel="noreferrer">LinkedIn</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 Yi Han. Built for data, business, and useful software.</p>
+    <p>© 2026 Yi Han. Built with plain HTML and CSS.</p>
   </footer>
 </body>
 </html>
