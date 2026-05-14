@@ -10,7 +10,7 @@ The site is intentionally simple. It uses plain HTML and CSS so it is easy to re
 
 - `index.html` contains the page content.
 - `styles.css` contains the layout and visual styling.
-- `assets/` contains the profile image and CV PDF.
+- `assets/` contains the CV PDF.
 
 ## Local Preview
 

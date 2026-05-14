@@ -210,19 +210,20 @@ p {
   background: var(--surface);
 }
 
-.profile-card img {
-  width: 100%;
-  aspect-ratio: 1;
-  border-radius: 8px;
-  object-fit: cover;
-  object-position: center 34%;
-  background: var(--surface-soft);
-}
-
 .profile-name {
-  margin: 1rem 0 0.2rem;
+  margin: 0 0 0.75rem;
   color: var(--text);
   font-weight: 700;
+}
+
+.profile-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--muted);
+}
+
+.profile-card li + li {
+  margin-top: 0.45rem;
 }
 
 .section {
@@ -399,17 +400,6 @@ p {
   .notes-section,
   .contact-section {
     grid-template-columns: 1fr;
-  }
-
-  .profile-card {
-    display: grid;
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 1rem;
-    align-items: center;
-  }
-
-  .profile-card img {
-    width: 96px;
   }
 
   .project-card {
