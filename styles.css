@@ -330,16 +330,46 @@ p {
   gap: clamp(2rem, 5vw, 4rem);
 }
 
-.notes-list,
 .contact-list {
   margin: 0;
   padding-left: 1.15rem;
   color: var(--muted);
 }
 
-.notes-list li + li,
 .contact-list li + li {
   margin-top: 0.45rem;
+}
+
+.notes-list {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.notes-list li {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+}
+
+.notes-list span,
+.notes-list small {
+  display: block;
+}
+
+.notes-list span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.notes-list small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .contact-section {
