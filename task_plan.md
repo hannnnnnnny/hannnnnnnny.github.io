@@ -61,11 +61,11 @@
 - Commit the plan.
 
 ### Phase 2: Content and Project Accuracy
-- Update project cards from current GitHub repositories.
-- Fix NovaCart repository URL and description.
-- Improve project descriptions, features, tech stacks, and learning outcomes.
-- Add clearer README links.
-- Update this plan after the phase.
+- Updated project cards from current GitHub repositories.
+- Fixed NovaCart repository URL and description for `NovaCart-Fashion-Commerce-Platform`.
+- Improved project descriptions, features, tech stacks, and learning outcomes.
+- Added clearer README links for each project.
+- Updated this plan after the phase.
 
 ### Phase 3: Visual Hierarchy and Layout
 - Refine sidebar presentation.
@@ -89,8 +89,8 @@
 - Push all commits.
 
 ## Progress
-- [x] Phase 1 started.
-- [ ] Phase 2 pending.
+- [x] Phase 1 complete.
+- [x] Phase 2 complete.
 - [ ] Phase 3 pending.
 - [ ] Phase 4 pending.
 - [ ] Phase 5 pending.
