@@ -1,6 +1,6 @@
 # Portfolio Improvement Plan
 
-## Current Audit
+## Initial Audit
 
 ### Stack and Repository
 - Static GitHub Pages site using plain `index.html` and `styles.css`.
@@ -32,7 +32,7 @@
 - No unused JS is present.
 - No dead image assets are present.
 
-### SEO and Social Preview Issues
+### SEO and Social Preview Issues Found
 - Basic title and description exist.
 - Missing canonical URL.
 - Missing Open Graph and Twitter Card metadata.
@@ -74,11 +74,11 @@
 - Updated this plan after the phase.
 
 ### Phase 4: Accessibility and SEO
-- Add canonical, Open Graph, Twitter Card, and theme color metadata.
-- Add favicon support without heavy assets.
-- Improve external-link attributes and visible focus/hover states.
-- Check keyboard and mobile behavior.
-- Update this plan after the phase.
+- Added canonical, Open Graph, Twitter Card, and theme color metadata.
+- Added lightweight SVG favicon and social preview assets.
+- Improved external-link attributes and README link labels.
+- Kept visible focus/hover states.
+- Updated this plan after the phase.
 
 ### Phase 5: Verification and Documentation
 - Run available checks.
@@ -92,5 +92,5 @@
 - [x] Phase 1 complete.
 - [x] Phase 2 complete.
 - [x] Phase 3 complete.
-- [ ] Phase 4 pending.
+- [x] Phase 4 complete.
 - [ ] Phase 5 pending.
