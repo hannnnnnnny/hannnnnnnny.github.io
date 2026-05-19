@@ -81,16 +81,16 @@
 - Updated this plan after the phase.
 
 ### Phase 5: Verification and Documentation
-- Run available checks.
-- Verify local preview in desktop and mobile widths.
-- Check links and assets.
-- Search for Chinese text, local-only paths, AI-sounding phrases, and dead references.
-- Update README if needed.
-- Push all commits.
+- Ran available static checks with `rg` and `git diff --check`.
+- Verified local preview with the browser tool in desktop and mobile widths.
+- Checked project README links and local assets.
+- Searched for Chinese text, local-only paths, AI-sounding phrases, and dead references.
+- Updated README with structure and maintenance notes.
+- Ready to push all commits.
 
 ## Progress
 - [x] Phase 1 complete.
 - [x] Phase 2 complete.
 - [x] Phase 3 complete.
 - [x] Phase 4 complete.
-- [ ] Phase 5 pending.
+- [x] Phase 5 complete.
