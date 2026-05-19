@@ -68,10 +68,10 @@
 - Updated this plan after the phase.
 
 ### Phase 3: Visual Hierarchy and Layout
-- Refine sidebar presentation.
-- Improve hero rhythm, section spacing, project cards, tags, and note cards.
-- Keep the site minimal and personal, without startup landing-page styling.
-- Update this plan after the phase.
+- Refined sidebar presentation with a short site note and calmer link treatment.
+- Improved hero rhythm, section spacing, project cards, tags, and note cards.
+- Kept the site minimal and personal, without startup landing-page styling.
+- Updated this plan after the phase.
 
 ### Phase 4: Accessibility and SEO
 - Add canonical, Open Graph, Twitter Card, and theme color metadata.
@@ -91,6 +91,6 @@
 ## Progress
 - [x] Phase 1 complete.
 - [x] Phase 2 complete.
-- [ ] Phase 3 pending.
+- [x] Phase 3 complete.
 - [ ] Phase 4 pending.
 - [ ] Phase 5 pending.

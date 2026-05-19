@@ -3,6 +3,7 @@
   --bg: #fbfaf8;
   --surface: #ffffff;
   --surface-soft: #f4f1ec;
+  --surface-warm: #f7f3ed;
   --text: #25211d;
   --muted: #6e665c;
   --subtle: #8d8378;
@@ -10,8 +11,8 @@
   --accent: #8b4b2f;
   --accent-soft: #f0e3da;
   --focus: #1f6feb;
-  --max-width: 1040px;
-  --sidebar-width: 248px;
+  --max-width: 1080px;
+  --sidebar-width: 260px;
 }
 
 * {
@@ -29,7 +30,9 @@ body {
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   line-height: 1.65;
-  background: var(--bg);
+  background:
+    linear-gradient(90deg, rgba(222, 215, 205, 0.28) 1px, transparent 1px) 0 0 / 56px 56px,
+    var(--bg);
   text-rendering: optimizeLegibility;
 }
 
@@ -76,7 +79,7 @@ button:focus-visible {
   z-index: 10;
   width: var(--sidebar-width);
   border-right: 1px solid var(--border);
-  background: rgba(251, 250, 248, 0.92);
+  background: rgba(247, 243, 237, 0.94);
   backdrop-filter: blur(10px);
 }
 
@@ -89,14 +92,22 @@ button:focus-visible {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 1rem;
-  padding: 2rem 1.25rem;
+  padding: 2rem 1.35rem;
 }
 
 .brand {
   color: var(--text);
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 750;
   text-decoration: none;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.nav-note {
+  margin: 0 0 1.6rem;
+  color: var(--subtle);
+  font-size: 0.86rem;
+  line-height: 1.45;
 }
 
 .nav-links {
@@ -110,15 +121,17 @@ button:focus-visible {
 
 .nav-links a {
   display: block;
-  padding: 0.42rem 0.55rem;
+  padding: 0.5rem 0.62rem;
   border-radius: 6px;
   color: var(--muted);
   text-decoration: none;
+  transition: background 150ms ease, color 150ms ease, transform 150ms ease;
 }
 
 .nav-links a:hover {
   color: var(--text);
   background: var(--surface-soft);
+  transform: translateX(2px);
 }
 
 main,
@@ -133,7 +146,7 @@ main,
   gap: clamp(2rem, 5vw, 5rem);
   align-items: start;
   scroll-margin-top: 5rem;
-  padding: clamp(4rem, 10vw, 7rem) 0 clamp(3rem, 8vw, 5rem);
+  padding: clamp(4.5rem, 10vw, 7.5rem) 0 clamp(3.5rem, 8vw, 5.5rem);
   border-bottom: 1px solid var(--border);
 }
 
@@ -160,7 +173,7 @@ p {
 
 h1 {
   margin-bottom: 1rem;
-  font-size: clamp(2.6rem, 8vw, 5.4rem);
+  font-size: clamp(2.8rem, 8vw, 5.8rem);
   line-height: 0.98;
   letter-spacing: -0.04em;
 }
@@ -203,6 +216,7 @@ p {
   min-height: 2.4rem;
   color: var(--text);
   font-weight: 650;
+  text-decoration-color: rgba(37, 33, 29, 0.32);
 }
 
 .hero-links a::after,
@@ -218,10 +232,11 @@ p {
 }
 
 .profile-card {
-  padding: 1rem;
+  padding: 1.1rem;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 40px rgba(62, 48, 36, 0.05);
 }
 
 .profile-name {
@@ -242,7 +257,7 @@ p {
 
 .section {
   scroll-margin-top: 5rem;
-  padding: clamp(3rem, 8vw, 5.5rem) 0;
+  padding: clamp(3.4rem, 8vw, 5.8rem) 0;
   border-bottom: 1px solid var(--border);
 }
 
@@ -267,25 +282,27 @@ p {
 
 .project-list {
   display: grid;
-  gap: 1rem;
+  gap: 1.1rem;
 }
 
 .project-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1.25rem;
+  gap: 1.35rem;
   align-items: start;
-  padding: 1.25rem;
+  padding: clamp(1.1rem, 2vw, 1.45rem);
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
-  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 1px 0 rgba(62, 48, 36, 0.02);
+  transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
 }
 
 .project-card:hover {
   transform: translateY(-2px);
   border-color: #c8b8aa;
-  box-shadow: 0 12px 28px rgba(71, 55, 40, 0.08);
+  background: var(--surface);
+  box-shadow: 0 14px 32px rgba(71, 55, 40, 0.08);
 }
 
 .project-card p {
@@ -297,6 +314,15 @@ p {
   margin-top: 0.7rem;
   color: var(--subtle);
   font-size: 0.95rem;
+}
+
+.project-type {
+  margin-bottom: 0.45rem;
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-link {
@@ -315,7 +341,7 @@ p {
 }
 
 .tags li {
-  padding: 0.25rem 0.55rem;
+  padding: 0.28rem 0.58rem;
   border: 1px solid var(--border);
   border-radius: 999px;
   color: var(--muted);
@@ -330,10 +356,10 @@ p {
 }
 
 .skills-grid section {
-  padding: 1rem;
+  padding: 1.05rem;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.76);
 }
 
 .skills-grid p {
@@ -365,10 +391,10 @@ p {
 }
 
 .notes-list li {
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1rem;
   border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--surface);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.76);
 }
 
 .notes-list span,
@@ -436,6 +462,10 @@ p {
     margin-bottom: 0;
   }
 
+  .nav-note {
+    display: none;
+  }
+
   .nav-links {
     width: auto;
     flex-direction: row;
@@ -452,6 +482,7 @@ p {
 
   .nav-links a:hover {
     background: transparent;
+    transform: none;
   }
 
   .hero,
@@ -483,6 +514,10 @@ p {
 
   .hero {
     padding-top: 3rem;
+  }
+
+  h1 {
+    letter-spacing: -0.05em;
   }
 
   .skills-grid {
