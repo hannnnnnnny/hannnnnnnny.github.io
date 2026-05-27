@@ -516,6 +516,11 @@ p {
     padding-top: 3rem;
   }
 
+  .hero,
+  .section {
+    scroll-margin-top: 7rem;
+  }
+
   h1 {
     letter-spacing: -0.05em;
   }

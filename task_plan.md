@@ -94,3 +94,25 @@
 - [x] Phase 3 complete.
 - [x] Phase 4 complete.
 - [x] Phase 5 complete.
+
+## 2026-05-28 Maintenance Audit
+
+### Goal
+- Re-check the live personal homepage and local source.
+- Test responsive layout, links, accessibility basics, SEO files, and GitHub Pages deployment.
+- Fix real issues only, then commit and push.
+
+### Phase 6: Current Site Audit
+- Status: complete.
+- Review repository state, existing content, and deployment setup.
+- Run local static checks and browser checks at desktop, tablet, and mobile widths.
+- Record findings in `findings.md` and progress in `progress.md`.
+
+### Phase 7: Targeted Fixes
+- Status: complete.
+- Fix only the issues found during Phase 6.
+- Preserve the simple static HTML/CSS structure.
+
+### Phase 8: Verification, Commit, and Push
+- Status: complete.
+- Re-run checks, verify the live site or triggered deployment, commit with a clear message, and push to `main`.

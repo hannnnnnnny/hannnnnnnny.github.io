@@ -10,8 +10,10 @@ The site is intentionally simple. It uses plain HTML and CSS so it is easy to re
 
 - `index.html` contains the page content.
 - `styles.css` contains the layout and visual styling.
-- `assets/` contains the CV PDF, favicon, and social preview image.
-- `task_plan.md` records the portfolio audit and improvement plan.
+- `assets/` contains resume/CV PDFs, the favicon, and the social preview image.
+- `robots.txt` and `sitemap.xml` provide basic crawler metadata.
+- `.nojekyll` keeps GitHub Pages from running Jekyll on this static site.
+- `task_plan.md`, `findings.md`, and `progress.md` record maintenance notes.
 
 ## Local Preview
 
