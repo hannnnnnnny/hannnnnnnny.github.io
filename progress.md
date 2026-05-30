@@ -22,3 +22,17 @@
 - Verified fresh mobile CSS: stylesheet version query is present, mobile scroll margin computes to 112px, and the project heading clears the sticky header.
 - Browser screenshot capture timed out through the in-app browser after multiple approaches; layout verification continued with DOM metrics and viewport checks instead.
 - Final pre-commit checks passed; preparing to commit and push the maintenance fixes.
+
+## 2026-05-30
+
+- Started data and AI portfolio refresh.
+- Used `planning-with-files`, `frontend-design`, and `ui-ux-pro-max` guidance.
+- Researched public AI personal sites and selected Lilian Weng's `Lil'Log` as the reference for a writing-first, credible technical homepage.
+- Audited current public GitHub repositories and identified the strongest projects for IT, data analytics, and AI positioning.
+- Added phases 9 to 11 to `task_plan.md`.
+- Added AIDLC to the AI positioning after the user clarified they have studied it.
+- Rewrote the homepage around a writing-first data/AI portfolio structure inspired by Lilian Weng's public technical blog.
+- Ran responsive browser checks at mobile, tablet, and desktop widths.
+- Fixed the mobile/tablet header so sticky positioning has an explicit top offset and anchor jumps have enough scroll margin.
+- Local static checks passed: no Chinese UI text, no local-only paths, no banned generic AI copy, and local assets returned HTTP 200.
+- GitHub README links for the featured projects returned HTTP 200; LinkedIn returned its usual automated-check blocking response.

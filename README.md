@@ -4,7 +4,7 @@ This repository contains the source for my personal GitHub Pages website:
 
 https://hannnnnnnny.github.io
 
-The site is intentionally simple. It uses plain HTML and CSS so it is easy to read, edit, and publish through GitHub Pages.
+The site is intentionally simple. It uses plain HTML and CSS so it is easy to read, edit, and publish through GitHub Pages. The current homepage emphasizes IT, data analytics, AI tools, AIDLC learning, and practical software projects.
 
 ## Structure
 

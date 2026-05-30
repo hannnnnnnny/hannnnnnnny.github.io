@@ -116,3 +116,32 @@
 ### Phase 8: Verification, Commit, and Push
 - Status: complete.
 - Re-run checks, verify the live site or triggered deployment, commit with a clear message, and push to `main`.
+
+## 2026-05-30 Data and AI Portfolio Refresh
+
+### Goal
+- Redesign the homepage for IT, data analytics, and AI job-search positioning in New Zealand.
+- Use a respected public AI personal site as design inspiration without copying content, layout, assets, or branding.
+- Update project emphasis from generic full-stack work to AI tools, data analysis, and practical software evidence.
+- Test, commit, push, and verify GitHub Pages deployment.
+
+### Reference Chosen
+- Lilian Weng's `Lil'Log` and GitHub Pages repository were chosen as the main reference.
+- Reason: it is a well-known AI technical blog with a public GitHub Pages source, strong credibility, clear navigation, concise personal intro, and long-form technical note structure.
+- Borrowed principles only: writing-first layout, dated technical notes, readable hierarchy, simple navigation, and credibility through real technical artifacts.
+
+### Phase 9: Research and Current Project Audit
+- Status: complete.
+- Reviewed Lilian Weng's site and GitHub repository.
+- Checked current public GitHub repositories for Yi Han.
+- Identified `pansub`, `video-game-sales-ml-analysis`, `ReNova-Second-Hand-C2C-Marketplace`, `study-room-booking-system`, and `teacher-management-system` as relevant projects.
+
+### Phase 10: Content and Visual Redesign
+- Status: complete.
+- Rewrite hero, profile, projects, notes, skills, and contact sections around IT, data analytics, and AI.
+- Keep the site honest, human, and job-search appropriate.
+- Keep the implementation plain HTML/CSS and easy to maintain.
+
+### Phase 11: Verification, Commit, and Push
+- Status: in progress.
+- Run local preview, responsive checks, link checks, text checks, and GitHub Pages deployment verification.

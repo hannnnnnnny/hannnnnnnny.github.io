@@ -29,3 +29,26 @@
 - External links that open in a new tab use `noreferrer`; adding `noopener` explicitly makes the security intent clearer.
 - GitHub and asset links return HTTP 200 with a browser-like GET request. LinkedIn returned HTTP 999 to automated checking, which is a common bot-blocking response rather than proof that the link is broken.
 - `robots.txt` and `sitemap.xml` were added and both return HTTP 200 in the local preview.
+
+## 2026-05-30 Data and AI Portfolio Refresh
+
+### Reference Research
+- Chosen public reference: Lilian Weng's `Lil'Log`.
+- GitHub repository: `https://github.com/lilianweng/lilianweng.github.io`.
+- Live site: `https://lilianweng.github.io/`.
+- Why it fits: the site is famous in the AI community, uses a public GitHub Pages source, and presents expertise through clear technical writing rather than flashy portfolio effects.
+- Useful design principles: short personal intro, simple navigation, readable article list, dates and reading context, and visible links to technical profiles.
+- Decision: do not copy the design, text, colors, or assets; adapt the underlying content strategy for Yi Han's data/AI job-search context.
+
+### Current GitHub Project Audit
+- `pansub`: Chrome extension for AI-assisted subtitle support on Panopto lecture recordings. Strongest AI/product signal.
+- `video-game-sales-ml-analysis`: Reusable data and machine learning analysis workflow. Strongest data analytics signal.
+- `ReNova-Second-Hand-C2C-Marketplace`: Full-stack C2C marketplace with Spring Boot, Vue, MySQL, offers, messaging, escrow-style order flow, and reviews.
+- `study-room-booking-system`: Campus-style booking system with Vue, live availability, and a visual workstation map.
+- `teacher-management-system`: Full-stack admin dashboard with reporting, analytics, and resource status views.
+
+### Redesign Direction
+- Position Yi Han as an Auckland-based Master of IT student focused on data analysis, AI tools, and practical software systems.
+- Lead with evidence: real GitHub projects, README links, practical user problems, and learning notes.
+- Keep the page calm and credible for New Zealand graduate or internship applications.
+- Include AIDLC as a studied AI project lifecycle concept without overstating it as professional experience.
