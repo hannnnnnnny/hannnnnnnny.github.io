@@ -166,3 +166,28 @@
 ### Phase 13: Verification, Commit, and Push
 - Status: complete.
 - Run local preview, responsive browser checks, link checks, deployment check, then commit and push.
+
+## 2026-05-30 Vue Interaction Upgrade
+
+### Goal
+- Add JavaScript and Vue so the homepage feels interactive instead of purely static.
+- Preserve the static GitHub Pages deployment path without introducing a heavy build pipeline.
+- Keep the effects tied to the portfolio story: data, machine learning, AI workflow thinking, and project exploration.
+
+### Technical Direction
+- Use Vue 3 from a CDN with a small controller app, following the official no-build-step approach.
+- Keep the existing `index.html` and `styles.css` structure.
+- Add a small `app.js` file for state, project filtering, active navigation, scroll progress, AIDLC tabs, and the KNN sketch.
+
+### Phase 14: Vue Enhancement
+- Status: complete.
+- Add Vue root mounting, project filters, AIDLC tab panels, active navigation state, scroll progress, and an interactive KNN canvas widget.
+- Keep all core content visible without JavaScript where possible.
+
+### Phase 15: Verification, Commit, and Push
+- Status: complete.
+- Run static checks, local preview, browser responsiveness checks, link checks, then commit and push.
+
+### Errors Encountered
+- Initial Vue mount tried to control the whole page and cleared the visible DOM in the browser.
+- Resolution: changed Vue into a small controller mounted on a hidden root. The static HTML remains visible, while Vue binds events and updates classes, hidden states, scroll progress, and the KNN sketch.

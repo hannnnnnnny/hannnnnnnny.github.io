@@ -17,10 +17,12 @@
   <meta name="twitter:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
   <title>Yi Han | Data Analytics and AI Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260530-dark">
+  <link rel="stylesheet" href="styles.css?v=20260530-vue">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="scroll-progress" aria-hidden="true"></div>
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
@@ -32,12 +34,13 @@
         Auckland-based Master of IT student building practical systems from real problems.
       </p>
       <div class="nav-links">
-        <a href="#top">Profile</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#notes">Notes</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+        <a href="#top" data-section-link="top">Profile</a>
+        <a href="#work" data-section-link="work">Work</a>
+        <a href="#lifecycle" data-section-link="lifecycle">AIDLC</a>
+        <a href="#projects" data-section-link="projects">Projects</a>
+        <a href="#notes" data-section-link="notes">Notes</a>
+        <a href="#skills" data-section-link="skills">Skills</a>
+        <a href="#contact" data-section-link="contact">Contact</a>
       </div>
       <div class="nav-meta" aria-label="Quick profile links">
         <span>Auckland, New Zealand</span>
@@ -71,6 +74,17 @@
 
       <aside class="profile-card" aria-label="Profile summary">
         <p class="profile-name">Current direction</p>
+        <div class="model-widget" aria-label="Interactive KNN sketch">
+          <div class="model-widget-header">
+            <span>Mini KNN sketch</span>
+            <output id="knn-k-output" for="knn-k">k = 5</output>
+          </div>
+          <canvas id="model-canvas" width="520" height="340" aria-hidden="true"></canvas>
+          <label class="knn-control" for="knn-k">
+            <span>Neighbors</span>
+            <input id="knn-k" type="range" min="1" max="9" step="2" value="5">
+          </label>
+        </div>
         <dl class="profile-facts">
           <div>
             <dt>Study</dt>
@@ -131,6 +145,76 @@
       </div>
     </section>
 
+    <section class="section lifecycle-section" id="lifecycle" aria-labelledby="lifecycle-title">
+      <div class="section-heading">
+        <p class="section-label">AIDLC</p>
+        <h2 id="lifecycle-title">How I think about small AI projects</h2>
+        <p>
+          I have been learning AIDLC as a practical way to keep AI work grounded:
+          start with the user problem, inspect the data, build a small version,
+          evaluate it honestly, and improve it from evidence.
+        </p>
+      </div>
+      <div class="lifecycle-layout">
+        <div class="lifecycle-steps" role="tablist" aria-label="AIDLC stages">
+          <button id="aidlc-tab-frame" class="active" type="button" role="tab" aria-controls="aidlc-panel-frame" aria-selected="true" data-lifecycle-target="frame">
+            <span>01</span>
+            Frame
+          </button>
+          <button id="aidlc-tab-data" type="button" role="tab" aria-controls="aidlc-panel-data" aria-selected="false" data-lifecycle-target="data">
+            <span>02</span>
+            Data
+          </button>
+          <button id="aidlc-tab-build" type="button" role="tab" aria-controls="aidlc-panel-build" aria-selected="false" data-lifecycle-target="build">
+            <span>03</span>
+            Build
+          </button>
+          <button id="aidlc-tab-check" type="button" role="tab" aria-controls="aidlc-panel-check" aria-selected="false" data-lifecycle-target="check">
+            <span>04</span>
+            Check
+          </button>
+        </div>
+        <div class="lifecycle-panels">
+          <article id="aidlc-panel-frame" class="active" role="tabpanel" aria-labelledby="aidlc-tab-frame" data-lifecycle-panel="frame">
+            <p class="panel-kicker">Problem first</p>
+            <h3>What would make this useful?</h3>
+            <p>
+              For a tool like PanSub, I would start by asking where students
+              actually struggle: caption timing, translation clarity, or the
+              friction of switching tools while watching a lecture.
+            </p>
+          </article>
+          <article id="aidlc-panel-data" role="tabpanel" aria-labelledby="aidlc-tab-data" data-lifecycle-panel="data">
+            <p class="panel-kicker">Data awareness</p>
+            <h3>What can be trusted?</h3>
+            <p>
+              In my analysis projects, this means checking missing values,
+              class balance, feature meaning, and whether a chart is explaining
+              something real or only making noise look tidy.
+            </p>
+          </article>
+          <article id="aidlc-panel-build" role="tabpanel" aria-labelledby="aidlc-tab-build" data-lifecycle-panel="build">
+            <p class="panel-kicker">Small working version</p>
+            <h3>Make one path work end to end.</h3>
+            <p>
+              I prefer building a thin but complete workflow first: frontend,
+              API, storage, and one clear result. It makes problems easier to
+              see than a large unfinished design.
+            </p>
+          </article>
+          <article id="aidlc-panel-check" role="tabpanel" aria-labelledby="aidlc-tab-check" data-lifecycle-panel="check">
+            <p class="panel-kicker">Evaluation</p>
+            <h3>Show the limits, then improve.</h3>
+            <p>
+              For AI and data projects, I want to get better at recording what
+              fails, what improves the result, and what a user would still need
+              before trusting the system.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="projects" aria-labelledby="projects-title">
       <div class="section-heading">
         <p class="section-label">Projects</p>
@@ -142,8 +226,15 @@
         </p>
       </div>
 
+      <div class="project-controls" aria-label="Filter selected projects">
+        <button class="active" type="button" aria-pressed="true" data-project-filter="all">All</button>
+        <button type="button" aria-pressed="false" data-project-filter="data">Data and ML</button>
+        <button type="button" aria-pressed="false" data-project-filter="ai">AI tools</button>
+        <button type="button" aria-pressed="false" data-project-filter="fullstack">Full stack</button>
+      </div>
+
       <div class="project-list">
-        <article class="project-card project-card-featured">
+        <article class="project-card project-card-featured" data-project-groups="ai fullstack">
           <div class="project-main">
             <p class="project-type">AI tool / browser extension</p>
             <h3>PanSub</h3>
@@ -173,7 +264,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the PanSub README on GitHub">Read README</a>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project-groups="data">
           <div class="project-main">
             <p class="project-type">Data analysis / machine learning</p>
             <h3>Video Game Sales ML Analysis</h3>
@@ -204,7 +295,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/video-game-sales-ml-analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Video Game Sales ML Analysis README on GitHub">Read README</a>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project-groups="fullstack">
           <div class="project-main">
             <p class="project-type">Full-stack marketplace</p>
             <h3>ReNova Second-Hand C2C Marketplace</h3>
@@ -234,7 +325,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/ReNova-Second-Hand-C2C-Marketplace/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the ReNova Second-Hand C2C Marketplace README on GitHub">Read README</a>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project-groups="fullstack">
           <div class="project-main">
             <p class="project-type">Campus utility system</p>
             <h3>Study Room Booking System</h3>
@@ -263,7 +354,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/study-room-booking-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Study Room Booking System README on GitHub">Read README</a>
         </article>
 
-        <article class="project-card">
+        <article class="project-card" data-project-groups="fullstack data">
           <div class="project-main">
             <p class="project-type">Admin dashboard / reporting</p>
             <h3>Teacher Management System</h3>
@@ -389,7 +480,11 @@
   </main>
 
   <footer class="site-footer">
-    <p>&copy; 2026 Yi Han. Plain HTML and CSS, kept readable on purpose.</p>
+    <p>&copy; 2026 Yi Han. Static GitHub Pages, enhanced with a small Vue layer.</p>
   </footer>
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+  <div id="portfolio-app" hidden aria-hidden="true"></div>
+  <script src="app.js?v=20260530-vue2"></script>
 </body>
 </html>

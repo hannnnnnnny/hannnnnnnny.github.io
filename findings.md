@@ -60,3 +60,14 @@
 - Why it fits: the repository is highly starred and forked, and the live portfolio is known for a dark developer-focused aesthetic.
 - Useful principles: dark background, readable muted text, accent color for links and labels, sticky side navigation, and project cards that show credible technical work.
 - Decision: avoid copying the exact color tokens, text, layout details, animation style, or assets. Use the reference only to guide a dark professional mood.
+
+## 2026-05-30 Vue Interaction Upgrade
+
+### User Request
+- The user wants JavaScript and Vue framework effects so the portfolio does not feel static.
+
+### Implementation Findings
+- The repository is still best served as a static GitHub Pages site. A full Vite migration would add unnecessary build and deployment complexity for this homepage.
+- Vue's CDN/global-build pattern fits this repository because it can enhance the existing HTML without a build step.
+- Strongest portfolio-specific interactions are project filtering, AIDLC learning tabs, scroll-aware navigation, and a small KNN sketch tied to Yi Han's data and AI direction.
+- Vue should not own the whole static page in this repository. Using a hidden Vue controller keeps the page readable even if JavaScript fails, while still enabling the requested effects.

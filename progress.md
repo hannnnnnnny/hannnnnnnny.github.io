@@ -44,3 +44,13 @@
 - Converted the portfolio to a black/dark technical theme with pink and cyan accents, updated metadata, stylesheet cache version, README, and social preview.
 - Browser checks confirmed the dark theme loads, external links are safe, internal anchors exist, mobile project anchors clear the sticky header, and there is no horizontal overflow.
 - Final local resource checks and project README link checks passed before commit.
+
+## 2026-05-30 Vue Interaction Upgrade
+
+- Started Vue interaction upgrade after the user requested JavaScript and Vue framework effects.
+- Chose Vue 3 CDN/global build to keep GitHub Pages publishing simple and avoid an unnecessary framework migration.
+- Added a Vue app root, scroll progress bar, active sidebar state, project category filters, AIDLC tab panels, and an interactive KNN canvas sketch.
+- Updated README, findings, and the task plan to document the new static-plus-Vue structure.
+- Found and fixed a Vue mounting issue where the first approach cleared the page DOM. The final approach keeps the static HTML visible and uses Vue as a controller.
+- Browser checks passed for project filtering, AIDLC tab switching, KNN slider output, active navigation, and mobile/tablet/desktop overflow.
+- Staged and committed the Vue interaction upgrade as `feat: add vue portfolio interactions`.
