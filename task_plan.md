@@ -145,3 +145,24 @@
 ### Phase 11: Verification, Commit, and Push
 - Status: in progress.
 - Run local preview, responsive checks, link checks, text checks, and GitHub Pages deployment verification.
+
+## 2026-05-30 Dark Theme Refresh
+
+### Goal
+- Find a highly regarded dark personal developer website as a reference.
+- Convert Yi Han's homepage into a dark, professional portfolio suitable for data, AI, and IT job applications.
+- Preserve original content direction and do not copy the reference site's text, assets, or exact visual system.
+
+### Reference Chosen
+- Brittany Chiang's portfolio and open-source `bchiang7/v4` repository.
+- Reason: it is a well-known dark developer portfolio with thousands of stars and forks, and its README documents a dark color system.
+- Borrowed principles only: dark technical mood, strong contrast, persistent navigation, project-first credibility, and restrained interaction.
+
+### Phase 12: Dark Visual Refresh
+- Status: complete.
+- Update theme colors, cards, navigation, metadata, and social preview for a black/dark portfolio.
+- Keep the page accessible and readable on mobile and desktop.
+
+### Phase 13: Verification, Commit, and Push
+- Status: complete.
+- Run local preview, responsive browser checks, link checks, deployment check, then commit and push.

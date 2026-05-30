@@ -1,16 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Yi Han data analytics and AI portfolio social preview">
-  <rect width="1200" height="630" fill="#faf8f6"/>
-  <path d="M0 0h1200v630H0z" fill="#faf8f6"/>
-  <g opacity="0.65">
-    <path d="M90 120h1020" stroke="#d8dfd8" stroke-width="2"/>
-    <path d="M90 510h1020" stroke="#d8dfd8" stroke-width="2"/>
-    <path d="M90 210h420" stroke="#28736d" stroke-width="5" stroke-linecap="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Yi Han dark data analytics and AI portfolio social preview">
+  <rect width="1200" height="630" fill="#050608"/>
+  <path d="M0 0h1200v630H0z" fill="#050608"/>
+  <g opacity="0.68">
+    <path d="M90 120h1020" stroke="#24313b" stroke-width="2"/>
+    <path d="M90 510h1020" stroke="#24313b" stroke-width="2"/>
+    <path d="M90 210h420" stroke="#f48fb1" stroke-width="5" stroke-linecap="round"/>
   </g>
-  <text x="90" y="170" fill="#b85c7a" font-family="Arial, sans-serif" font-size="28" font-weight="700">DATA ANALYTICS / AI / AIDLC</text>
-  <text x="90" y="300" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="90" font-weight="700">Yi Han</text>
-  <text x="90" y="375" fill="#2d3237" font-family="Arial, sans-serif" font-size="36">Master of IT student in Auckland</text>
-  <text x="90" y="438" fill="#5f6b72" font-family="Arial, sans-serif" font-size="30">AI tools, data analysis, and practical software systems.</text>
-  <rect x="885" y="150" width="225" height="225" rx="26" fill="#fffdf9" stroke="#d8dfd8" stroke-width="3"/>
-  <text x="928" y="278" fill="#171717" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700">YH</text>
-  <path d="M920 414h160" stroke="#1f5f8b" stroke-width="8" stroke-linecap="round"/>
+  <text x="90" y="170" fill="#f48fb1" font-family="Arial, sans-serif" font-size="28" font-weight="700">DATA ANALYTICS / AI / AIDLC</text>
+  <text x="90" y="300" fill="#f4f7fb" font-family="Georgia, 'Times New Roman', serif" font-size="90" font-weight="700">Yi Han</text>
+  <text x="90" y="375" fill="#c7d2dc" font-family="Arial, sans-serif" font-size="36">Master of IT student in Auckland</text>
+  <text x="90" y="438" fill="#92a2af" font-family="Arial, sans-serif" font-size="30">AI tools, data analysis, and practical software systems.</text>
+  <rect x="885" y="150" width="225" height="225" rx="26" fill="#10151b" stroke="#24313b" stroke-width="3"/>
+  <text x="928" y="278" fill="#f4f7fb" font-family="Georgia, 'Times New Roman', serif" font-size="68" font-weight="700">YH</text>
+  <path d="M920 414h160" stroke="#7dd3fc" stroke-width="8" stroke-linecap="round"/>
 </svg>

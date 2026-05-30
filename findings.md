@@ -52,3 +52,11 @@
 - Lead with evidence: real GitHub projects, README links, practical user problems, and learning notes.
 - Keep the page calm and credible for New Zealand graduate or internship applications.
 - Include AIDLC as a studied AI project lifecycle concept without overstating it as professional experience.
+
+## 2026-05-30 Dark Theme Refresh
+
+### Reference Research
+- Chosen public reference: Brittany Chiang's portfolio and `bchiang7/v4` GitHub repository.
+- Why it fits: the repository is highly starred and forked, and the live portfolio is known for a dark developer-focused aesthetic.
+- Useful principles: dark background, readable muted text, accent color for links and labels, sticky side navigation, and project cards that show credible technical work.
+- Decision: avoid copying the exact color tokens, text, layout details, animation style, or assets. Use the reference only to guide a dark professional mood.

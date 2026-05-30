@@ -36,3 +36,11 @@
 - Fixed the mobile/tablet header so sticky positioning has an explicit top offset and anchor jumps have enough scroll margin.
 - Local static checks passed: no Chinese UI text, no local-only paths, no banned generic AI copy, and local assets returned HTTP 200.
 - GitHub README links for the featured projects returned HTTP 200; LinkedIn returned its usual automated-check blocking response.
+
+## 2026-05-30 Dark Theme
+
+- Researched high-recognition dark developer portfolios and selected Brittany Chiang's portfolio repository as the reference.
+- Recorded the dark theme direction in `task_plan.md` and `findings.md`.
+- Converted the portfolio to a black/dark technical theme with pink and cyan accents, updated metadata, stylesheet cache version, README, and social preview.
+- Browser checks confirmed the dark theme loads, external links are safe, internal anchors exist, mobile project anchors clear the sticky header, and there is no horizontal overflow.
+- Final local resource checks and project README link checks passed before commit.
