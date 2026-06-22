@@ -218,3 +218,26 @@
 ### Environment errors
 - python resolves to the Windows Store placeholder, so the planning session-catchup script could not run.
 - py is not installed. Continued from a clean Git working tree and the existing planning files.
+
+## 2026-06-23 Recruiter-Focused Hero Redesign
+
+### Goal
+- Make Yi Han's name, professional direction, strongest evidence, and availability scannable within the first viewport.
+- Replace tentative or potentially misleading employment language with an honest, static positioning statement.
+- Turn the KNN widget into a contextualized portfolio proof point with source and project links.
+- Reduce repetition and hero height so the next section is visible on common desktop and mobile viewports.
+
+### Phase 19: Positioning and content hierarchy
+- Status: complete.
+- Rewrite the hero around Yi Han, Business Analytics, Master of IT, and practical data/AI/software work.
+- Define clear primary and secondary actions plus a compact proof strip.
+
+### Phase 20: Hero implementation
+- Status: complete.
+- Replace the role rotator, repeated profile facts, and weak text links.
+- Refine the responsive layout, KNN context, and project evidence links.
+
+### Phase 21: Verification and delivery
+- Status: complete.
+- Run syntax, accessibility, responsive, interaction, console, and overflow checks.
+- Commit and push the recruiter-focused update to the existing PR branch.
