@@ -783,10 +783,221 @@ dd {
   }
 }
 
+/* ============================================================
+   Tech-feel upgrades: spotlight, typewriter, reveal, card glow,
+   and the interactive KNN classifier readout.
+   ============================================================ */
+
+/* Hero cursor spotlight */
+.hero {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(
+    460px circle at var(--spot-x, 28%) var(--spot-y, 22%),
+    rgba(125, 211, 252, 0.12),
+    rgba(244, 143, 177, 0.06) 38%,
+    transparent 62%
+  );
+  opacity: 0;
+  transition: opacity 320ms ease;
+}
+
+.hero.spotlight-on .hero-glow {
+  opacity: 1;
+}
+
+/* Role typewriter line */
+.role-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
+  margin: -0.35rem 0 1.4rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+}
+
+.role-static {
+  color: var(--subtle);
+}
+
+.role-rotator {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.role-word {
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.role-caret {
+  display: inline-block;
+  width: 0.6ch;
+  height: 1.05em;
+  margin-left: 2px;
+  translate: 0 0.16em;
+  background: var(--rose);
+  animation: caret-blink 1s steps(1, end) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* KNN classifier widget */
+.model-canvas-wrap {
+  position: relative;
+}
+
+#model-canvas {
+  cursor: grab;
+  touch-action: none;
+}
+
+#model-canvas:active {
+  cursor: grabbing;
+}
+
+.model-hint {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  padding: 0.18rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(10, 14, 19, 0.74);
+  color: var(--subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+}
+
+.knn-readout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0.45rem 0.7rem;
+}
+
+.knn-pred-label {
+  color: var(--subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.knn-pred {
+  justify-self: start;
+  color: var(--blue);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.95rem;
+  font-weight: 800;
+  transition: color 220ms ease;
+}
+
+.knn-votes {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.45rem;
+}
+
+.knn-vote {
+  display: grid;
+  gap: 0.24rem;
+}
+
+.knn-bar {
+  height: 5px;
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.16);
+  overflow: hidden;
+}
+
+.knn-bar i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 240ms ease;
+}
+
+.knn-vote b {
+  color: var(--subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Card cursor glow */
+.has-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.has-glow::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--cx, -200px) var(--cy, -200px),
+    rgba(125, 211, 252, 0.16),
+    rgba(244, 143, 177, 0.08) 42%,
+    transparent 68%
+  );
+  opacity: 0;
+  transition: opacity 240ms ease;
+  pointer-events: none;
+}
+
+.has-glow:hover::before {
+  opacity: 1;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+
+  .role-caret {
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
 
   *,
   *::before,
