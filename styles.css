@@ -527,6 +527,13 @@ dd {
   border-radius: 999px;
 }
 
+.project-filter-status {
+  min-height: 1.3rem;
+  margin: -0.45rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .project-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
@@ -538,6 +545,11 @@ dd {
   background: rgba(16, 21, 27, 0.86);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.02);
   transition: border-color 160ms ease, transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.project-card[hidden],
+.project-card.is-filtered-out {
+  display: none !important;
 }
 
 .project-card:hover {

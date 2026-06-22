@@ -18,18 +18,31 @@
   function initProjectFilters() {
     const buttons = $$("[data-project-filter]");
     const cards = $$("[data-project-groups]");
+    const status = $("#project-filter-status");
     if (!buttons.length) return;
 
     const apply = (filter) => {
+      const activeButton = buttons.find((button) => button.dataset.projectFilter === filter);
+      const filterLabel = activeButton ? activeButton.textContent.trim() : "All";
+      let visibleCount = 0;
+
       buttons.forEach((button) => {
         const active = button.dataset.projectFilter === filter;
         button.classList.toggle("active", active);
         button.setAttribute("aria-pressed", String(active));
       });
       cards.forEach((card) => {
-        const groups = (card.dataset.projectGroups || "").split(" ");
-        card.hidden = !(filter === "all" || groups.includes(filter));
+        const groups = (card.dataset.projectGroups || "").split(/\s+/).filter(Boolean);
+        const visible = filter === "all" || groups.includes(filter);
+        card.hidden = !visible;
+        card.classList.toggle("is-filtered-out", !visible);
+        if (visible) visibleCount += 1;
       });
+      if (status) {
+        status.textContent = filter === "all"
+          ? `Showing all ${cards.length} selected projects.`
+          : `Showing ${visibleCount} of ${cards.length} selected projects for ${filterLabel}.`;
+      }
     };
 
     buttons.forEach((button) =>
