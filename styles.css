@@ -512,15 +512,14 @@ dd {
   gap: 4rem;
 }
 
-.focus-grid,
-.skills-grid {
+.focus-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
 }
 
 .focus-grid article,
-.skills-grid section,
+.tool-group,
 .note-card {
   padding: 1rem;
   border: 1px solid var(--border);
@@ -529,7 +528,6 @@ dd {
 }
 
 .focus-grid p,
-.skills-grid p,
 .note-card p {
   margin-bottom: 0;
 }
@@ -711,7 +709,7 @@ dd {
   top: 1.25rem;
   isolation: isolate;
   display: grid;
-  gap: 0.75rem;
+  gap: 0.9rem;
   min-height: 320px;
   padding: 1rem;
   border: 1px solid rgba(125, 211, 252, 0.22);
@@ -732,6 +730,13 @@ dd {
   pointer-events: none;
 }
 
+.inspector-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
 .inspector-kicker,
 .command-kicker {
   margin: 0;
@@ -742,22 +747,65 @@ dd {
   text-transform: uppercase;
 }
 
+.inspector-current {
+  max-width: 10.5rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.3;
+  text-align: right;
+}
+
 .project-inspector h3 {
   margin-bottom: 0;
-  font-size: 1.35rem;
+  font-size: 1.18rem;
+  text-wrap: balance;
 }
 
 .inspector-type {
+  width: fit-content;
+  padding: 0.28rem 0.48rem;
+  border: 1px solid rgba(244, 143, 177, 0.22);
+  border-radius: 6px;
   margin-bottom: 0;
   color: var(--rose);
+  background: rgba(244, 143, 177, 0.08);
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   font-size: 0.78rem;
   font-weight: 800;
   text-transform: uppercase;
 }
 
-.inspector-summary {
-  margin-bottom: 0;
+.inspector-signals {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+}
+
+.inspector-signals div {
+  padding-left: 0.75rem;
+  border-left: 1px solid rgba(125, 211, 252, 0.22);
+}
+
+.inspector-signals dt,
+.inspector-stack > span {
+  margin-bottom: 0.24rem;
+  color: var(--subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.inspector-signals dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.inspector-stack {
+  display: grid;
+  gap: 0.45rem;
 }
 
 .inspector-tags {
@@ -831,6 +879,9 @@ dd {
 
 .skills-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  display: grid;
+  gap: 1rem;
 }
 
 .skill-map {
@@ -862,17 +913,118 @@ dd {
   font-size: 0.88rem;
 }
 
-.skills-grid section {
+.tool-group {
+  display: grid;
+  gap: 0.9rem;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(125, 211, 252, 0.1), transparent 34%),
+    rgba(16, 21, 27, 0.72);
   transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
-.skills-grid section.is-skill-active,
-.skills-grid section:hover {
+.tool-group h3 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  text-wrap: balance;
+}
+
+.tool-group-wide {
+  grid-column: 1 / -1;
+}
+
+.tool-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(5.4rem, 1fr));
+  gap: 0.65rem;
+}
+
+.tool-chip {
+  position: relative;
+  display: grid;
+  min-height: 5.9rem;
+  place-items: center;
+  gap: 0.48rem;
+  padding: 0.78rem 0.55rem 0.68rem;
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 8px;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent),
+    rgba(5, 8, 12, 0.48);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.tool-chip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(circle at 50% 0%, rgba(126, 231, 214, 0.12), transparent 52%);
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.tool-chip img,
+.tool-glyph {
+  position: relative;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.tool-chip img {
+  object-fit: contain;
+  filter: saturate(0.92);
+}
+
+.tool-chip img.icon-mono {
+  filter: invert(0.92) saturate(0.65);
+}
+
+.tool-glyph {
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(126, 231, 214, 0.26);
+  border-radius: 8px;
+  color: var(--teal);
+  background:
+    radial-gradient(circle at 30% 18%, rgba(244, 143, 177, 0.2), transparent 45%),
+    rgba(126, 231, 214, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.tool-chip span:last-child {
+  position: relative;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.tool-chip:hover,
+.tool-chip:focus-visible,
+.tool-chip.is-skill-active {
   transform: translateY(-2px);
   border-color: rgba(126, 231, 214, 0.38);
   background:
     radial-gradient(circle at 88% 18%, rgba(126, 231, 214, 0.12), transparent 28%),
     rgba(16, 21, 27, 0.88);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(126, 231, 214, 0.08);
+}
+
+.tool-chip:hover::before,
+.tool-chip:focus-visible::before,
+.tool-chip.is-skill-active::before {
+  opacity: 1;
+}
+
+.tool-chip:focus-visible {
+  outline: 2px solid rgba(126, 231, 214, 0.55);
+  outline-offset: 3px;
 }
 
 .contact-list {

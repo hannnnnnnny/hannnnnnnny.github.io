@@ -262,7 +262,7 @@
           <p class="project-filter-status" id="project-filter-status" aria-live="polite">Showing all selected projects.</p>
 
           <div class="project-list">
-            <article class="project-card project-card-featured" data-project-groups="ai fullstack">
+            <article class="project-card project-card-featured" data-project-groups="ai fullstack" data-project-signal="AI workflow" data-role-fit="AI engineer / frontend product engineer" data-proof="Captions, translation overlay, browser constraints" data-angle="Turns an awkward study workflow into an inspectable tool.">
           <div class="project-main">
             <p class="project-type">AI tool / browser extension</p>
             <h3>PanSub</h3>
@@ -292,7 +292,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the PanSub README on GitHub">Read README</a>
             </article>
 
-            <article class="project-card" data-project-groups="data">
+            <article class="project-card" data-project-groups="data" data-project-signal="Data evidence" data-role-fit="Data analyst / ML engineer" data-proof="Cleaning, clustering, KNN, regression, charts" data-angle="Shows modelling decisions and reportable evidence.">
           <div class="project-main">
             <p class="project-type">Data analysis / machine learning</p>
             <h3>Video Game Sales ML Analysis</h3>
@@ -323,7 +323,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/video-game-sales-ml-analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Video Game Sales ML Analysis README on GitHub">Read README</a>
             </article>
 
-            <article class="project-card" data-project-groups="fullstack">
+            <article class="project-card" data-project-groups="fullstack" data-project-signal="System design" data-role-fit="Full-stack engineer" data-proof="Spring Boot APIs, Vue UI, MySQL transactions" data-angle="Demonstrates product states and marketplace rules end to end.">
           <div class="project-main">
             <p class="project-type">Full-stack marketplace</p>
             <h3>ReNova Second-Hand C2C Marketplace</h3>
@@ -353,7 +353,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/ReNova-Second-Hand-C2C-Marketplace/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the ReNova Second-Hand C2C Marketplace README on GitHub">Read README</a>
             </article>
 
-            <article class="project-card" data-project-groups="fullstack">
+            <article class="project-card" data-project-groups="fullstack" data-project-signal="Workflow UX" data-role-fit="Frontend / full-stack engineer" data-proof="Availability map, validation, booking states" data-angle="Translates a campus workflow into a usable interaction.">
           <div class="project-main">
             <p class="project-type">Campus utility system</p>
             <h3>Study Room Booking System</h3>
@@ -382,7 +382,7 @@
           <a class="project-link" href="https://github.com/hannnnnnnny/study-room-booking-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Study Room Booking System README on GitHub">Read README</a>
             </article>
 
-            <article class="project-card" data-project-groups="fullstack data">
+            <article class="project-card" data-project-groups="fullstack data" data-project-signal="Dashboard logic" data-role-fit="Full-stack data systems" data-proof="CRUD modules, analytics views, schema, reports" data-angle="Combines admin operations with reporting in one interface.">
           <div class="project-main">
             <p class="project-type">Admin dashboard / reporting</p>
             <h3>Teacher Management System</h3>
@@ -415,12 +415,31 @@
         </div>
 
         <aside class="project-inspector" aria-labelledby="project-inspector-title" aria-live="polite">
-          <p class="inspector-kicker">Hover preview</p>
-          <h3 id="project-inspector-title">PanSub</h3>
-          <p class="inspector-type">AI tool / browser extension</p>
-          <p class="inspector-summary">A Chrome extension for Panopto lecture recordings that reads the active caption stream and overlays translated subtitles on top of the player.</p>
-          <div class="inspector-tags" aria-label="Selected project tags"></div>
-          <a class="inspector-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer">Open README</a>
+          <div class="inspector-header">
+            <p class="inspector-kicker">Selection signal</p>
+            <span class="inspector-current" data-inspector-current>PanSub</span>
+          </div>
+          <h3 id="project-inspector-title">What this proves</h3>
+          <p class="inspector-type">AI workflow</p>
+          <dl class="inspector-signals">
+            <div>
+              <dt>Role fit</dt>
+              <dd data-inspector-role>AI engineer / frontend product engineer</dd>
+            </div>
+            <div>
+              <dt>Proof</dt>
+              <dd data-inspector-proof>Captions, translation overlay, browser constraints</dd>
+            </div>
+            <div>
+              <dt>Interview angle</dt>
+              <dd data-inspector-angle>Turns an awkward study workflow into an inspectable tool.</dd>
+            </div>
+          </dl>
+          <div class="inspector-stack">
+            <span>Stack to mention</span>
+            <div class="inspector-tags" aria-label="Selected project tags"></div>
+          </div>
+          <a class="inspector-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer">Inspect README</a>
         </aside>
       </div>
     </section>
@@ -473,30 +492,139 @@
           <p id="skill-map-status" aria-live="polite">Hover a skill to see how it connects across data, AI, and full-stack work.</p>
         </div>
       </div>
-      <div class="skills-grid">
-        <section aria-labelledby="data-title" data-skill-card="Data">
-          <h3 id="data-title">Data and machine learning</h3>
-          <p>Python, pandas, scikit-learn, K-Means, KNN, regression, model comparison, charts, and analysis reports.</p>
+      <div class="skills-grid" aria-label="Tool icons by capability">
+        <section class="tool-group" aria-labelledby="data-title">
+          <h3 id="data-title">Data and ML</h3>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="Python">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Python</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="pandas">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>pandas</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="scikit-learn">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>scikit-learn</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="Jupyter">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Jupyter</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="KNN">
+              <span class="tool-glyph" aria-hidden="true">KNN</span>
+              <span>KNN</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" aria-label="K-Means">
+              <span class="tool-glyph" aria-hidden="true">K</span>
+              <span>K-Means</span>
+            </button>
+          </div>
         </section>
-        <section aria-labelledby="ai-title" data-skill-card="AI">
-          <h3 id="ai-title">AI tools</h3>
-          <p>Browser extensions, translation workflows, AIDLC concepts, prompt-aware product thinking, and small AI-assisted user workflows.</p>
+        <section class="tool-group" aria-labelledby="ai-title">
+          <h3 id="ai-title">AI workflow</h3>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="AI" aria-label="AIDLC">
+              <span class="tool-glyph" aria-hidden="true">AI</span>
+              <span>AIDLC</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" aria-label="Prompting">
+              <span class="tool-glyph" aria-hidden="true">Pr</span>
+              <span>Prompting</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" aria-label="Translation">
+              <span class="tool-glyph" aria-hidden="true">Tr</span>
+              <span>Translation</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" aria-label="Browser extensions">
+              <span class="tool-glyph" aria-hidden="true">EX</span>
+              <span>Extension</span>
+            </button>
+          </div>
         </section>
-        <section aria-labelledby="backend-title" data-skill-card="Backend">
+        <section class="tool-group" aria-labelledby="backend-title">
           <h3 id="backend-title">Backend</h3>
-          <p>Java, Spring Boot, Node.js, Express, REST APIs, authentication basics, and service structure.</p>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Backend" aria-label="Java">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Java</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" aria-label="Spring Boot">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Spring</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" aria-label="Node.js">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Node.js</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" aria-label="Express">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Express</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" aria-label="REST API">
+              <span class="tool-glyph" aria-hidden="true">API</span>
+              <span>REST API</span>
+            </button>
+          </div>
         </section>
-        <section aria-labelledby="frontend-title" data-skill-card="Frontend">
+        <section class="tool-group" aria-labelledby="frontend-title">
           <h3 id="frontend-title">Frontend</h3>
-          <p>Vue, Svelte, HTML, CSS, JavaScript, responsive layouts, form flows, dashboards, and stateful interfaces.</p>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="Vue">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Vue</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="Svelte">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Svelte</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="HTML5">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>HTML5</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="CSS3">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>CSS3</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="JavaScript">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>JavaScript</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" aria-label="Vite">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Vite</span>
+            </button>
+          </div>
         </section>
-        <section aria-labelledby="database-title" data-skill-card="Database">
-          <h3 id="database-title">Database</h3>
-          <p>MySQL, SQL, schema design, filtering queries, relationships, and connecting application code to data.</p>
-        </section>
-        <section aria-labelledby="practice-title" data-skill-card="Practice">
-          <h3 id="practice-title">Practice</h3>
-          <p>Git, GitHub, Maven, Vite, npm, testing basics, debugging, clear README writing, and reproducible project setup.</p>
+        <section class="tool-group tool-group-wide" aria-labelledby="practice-title">
+          <h3 id="practice-title">Database and practice</h3>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Database" aria-label="MySQL">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>MySQL</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" aria-label="SQL">
+              <span class="tool-glyph" aria-hidden="true">SQL</span>
+              <span>SQL</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Practice" aria-label="Git">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Git</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Practice" aria-label="GitHub">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>GitHub</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Practice" aria-label="Maven">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Maven</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Practice" aria-label="npm">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>npm</span>
+            </button>
+          </div>
         </section>
       </div>
     </section>

@@ -168,7 +168,7 @@
   /* ---------- Scroll reveal ---------- */
   function initScrollReveal() {
     const targets = $$(
-      ".section-heading, .focus-grid article, .lifecycle-layout, .project-card, .note-card, .skills-grid section, .contact-section .section-copy",
+      ".section-heading, .focus-grid article, .lifecycle-layout, .project-card, .note-card, .tool-group, .contact-section .section-copy",
     );
     if (!targets.length) return;
 
@@ -322,28 +322,36 @@
     const cards = $$("[data-project-groups]");
     if (!inspector || !cards.length) return;
 
+    const current = $("[data-inspector-current]", inspector);
     const title = $("#project-inspector-title", inspector);
     const type = $(".inspector-type", inspector);
-    const summary = $(".inspector-summary", inspector);
+    const role = $("[data-inspector-role]", inspector);
+    const proof = $("[data-inspector-proof]", inspector);
+    const angle = $("[data-inspector-angle]", inspector);
     const tags = $(".inspector-tags", inspector);
     const link = $(".inspector-link", inspector);
 
     const update = (card) => {
       if (!card || card.hidden) return;
       const projectTitle = $("h3", card)?.textContent?.trim() || "Selected project";
-      const projectType = $(".project-type", card)?.textContent?.trim() || "Project";
-      const projectSummary = $(".project-main > p:not(.project-type)", card)?.textContent?.trim() || "";
+      const projectSignal = card.dataset.projectSignal || $(".project-type", card)?.textContent?.trim() || "Project signal";
+      const roleFit = card.dataset.roleFit || "Practical software work";
+      const proofPoint = card.dataset.proof || "Readable code, workflow details, and project notes";
+      const interviewAngle = card.dataset.angle || "A focused example to discuss decisions and tradeoffs.";
       const projectTags = $$(".tags li", card).map((tag) => tag.textContent.trim());
       const projectLink = $(".project-link", card)?.getAttribute("href") || "#projects";
 
       cards.forEach((item) => item.classList.toggle("is-previewed", item === card));
-      if (title) title.textContent = projectTitle;
-      if (type) type.textContent = projectType;
-      if (summary) summary.textContent = projectSummary;
-      if (tags) tags.innerHTML = projectTags.map((tag) => `<span>${tag}</span>`).join("");
+      if (current) current.textContent = projectTitle;
+      if (title) title.textContent = "What this proves";
+      if (type) type.textContent = projectSignal;
+      if (role) role.textContent = roleFit;
+      if (proof) proof.textContent = proofPoint;
+      if (angle) angle.textContent = interviewAngle;
+      if (tags) tags.innerHTML = projectTags.slice(0, 4).map((tag) => "<span>" + tag + "</span>").join("");
       if (link) {
         link.href = projectLink;
-        link.setAttribute("aria-label", `Open the ${projectTitle} README`);
+        link.setAttribute("aria-label", "Open the " + projectTitle + " README");
       }
     };
 
