@@ -14,6 +14,17 @@
 
   document.documentElement.classList.add("js-enabled");
 
+  function initHashPosition() {
+    window.addEventListener("load", () => {
+      const id = window.location.hash.slice(1);
+      const target = id ? document.getElementById(id) : null;
+      if (!target) return;
+      requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: "auto", block: "start" });
+      });
+    }, { once: true });
+  }
+
   /* ---------- Project filters ---------- */
   function initProjectFilters() {
     const buttons = $$("[data-project-filter]");
@@ -168,7 +179,7 @@
   /* ---------- Scroll reveal ---------- */
   function initScrollReveal() {
     const targets = $$(
-      ".section-heading, .focus-grid article, .lifecycle-layout, .project-card, .note-card, .skills-grid section, .contact-section .section-copy",
+      ".section-heading, .focus-grid article, .lifecycle-layout, .project-card, .note-card, .contact-section .section-copy",
     );
     if (!targets.length) return;
 
@@ -322,28 +333,36 @@
     const cards = $$("[data-project-groups]");
     if (!inspector || !cards.length) return;
 
+    const current = $("[data-inspector-current]", inspector);
     const title = $("#project-inspector-title", inspector);
     const type = $(".inspector-type", inspector);
-    const summary = $(".inspector-summary", inspector);
+    const role = $("[data-inspector-role]", inspector);
+    const proof = $("[data-inspector-proof]", inspector);
+    const angle = $("[data-inspector-angle]", inspector);
     const tags = $(".inspector-tags", inspector);
     const link = $(".inspector-link", inspector);
 
     const update = (card) => {
       if (!card || card.hidden) return;
       const projectTitle = $("h3", card)?.textContent?.trim() || "Selected project";
-      const projectType = $(".project-type", card)?.textContent?.trim() || "Project";
-      const projectSummary = $(".project-main > p:not(.project-type)", card)?.textContent?.trim() || "";
+      const projectSignal = card.dataset.projectSignal || $(".project-type", card)?.textContent?.trim() || "Project signal";
+      const roleFit = card.dataset.roleFit || "Practical software work";
+      const proofPoint = card.dataset.proof || "Readable code, workflow details, and project notes";
+      const interviewAngle = card.dataset.angle || "A focused example to discuss decisions and tradeoffs.";
       const projectTags = $$(".tags li", card).map((tag) => tag.textContent.trim());
       const projectLink = $(".project-link", card)?.getAttribute("href") || "#projects";
 
       cards.forEach((item) => item.classList.toggle("is-previewed", item === card));
-      if (title) title.textContent = projectTitle;
-      if (type) type.textContent = projectType;
-      if (summary) summary.textContent = projectSummary;
-      if (tags) tags.innerHTML = projectTags.map((tag) => `<span>${tag}</span>`).join("");
+      if (current) current.textContent = projectTitle;
+      if (title) title.textContent = "What this proves";
+      if (type) type.textContent = projectSignal;
+      if (role) role.textContent = roleFit;
+      if (proof) proof.textContent = proofPoint;
+      if (angle) angle.textContent = interviewAngle;
+      if (tags) tags.innerHTML = projectTags.slice(0, 4).map((tag) => "<span>" + tag + "</span>").join("");
       if (link) {
         link.href = projectLink;
-        link.setAttribute("aria-label", `Open the ${projectTitle} README`);
+        link.setAttribute("aria-label", "Open the " + projectTitle + " README");
       }
     };
 
@@ -376,6 +395,59 @@
     if (!canvas || !cards.length) return;
 
     const ctx = canvas.getContext("2d");
+    const activeName = $("#skill-active-name");
+    const selectionState = $("#skill-selection-state");
+    const projectLinks = $("#skill-project-links");
+    if (window.lucide) window.lucide.createIcons();
+
+    const projects = {
+      pansub: { label: "PanSub", href: "#project-pansub" },
+      sales: { label: "Video Game Sales ML", href: "#project-video-game-sales" },
+      renova: { label: "ReNova Marketplace", href: "#project-renova" },
+      study: { label: "Study Room Booking", href: "#project-study-room" },
+      teacher: { label: "Teacher System", href: "#project-teacher-system" },
+      portfolio: { label: "This portfolio", href: "#top" },
+      github: { label: "GitHub repositories", href: "https://github.com/hannnnnnnny", external: true },
+    };
+    const evidence = {
+      Python: { text: "Cleans data, compares models, and turns outputs into readable evidence.", projects: ["sales"] },
+      pandas: { text: "Builds repeatable cleaning, transformation, and analysis steps for structured data.", projects: ["sales"] },
+      "scikit-learn": { text: "Supports model comparison, clustering, KNN, regression, and evaluation.", projects: ["sales"] },
+      Jupyter: { text: "Keeps exploration, charts, decisions, and model outputs inspectable in one workflow.", projects: ["sales"] },
+      KNN: { text: "Connects distance-based classification theory with an interactive browser demonstration.", projects: ["sales", "portfolio"] },
+      "K-Means": { text: "Explores clusters and patterns before turning them into reportable findings.", projects: ["sales"] },
+      R: { text: "Supports statistical analysis, visual exploration, and evidence-based reporting.", projects: ["github"] },
+      Regression: { text: "Models relationships between variables and compares predictive performance.", projects: ["sales"] },
+      AIDLC: { text: "Frames AI work around the user problem, data checks, evaluation, and iteration.", projects: ["pansub"] },
+      Prompting: { text: "Uses prompts as one part of a product workflow, with outputs checked against the task.", projects: ["pansub"] },
+      Translation: { text: "Applies AI-assisted translation to a concrete lecture-caption workflow.", projects: ["pansub"] },
+      Extension: { text: "Works within browser constraints, live captions, overlays, and user-controlled interaction.", projects: ["pansub"] },
+      Evaluation: { text: "Treats model or AI output as evidence to inspect, not a result to accept automatically.", projects: ["sales", "pansub"] },
+      "Tool design": { text: "Turns a narrow user problem into a small interface that can be tested and improved.", projects: ["pansub", "study"] },
+      Java: { text: "Implements domain logic and service layers for practical full-stack systems.", projects: ["renova", "teacher"] },
+      "Spring Boot": { text: "Structures APIs, authentication, services, and transactional application flows.", projects: ["renova", "teacher"] },
+      "Node.js": { text: "Supports JavaScript services, tooling, and API practice beyond the browser.", projects: ["github"] },
+      Express: { text: "Provides a lightweight route and middleware model for backend prototypes.", projects: ["github"] },
+      "REST API": { text: "Connects frontend workflows to clear resource and state transitions.", projects: ["renova", "teacher"] },
+      Maven: { text: "Keeps Java builds and dependencies reproducible across machines.", projects: ["renova", "teacher"] },
+      "Java Swing": { text: "Builds event-driven Java desktop interfaces with familiar application controls.", projects: ["github"] },
+      Vue: { text: "Builds stateful product interfaces for marketplaces, booking, and administration.", projects: ["renova", "study", "teacher"] },
+      Svelte: { text: "Explores component-based interfaces with a small runtime and direct reactivity.", projects: ["github"] },
+      HTML5: { text: "Keeps portfolio and browser-extension structure semantic and progressively enhanced.", projects: ["pansub", "portfolio"] },
+      CSS3: { text: "Handles responsive layout, visual hierarchy, interaction states, and reduced motion.", projects: ["portfolio", "pansub"] },
+      JavaScript: { text: "Drives browser interaction, state, canvas visualisation, and extension behaviour.", projects: ["pansub", "study", "portfolio"] },
+      Vite: { text: "Supports fast local iteration and reproducible frontend builds.", projects: ["study"] },
+      MySQL: { text: "Grounds marketplace and administration workflows in explicit relational models.", projects: ["renova", "teacher"] },
+      MongoDB: { text: "Supports document-oriented data models for flexible application prototypes.", projects: ["github"] },
+      SQLite: { text: "Provides a compact local database for prototypes, scripts, and portable development workflows.", projects: ["github"] },
+      SQL: { text: "Connects filters, relationships, reports, and application state to stored data.", projects: ["renova", "teacher"] },
+      Git: { text: "Keeps implementation changes reviewable, reversible, and organised by branch.", projects: ["github"] },
+      GitHub: { text: "Makes source, READMEs, project history, and reviewable changes easy to inspect.", projects: ["github"] },
+      npm: { text: "Manages JavaScript tooling and repeatable local project setup.", projects: ["study", "portfolio"] },
+      Testing: { text: "Checks syntax, interactions, responsive layout, and edge states before publishing.", projects: ["portfolio", "sales"] },
+      Playwright: { text: "Automates real browser flows, interaction checks, and responsive verification.", projects: ["portfolio"] },
+      "E2E testing": { text: "Verifies complete user journeys across navigation, filtering, state, and project links.", projects: ["portfolio"] },
+    };
     const nodes = [
       { key: "Data", label: "DATA", x: 0.23, y: 0.28, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
       { key: "AI", label: "AI", x: 0.68, y: 0.22, color: "#f48fb1", text: "AI tools connect user workflows with translation, search, and evaluation." },
@@ -388,16 +460,58 @@
       ["Data", "AI"], ["Data", "Database"], ["AI", "Frontend"], ["AI", "Practice"],
       ["Backend", "Database"], ["Backend", "Frontend"], ["Frontend", "Practice"], ["Data", "Practice"],
     ];
-    let activeKey = "Practice";
+    let activeKey = cards[0].dataset.skillCard || "Data";
+    let activeCard = cards[0];
+    let pinnedCard = null;
     let rafId = 0;
 
     const nodeByKey = (key) => nodes.find((node) => node.key === key);
 
-    const setActive = (key) => {
-      activeKey = key;
-      cards.forEach((card) => card.classList.toggle("is-skill-active", card.dataset.skillCard === key));
-      const node = nodeByKey(key);
-      if (status && node) status.textContent = node.text;
+    const renderProjectLinks = (projectKeys) => {
+      if (!projectLinks) return;
+      projectLinks.replaceChildren();
+      projectKeys.forEach((projectKey) => {
+        const project = projects[projectKey];
+        if (!project) return;
+        const link = document.createElement("a");
+        link.href = project.href;
+        link.textContent = project.label;
+        if (project.external) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+        } else if (project.href.startsWith("#project-")) {
+          link.addEventListener("click", (event) => {
+            const target = $(project.href);
+            if (!target) return;
+            event.preventDefault();
+            $("[data-project-filter=\"all\"]")?.click();
+            requestAnimationFrame(() => {
+              target.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+              window.history.replaceState(null, "", project.href);
+            });
+          });
+        }
+        projectLinks.append(link);
+      });
+    };
+
+    const setActiveCard = (card) => {
+      if (!card) return;
+      activeCard = card;
+      activeKey = card.dataset.skillCard || "Data";
+      const tool = card.dataset.tool || card.getAttribute("aria-label") || "Selected tool";
+      const detail = evidence[tool] || {
+        text: nodeByKey(activeKey)?.text || "A practical part of the working stack.",
+        projects: ["github"],
+      };
+      cards.forEach((item) => {
+        item.classList.toggle("is-skill-active", item === card);
+        item.setAttribute("aria-pressed", String(item === pinnedCard));
+      });
+      if (activeName) activeName.textContent = tool;
+      if (selectionState) selectionState.textContent = pinnedCard === card ? "Pinned" : "Preview";
+      if (status) status.textContent = detail.text;
+      renderProjectLinks(detail.projects);
       draw(performance.now());
     };
 
@@ -452,12 +566,23 @@
     };
 
     cards.forEach((card) => {
-      card.tabIndex = 0;
-      card.addEventListener("pointerenter", () => setActive(card.dataset.skillCard));
-      card.addEventListener("focusin", () => setActive(card.dataset.skillCard));
+      card.addEventListener("pointerenter", () => setActiveCard(card));
+      card.addEventListener("pointerleave", () => {
+        if (pinnedCard) setActiveCard(pinnedCard);
+      });
+      card.addEventListener("focusin", () => setActiveCard(card));
+      card.addEventListener("click", () => {
+        pinnedCard = pinnedCard === card ? null : card;
+        setActiveCard(card);
+      });
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !pinnedCard) return;
+      pinnedCard = null;
+      setActiveCard(activeCard || cards[0]);
     });
     window.addEventListener("resize", () => draw(performance.now()));
-    setActive(activeKey);
+    setActiveCard(cards[0]);
     if (!reduceMotion) rafId = requestAnimationFrame(loop);
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) cancelAnimationFrame(rafId);
@@ -753,6 +878,7 @@
   }
 
   /* ---------- boot ---------- */
+  initHashPosition();
   initProjectFilters();
   initLifecycleTabs();
   initScrollSync();

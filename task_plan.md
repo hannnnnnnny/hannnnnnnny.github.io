@@ -191,3 +191,30 @@
 ### Errors Encountered
 - Initial Vue mount tried to control the whole page and cleared the visible DOM in the browser.
 - Resolution: changed Vue into a small controller mounted on a hidden root. The static HTML remains visible, while Vue binds events and updates classes, hidden states, scroll progress, and the KNN sketch.
+
+## 2026-06-23 Skills Evidence Redesign
+
+### Goal
+- Turn the Skills section into a calmer, recruiter-friendly tool wall.
+- Remove nested-card visual weight and rebalance the left and right columns.
+- Replace temporary letter glyphs with consistent concept icons.
+- Make interaction meaningful: hover previews a tool, click locks it, and the detail panel links skills to real projects.
+- Preserve keyboard access, reduced-motion behavior, responsive layout, and static GitHub Pages deployment.
+
+### Phase 16: Audit and interaction model
+- Status: complete.
+- Review current markup, styles, capability-map code, and project anchors.
+- Define the evidence data model and responsive layout.
+
+### Phase 17: Skills implementation
+- Status: complete.
+- Rebuild the Skills layout, icons, active states, evidence panel, and project links.
+
+### Phase 18: Verification and delivery
+- Status: complete.
+- Run syntax, diff, resource, desktop, mobile, keyboard, and reduced-motion checks.
+- Commit and push the finished update to the current PR branch.
+
+### Environment errors
+- python resolves to the Windows Store placeholder, so the planning session-catchup script could not run.
+- py is not installed. Continued from a clean Git working tree and the existing planning files.
