@@ -17,12 +17,21 @@
   <meta name="twitter:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
   <title>Yi Han | Data Analytics and AI Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260623-tech">
+  <link rel="stylesheet" href="styles.css?v=20260623-21st">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="ambient-aurora" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <button class="command-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette" data-command-open>
+    <span>Ctrl K</span>
+    <b>Explore</b>
+  </button>
 
   <header class="site-header">
     <nav class="nav" aria-label="Primary navigation">
@@ -242,16 +251,18 @@
         </p>
       </div>
 
-      <div class="project-controls" aria-label="Filter selected projects">
-        <button class="active" type="button" aria-pressed="true" data-project-filter="all">All</button>
-        <button type="button" aria-pressed="false" data-project-filter="data">Data and ML</button>
-        <button type="button" aria-pressed="false" data-project-filter="ai">AI tools</button>
-        <button type="button" aria-pressed="false" data-project-filter="fullstack">Full stack</button>
-      </div>
-      <p class="project-filter-status" id="project-filter-status" aria-live="polite">Showing all selected projects.</p>
+      <div class="projects-shell">
+        <div class="projects-main">
+          <div class="project-controls" aria-label="Filter selected projects">
+            <button class="active" type="button" aria-pressed="true" data-project-filter="all">All</button>
+            <button type="button" aria-pressed="false" data-project-filter="data">Data and ML</button>
+            <button type="button" aria-pressed="false" data-project-filter="ai">AI tools</button>
+            <button type="button" aria-pressed="false" data-project-filter="fullstack">Full stack</button>
+          </div>
+          <p class="project-filter-status" id="project-filter-status" aria-live="polite">Showing all selected projects.</p>
 
-      <div class="project-list">
-        <article class="project-card project-card-featured" data-project-groups="ai fullstack">
+          <div class="project-list">
+            <article class="project-card project-card-featured" data-project-groups="ai fullstack">
           <div class="project-main">
             <p class="project-type">AI tool / browser extension</p>
             <h3>PanSub</h3>
@@ -279,9 +290,9 @@
             <li>Product UX</li>
           </ul>
           <a class="project-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the PanSub README on GitHub">Read README</a>
-        </article>
+            </article>
 
-        <article class="project-card" data-project-groups="data">
+            <article class="project-card" data-project-groups="data">
           <div class="project-main">
             <p class="project-type">Data analysis / machine learning</p>
             <h3>Video Game Sales ML Analysis</h3>
@@ -310,9 +321,9 @@
             <li>Regression</li>
           </ul>
           <a class="project-link" href="https://github.com/hannnnnnnny/video-game-sales-ml-analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Video Game Sales ML Analysis README on GitHub">Read README</a>
-        </article>
+            </article>
 
-        <article class="project-card" data-project-groups="fullstack">
+            <article class="project-card" data-project-groups="fullstack">
           <div class="project-main">
             <p class="project-type">Full-stack marketplace</p>
             <h3>ReNova Second-Hand C2C Marketplace</h3>
@@ -340,9 +351,9 @@
             <li>REST API</li>
           </ul>
           <a class="project-link" href="https://github.com/hannnnnnnny/ReNova-Second-Hand-C2C-Marketplace/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the ReNova Second-Hand C2C Marketplace README on GitHub">Read README</a>
-        </article>
+            </article>
 
-        <article class="project-card" data-project-groups="fullstack">
+            <article class="project-card" data-project-groups="fullstack">
           <div class="project-main">
             <p class="project-type">Campus utility system</p>
             <h3>Study Room Booking System</h3>
@@ -369,9 +380,9 @@
             <li>State Design</li>
           </ul>
           <a class="project-link" href="https://github.com/hannnnnnnny/study-room-booking-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Study Room Booking System README on GitHub">Read README</a>
-        </article>
+            </article>
 
-        <article class="project-card" data-project-groups="fullstack data">
+            <article class="project-card" data-project-groups="fullstack data">
           <div class="project-main">
             <p class="project-type">Admin dashboard / reporting</p>
             <h3>Teacher Management System</h3>
@@ -399,7 +410,18 @@
             <li>MySQL</li>
           </ul>
           <a class="project-link" href="https://github.com/hannnnnnnny/teacher-management-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Teacher Management System README on GitHub">Read README</a>
-        </article>
+            </article>
+          </div>
+        </div>
+
+        <aside class="project-inspector" aria-labelledby="project-inspector-title" aria-live="polite">
+          <p class="inspector-kicker">Hover preview</p>
+          <h3 id="project-inspector-title">PanSub</h3>
+          <p class="inspector-type">AI tool / browser extension</p>
+          <p class="inspector-summary">A Chrome extension for Panopto lecture recordings that reads the active caption stream and overlays translated subtitles on top of the player.</p>
+          <div class="inspector-tags" aria-label="Selected project tags"></div>
+          <a class="inspector-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer">Open README</a>
+        </aside>
       </div>
     </section>
 
@@ -446,29 +468,33 @@
       <div>
         <p class="section-label">Skills</p>
         <h2 id="skills-title">Tools I am using and improving</h2>
+        <div class="skill-map" aria-label="Capability map">
+          <canvas id="skill-map-canvas" width="520" height="320" aria-hidden="true"></canvas>
+          <p id="skill-map-status" aria-live="polite">Hover a skill to see how it connects across data, AI, and full-stack work.</p>
+        </div>
       </div>
       <div class="skills-grid">
-        <section aria-labelledby="data-title">
+        <section aria-labelledby="data-title" data-skill-card="Data">
           <h3 id="data-title">Data and machine learning</h3>
           <p>Python, pandas, scikit-learn, K-Means, KNN, regression, model comparison, charts, and analysis reports.</p>
         </section>
-        <section aria-labelledby="ai-title">
+        <section aria-labelledby="ai-title" data-skill-card="AI">
           <h3 id="ai-title">AI tools</h3>
           <p>Browser extensions, translation workflows, AIDLC concepts, prompt-aware product thinking, and small AI-assisted user workflows.</p>
         </section>
-        <section aria-labelledby="backend-title">
+        <section aria-labelledby="backend-title" data-skill-card="Backend">
           <h3 id="backend-title">Backend</h3>
           <p>Java, Spring Boot, Node.js, Express, REST APIs, authentication basics, and service structure.</p>
         </section>
-        <section aria-labelledby="frontend-title">
+        <section aria-labelledby="frontend-title" data-skill-card="Frontend">
           <h3 id="frontend-title">Frontend</h3>
           <p>Vue, Svelte, HTML, CSS, JavaScript, responsive layouts, form flows, dashboards, and stateful interfaces.</p>
         </section>
-        <section aria-labelledby="database-title">
+        <section aria-labelledby="database-title" data-skill-card="Database">
           <h3 id="database-title">Database</h3>
           <p>MySQL, SQL, schema design, filtering queries, relationships, and connecting application code to data.</p>
         </section>
-        <section aria-labelledby="practice-title">
+        <section aria-labelledby="practice-title" data-skill-card="Practice">
           <h3 id="practice-title">Practice</h3>
           <p>Git, GitHub, Maven, Vite, npm, testing basics, debugging, clear README writing, and reproducible project setup.</p>
         </section>
@@ -496,10 +522,47 @@
     </section>
   </main>
 
+  <div class="command-backdrop" data-command-backdrop hidden></div>
+  <section class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-title" hidden>
+    <div class="command-shell">
+      <div class="command-header">
+        <div>
+          <p class="command-kicker">Quick launch</p>
+          <h2 id="command-title">Move through the portfolio</h2>
+        </div>
+        <button type="button" class="command-close" data-command-close aria-label="Close command palette">Esc</button>
+      </div>
+      <label class="command-search">
+        <span>Search sections, projects, and links</span>
+        <input id="command-input" type="search" autocomplete="off" placeholder="Try projects, resume, PanSub, skills...">
+      </label>
+      <div class="command-list" data-command-list>
+        <button type="button" data-command-item data-command-label="Profile hero overview" data-command-target="#top">
+          <span>Profile</span><small>Start at the hero and KNN widget</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Projects GitHub work PanSub machine learning marketplace" data-command-target="#projects">
+          <span>Projects</span><small>Inspect the selected GitHub projects</small>
+        </button>
+        <button type="button" data-command-item data-command-label="AIDLC AI development lifecycle tabs process" data-command-target="#lifecycle">
+          <span>AIDLC</span><small>See the AI project thinking model</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Skills data AI backend frontend database practice" data-command-target="#skills">
+          <span>Skills</span><small>Open the capability map</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Resume PDF CV Yi Han" data-command-target="assets/YiHan_Resume.pdf">
+          <span>Resume</span><small>Open the resume PDF</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Email contact harryhaber606 gmail" data-command-target="mailto:harryhaber606@gmail.com">
+          <span>Email</span><small>Start a message</small>
+        </button>
+      </div>
+    </div>
+  </section>
+
   <footer class="site-footer">
-    <p>&copy; 2026 Yi Han. Static GitHub Pages, enhanced with a small Vue layer.</p>
+    <p>&copy; 2026 Yi Han. Static GitHub Pages, enhanced with a small vanilla JavaScript layer.</p>
   </footer>
 
-  <script src="app.js?v=20260623-tech" defer></script>
+  <script src="app.js?v=20260623-21st" defer></script>
 </body>
 </html>

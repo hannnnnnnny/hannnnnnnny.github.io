@@ -43,6 +43,9 @@
           ? `Showing all ${cards.length} selected projects.`
           : `Showing ${visibleCount} of ${cards.length} selected projects for ${filterLabel}.`;
       }
+      document.dispatchEvent(new CustomEvent("projectfilterchange", {
+        detail: { filter, visibleCount, total: cards.length },
+      }));
     };
 
     buttons.forEach((button) =>
@@ -202,7 +205,263 @@
         const rect = card.getBoundingClientRect();
         card.style.setProperty("--cx", `${event.clientX - rect.left}px`);
         card.style.setProperty("--cy", `${event.clientY - rect.top}px`);
+        if (!reduceMotion && card.classList.contains("project-card")) {
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+          card.style.setProperty("--tilt-x", `${(-y * 3).toFixed(2)}deg`);
+          card.style.setProperty("--tilt-y", `${(x * 3).toFixed(2)}deg`);
+        }
       });
+      card.addEventListener("pointerleave", () => {
+        card.style.setProperty("--tilt-x", "0deg");
+        card.style.setProperty("--tilt-y", "0deg");
+      });
+    });
+  }
+
+  /* ---------- Command palette ---------- */
+  function initCommandPalette() {
+    const palette = $("#command-palette");
+    const backdrop = $("[data-command-backdrop]");
+    const input = $("#command-input");
+    const openers = $$("[data-command-open]");
+    const closeButton = $("[data-command-close]");
+    const items = $$("[data-command-item]");
+    if (!palette || !backdrop || !input || !items.length) return;
+
+    let lastFocus = null;
+    let activeIndex = 0;
+
+    const visibleItems = () => items.filter((item) => !item.hidden);
+
+    const setActive = (index) => {
+      const visible = visibleItems();
+      if (!visible.length) return;
+      activeIndex = (index + visible.length) % visible.length;
+      visible.forEach((item, itemIndex) => item.classList.toggle("is-command-active", itemIndex === activeIndex));
+      visible[activeIndex].focus({ preventScroll: true });
+    };
+
+    const filterItems = () => {
+      const query = input.value.trim().toLowerCase();
+      items.forEach((item) => {
+        const label = `${item.dataset.commandLabel || ""} ${item.textContent || ""}`.toLowerCase();
+        item.hidden = Boolean(query && !label.includes(query));
+        item.classList.remove("is-command-active");
+      });
+      activeIndex = 0;
+      const visible = visibleItems();
+      if (visible[0]) visible[0].classList.add("is-command-active");
+    };
+
+    const openPalette = () => {
+      lastFocus = document.activeElement;
+      palette.hidden = false;
+      backdrop.hidden = false;
+      document.body.classList.add("command-open");
+      input.value = "";
+      filterItems();
+      window.setTimeout(() => input.focus(), 20);
+    };
+
+    const closePalette = () => {
+      palette.hidden = true;
+      backdrop.hidden = true;
+      document.body.classList.remove("command-open");
+      if (lastFocus && typeof lastFocus.focus === "function") {
+        lastFocus.focus({ preventScroll: true });
+      }
+    };
+
+    const runCommand = (item) => {
+      const target = item.dataset.commandTarget;
+      if (!target) return;
+      closePalette();
+      if (target.startsWith("#")) {
+        const node = $(target);
+        if (node) node.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        if (history.pushState) history.pushState(null, "", target);
+        return;
+      }
+      window.location.href = target;
+    };
+
+    openers.forEach((opener) => opener.addEventListener("click", openPalette));
+    closeButton?.addEventListener("click", closePalette);
+    backdrop.addEventListener("click", closePalette);
+    input.addEventListener("input", filterItems);
+    items.forEach((item) => item.addEventListener("click", () => runCommand(item)));
+
+    document.addEventListener("keydown", (event) => {
+      const isCommandShortcut = (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k";
+      if (isCommandShortcut) {
+        event.preventDefault();
+        if (palette.hidden) openPalette();
+        else closePalette();
+      } else if (!palette.hidden && event.key === "Escape") {
+        closePalette();
+      } else if (!palette.hidden && event.key === "ArrowDown") {
+        event.preventDefault();
+        setActive(activeIndex + 1);
+      } else if (!palette.hidden && event.key === "ArrowUp") {
+        event.preventDefault();
+        setActive(activeIndex - 1);
+      } else if (!palette.hidden && event.key === "Enter") {
+        const current = visibleItems()[activeIndex];
+        if (current) {
+          event.preventDefault();
+          runCommand(current);
+        }
+      }
+    });
+  }
+
+  /* ---------- Project inspector ---------- */
+  function initProjectInspector() {
+    const inspector = $(".project-inspector");
+    const cards = $$("[data-project-groups]");
+    if (!inspector || !cards.length) return;
+
+    const title = $("#project-inspector-title", inspector);
+    const type = $(".inspector-type", inspector);
+    const summary = $(".inspector-summary", inspector);
+    const tags = $(".inspector-tags", inspector);
+    const link = $(".inspector-link", inspector);
+
+    const update = (card) => {
+      if (!card || card.hidden) return;
+      const projectTitle = $("h3", card)?.textContent?.trim() || "Selected project";
+      const projectType = $(".project-type", card)?.textContent?.trim() || "Project";
+      const projectSummary = $(".project-main > p:not(.project-type)", card)?.textContent?.trim() || "";
+      const projectTags = $$(".tags li", card).map((tag) => tag.textContent.trim());
+      const projectLink = $(".project-link", card)?.getAttribute("href") || "#projects";
+
+      cards.forEach((item) => item.classList.toggle("is-previewed", item === card));
+      if (title) title.textContent = projectTitle;
+      if (type) type.textContent = projectType;
+      if (summary) summary.textContent = projectSummary;
+      if (tags) tags.innerHTML = projectTags.map((tag) => `<span>${tag}</span>`).join("");
+      if (link) {
+        link.href = projectLink;
+        link.setAttribute("aria-label", `Open the ${projectTitle} README`);
+      }
+    };
+
+    cards.forEach((card) => {
+      card.tabIndex = 0;
+      card.addEventListener("pointerenter", () => update(card));
+      card.addEventListener("focusin", () => update(card));
+      card.addEventListener("click", (event) => {
+        if (!event.target.closest("a")) update(card);
+      });
+    });
+
+    inspector.addEventListener("pointermove", (event) => {
+      const rect = inspector.getBoundingClientRect();
+      inspector.style.setProperty("--cx", `${event.clientX - rect.left}px`);
+      inspector.style.setProperty("--cy", `${event.clientY - rect.top}px`);
+    });
+
+    document.addEventListener("projectfilterchange", () => {
+      update(cards.find((card) => !card.hidden));
+    });
+    update(cards[0]);
+  }
+
+  /* ---------- Skill capability map ---------- */
+  function initSkillMap() {
+    const canvas = $("#skill-map-canvas");
+    const status = $("#skill-map-status");
+    const cards = $$("[data-skill-card]");
+    if (!canvas || !cards.length) return;
+
+    const ctx = canvas.getContext("2d");
+    const nodes = [
+      { key: "Data", label: "DATA", x: 0.23, y: 0.28, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
+      { key: "AI", label: "AI", x: 0.68, y: 0.22, color: "#f48fb1", text: "AI tools connect user workflows with translation, search, and evaluation." },
+      { key: "Backend", label: "API", x: 0.78, y: 0.58, color: "#f2c879", text: "Backend skills make the project real: APIs, auth, services, and deployment shape." },
+      { key: "Frontend", label: "UI", x: 0.45, y: 0.72, color: "#7ee7d6", text: "Frontend turns the work into something people can actually inspect and use." },
+      { key: "Database", label: "SQL", x: 0.25, y: 0.62, color: "#a7b8c7", text: "Database thinking keeps projects grounded in schema, queries, and relationships." },
+      { key: "Practice", label: "GIT", x: 0.53, y: 0.42, color: "#dce5ec", text: "Practice ties the stack together: Git, testing, debugging, and clear READMEs." },
+    ];
+    const links = [
+      ["Data", "AI"], ["Data", "Database"], ["AI", "Frontend"], ["AI", "Practice"],
+      ["Backend", "Database"], ["Backend", "Frontend"], ["Frontend", "Practice"], ["Data", "Practice"],
+    ];
+    let activeKey = "Practice";
+    let rafId = 0;
+
+    const nodeByKey = (key) => nodes.find((node) => node.key === key);
+
+    const setActive = (key) => {
+      activeKey = key;
+      cards.forEach((card) => card.classList.toggle("is-skill-active", card.dataset.skillCard === key));
+      const node = nodeByKey(key);
+      if (status && node) status.textContent = node.text;
+      draw(performance.now());
+    };
+
+    function draw(time) {
+      const rect = canvas.getBoundingClientRect();
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = Math.max(rect.width, 260);
+      const h = Math.max(rect.height, 170);
+      if (canvas.width !== Math.round(w * dpr)) canvas.width = Math.round(w * dpr);
+      if (canvas.height !== Math.round(h * dpr)) canvas.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.fillStyle = "rgba(5, 8, 12, 0.72)";
+      ctx.fillRect(0, 0, w, h);
+
+      const pulse = reduceMotion ? 0 : Math.sin(time * 0.003) * 0.35 + 0.65;
+      links.forEach(([from, to]) => {
+        const a = nodeByKey(from);
+        const b = nodeByKey(to);
+        const active = from === activeKey || to === activeKey;
+        ctx.beginPath();
+        ctx.moveTo(a.x * w, a.y * h);
+        ctx.lineTo(b.x * w, b.y * h);
+        ctx.strokeStyle = active ? `rgba(126, 231, 214, ${0.22 + pulse * 0.28})` : "rgba(148, 163, 184, 0.12)";
+        ctx.lineWidth = active ? 1.8 : 1;
+        ctx.stroke();
+      });
+
+      nodes.forEach((node) => {
+        const x = node.x * w;
+        const y = node.y * h;
+        const active = node.key === activeKey;
+        ctx.beginPath();
+        ctx.fillStyle = active ? hexToRgba(node.color, 0.24) : "rgba(148, 163, 184, 0.08)";
+        ctx.arc(x, y, active ? 20 + pulse * 3 : 16, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.fillStyle = node.color;
+        ctx.arc(x, y, active ? 6 : 4.5, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.fillStyle = active ? "#f4f7fb" : "#9aa7b1";
+        ctx.font = "700 11px ui-monospace, SFMono-Regular, Menlo, Consolas, monospace";
+        ctx.textAlign = "center";
+        ctx.fillText(node.label, x, y + 32);
+      });
+    }
+
+    const loop = (time) => {
+      draw(time);
+      rafId = requestAnimationFrame(loop);
+    };
+
+    cards.forEach((card) => {
+      card.tabIndex = 0;
+      card.addEventListener("pointerenter", () => setActive(card.dataset.skillCard));
+      card.addEventListener("focusin", () => setActive(card.dataset.skillCard));
+    });
+    window.addEventListener("resize", () => draw(performance.now()));
+    setActive(activeKey);
+    if (!reduceMotion) rafId = requestAnimationFrame(loop);
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) cancelAnimationFrame(rafId);
+      else if (!reduceMotion) rafId = requestAnimationFrame(loop);
     });
   }
 
@@ -501,5 +760,8 @@
   initRoleRotator();
   initScrollReveal();
   initCardGlow();
+  initCommandPalette();
+  initProjectInspector();
+  initSkillMap();
   initKnn();
 })();
