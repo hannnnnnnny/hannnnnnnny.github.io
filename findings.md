@@ -95,3 +95,23 @@
 - The user confirmed MongoDB and SQLite should be represented. Split the former combined bottom group into balanced Database and Delivery groups instead of adding uneven trailing cells.
 - The user confirmed Playwright and E2E testing. Treat Playwright as the concrete browser automation tool and E2E testing as a separate delivery capability.
 - The user confirmed R for statistics and Java Swing. Use the previously documented Regression capability to keep Data and ML at a balanced eight items; give Swing a deliberate two-column tile so Backend has no accidental empty cell.
+
+## 2026-06-23 Recruiter-Focused Hero Audit
+
+### Recruiter scan findings
+- Yi Han's name is visible in navigation but is not the dominant first-viewport signal.
+- The current headline is generic and oversized; it takes four lines without quickly naming a role or differentiator.
+- The animated `Currently working as` line can imply current employment and cycles through too many identities.
+- Study, background, focus, and availability are repeated in the right panel instead of adding new evidence.
+- The text-link CTA row has weak visual priority and makes resume, email, and GitHub feel equally important.
+- The interactive KNN demo is distinctive, but it does not explain its implementation or connect to inspectable code.
+- The strongest positioning is the combination of Business Analytics, a Master of IT, and practical AI/full-stack project work.
+
+### Chosen direction
+- Make `Yi Han` the H1 and use a concise supporting statement for the target direction.
+- Use a static, honest focus line and a compact proof strip for projects, tools, location, and availability.
+- Promote selected work and the resume as the two primary actions; keep contact/profile links compact.
+- Keep the KNN interaction but label it as an interactive ML demo, name its implementation, and link to source and relevant projects.
+- Remove the duplicated profile fact list and reduce hero height so recruiters see the beginning of the next section.
+- The original 980px navigation breakpoint left a 280px sidebar active on 1024px laptops, compressing the supporting statement into seven lines. Moving the top-navigation breakpoint to 1120px and retaining a two-column hero above 820px restored a balanced three-line statement.
+- On 320px mobile, section anchors initially landed 21px behind the sticky header. A 12rem mobile scroll margin now clears the header for both sections and project cards.

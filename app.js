@@ -139,43 +139,6 @@
     hero.addEventListener("pointerleave", () => hero.classList.remove("spotlight-on"));
   }
 
-  /* ---------- Role typewriter ---------- */
-  function initRoleRotator() {
-    const rotator = $(".role-rotator");
-    const word = rotator && $(".role-word", rotator);
-    if (!rotator || !word) return;
-
-    const roles = (rotator.dataset.roles || "").split("|").filter(Boolean);
-    if (roles.length < 2) return;
-
-    if (reduceMotion) {
-      word.textContent = roles[0];
-      return;
-    }
-
-    let roleIndex = 0;
-    let charIndex = roles[0].length;
-    let deleting = false;
-
-    const tick = () => {
-      const current = roles[roleIndex];
-      charIndex += deleting ? -1 : 1;
-      word.textContent = current.slice(0, charIndex);
-
-      let delay = deleting ? 45 : 95;
-      if (!deleting && charIndex === current.length) {
-        delay = 1500;
-        deleting = true;
-      } else if (deleting && charIndex === 0) {
-        deleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        delay = 320;
-      }
-      window.setTimeout(tick, delay);
-    };
-    window.setTimeout(tick, 1600);
-  }
-
   /* ---------- Scroll reveal ---------- */
   function initScrollReveal() {
     const targets = $$(
@@ -398,8 +361,6 @@
     const activeName = $("#skill-active-name");
     const selectionState = $("#skill-selection-state");
     const projectLinks = $("#skill-project-links");
-    if (window.lucide) window.lucide.createIcons();
-
     const projects = {
       pansub: { label: "PanSub", href: "#project-pansub" },
       sales: { label: "Video Game Sales ML", href: "#project-video-game-sales" },
@@ -877,13 +838,17 @@
     return `rgba(${(n >> 16) & 255}, ${(n >> 8) & 255}, ${n & 255}, ${alpha})`;
   }
 
+  function initIcons() {
+    if (window.lucide) window.lucide.createIcons();
+  }
+
   /* ---------- boot ---------- */
+  initIcons();
   initHashPosition();
   initProjectFilters();
   initLifecycleTabs();
   initScrollSync();
   initHeroSpotlight();
-  initRoleRotator();
   initScrollReveal();
   initCardGlow();
   initCommandPalette();

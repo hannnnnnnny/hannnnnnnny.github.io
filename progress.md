@@ -80,3 +80,16 @@
 - Final browser verification covered 37 tools, 14 Lucide icons, all Devicon images, hover evidence, desktop group geometry, mobile two-column geometry, sticky-header clearance, and zero horizontal overflow.
 - Playwright console checks reported zero errors and zero warnings before the final skill additions; incremental checks after additions passed without broken assets or layout regressions.
 - Final node syntax and Git whitespace checks passed; the update is ready to commit and push to PR 5.
+
+## 2026-06-23 Recruiter-Focused Hero Redesign
+
+- Started the homepage conversion audit using the existing interactive-portfolio, copywriting, and planning-with-files skills.
+- Confirmed the branch is clean and no additional skill installation is necessary.
+- Recorded the recruiter scan issues and selected a name-first, evidence-first hero direction.
+- Rebuilt the hero around Yi Han's name, a data-analyst-first statement, a four-point proof strip, stronger work/resume actions, and compact profile links.
+- Reframed the KNN classifier as an interactive ML demo with implementation context, source code, and links to the strongest data and AI projects.
+- Removed the role typewriter, duplicated profile facts, obsolete styles, and potentially misleading employment wording.
+- Strengthened the profile and contact copy while preserving honest student and graduate-role positioning.
+- Fixed the 1024px laptop breakpoint and mobile sticky-header anchor clearance.
+- Playwright checks passed at 1440x1000, 1024x768, 390x900, and 320x800 with no console warnings or errors, no horizontal overflow, nonblank KNN canvas pixels, valid 44px+ mobile targets, and working KNN prediction updates.
+- Node syntax, Git whitespace, duplicate-ID, local resource, and source-link checks passed.
