@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
   <title>Yi Han | Data Analytics and AI Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260530-vue">
+  <link rel="stylesheet" href="styles.css?v=20260623-tech">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -51,9 +51,16 @@
 
   <main id="main">
     <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-text">
         <p class="eyebrow">IT, data analytics, and AI</p>
         <h1 id="hero-title">I build practical software around data, learning, and everyday needs.</h1>
+        <p class="role-line" aria-label="Current focus">
+          <span class="role-static">Currently working as a</span>
+          <span class="role-rotator" data-roles="Data Analyst|AI Engineer|Full-Stack Developer">
+            <span class="role-word">Data Analyst</span><span class="role-caret" aria-hidden="true"></span>
+          </span>
+        </p>
         <p class="intro">
           I am Yi Han, a Master of IT student at the University of Auckland with
           a Bachelor of Commerce background in Business Analytics.
@@ -74,15 +81,24 @@
 
       <aside class="profile-card" aria-label="Profile summary">
         <p class="profile-name">Current direction</p>
-        <div class="model-widget" aria-label="Interactive KNN sketch">
+        <div class="model-widget" aria-label="Interactive KNN classifier">
           <div class="model-widget-header">
-            <span>Mini KNN sketch</span>
+            <span>Live KNN classifier</span>
             <output id="knn-k-output" for="knn-k">k = 5</output>
           </div>
-          <canvas id="model-canvas" width="520" height="340" aria-hidden="true"></canvas>
+          <div class="model-canvas-wrap">
+            <canvas id="model-canvas" width="520" height="360" role="img"
+              aria-label="Interactive k-nearest-neighbours plot. Drag the probe point across three clusters to see its predicted class and decision regions update."></canvas>
+            <span class="model-hint" aria-hidden="true">Drag the probe &middot; move k</span>
+          </div>
+          <div class="knn-readout">
+            <span class="knn-pred-label">Predicted class</span>
+            <span class="knn-pred" id="knn-pred" aria-live="polite">Cluster B</span>
+            <div class="knn-votes" id="knn-votes" aria-hidden="true"></div>
+          </div>
           <label class="knn-control" for="knn-k">
-            <span>Neighbors</span>
-            <input id="knn-k" type="range" min="1" max="9" step="2" value="5">
+            <span>Neighbors (k)</span>
+            <input id="knn-k" type="range" min="1" max="9" step="2" value="5" autocomplete="off">
           </label>
         </div>
         <dl class="profile-facts">
@@ -483,8 +499,6 @@
     <p>&copy; 2026 Yi Han. Static GitHub Pages, enhanced with a small Vue layer.</p>
   </footer>
 
-  <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
-  <div id="portfolio-app" hidden aria-hidden="true"></div>
-  <script src="app.js?v=20260530-vue2"></script>
+  <script src="app.js?v=20260623-tech" defer></script>
 </body>
 </html>
