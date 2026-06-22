@@ -54,3 +54,29 @@
 - Found and fixed a Vue mounting issue where the first approach cleared the page DOM. The final approach keeps the static HTML visible and uses Vue as a controller.
 - Browser checks passed for project filtering, AIDLC tab switching, KNN slider output, active navigation, and mobile/tablet/desktop overflow.
 - Staged and committed the Vue interaction upgrade as `feat: add vue portfolio interactions`.
+
+## 2026-06-23 Skills Evidence Redesign
+
+- Started a complete Skills-section refinement on codex/21st-inspired-portfolio.
+- Selected the existing interactive-portfolio and planning-with-files skills; no additional installation is needed.
+- Reviewed the latest screenshot and recorded the layout, icon consistency, active-state, and interaction issues.
+- Confirmed the working tree was clean before implementation.
+- Session catchup could not run because neither python nor py is installed; recorded the environment limitation in the plan.
+- Completed the code audit and defined a tool-level evidence model without changing the static deployment architecture.
+- Chose a pinned-selection interaction: hover or focus previews, click locks, and Escape clears.
+- Chose Lucide UMD from jsDelivr for non-brand concepts while retaining Devicon for named technologies.
+- Added project-card anchors and rebuilt the Skills section around a larger evidence-focused capability map.
+- Balanced every tool group at six items and removed outer category card surfaces.
+- Replaced temporary letter glyphs with Lucide concept icons.
+- Added tool-level evidence copy and links to real featured projects or the GitHub repository list.
+- Implemented hover/focus preview, click-to-pin, Escape-to-clear, and filtered-project recovery.
+- Static checks passed and the Lucide CDN returned HTTP 200.
+- Removed scroll-reveal gating from tool groups after browser verification showed five groups at zero opacity before intersection.
+- Hid the keyboard command trigger below 700px to prevent mobile overlap.
+- Added a post-load hash alignment pass so direct section URLs and navigation clicks both clear the sticky header.
+- Added MongoDB and SQLite, then split the bottom tool row into symmetric Database and Delivery groups.
+- Added Playwright and E2E testing; adjusted the bottom grids to Database 2 by 2 and Delivery 3 by 2 on desktop.
+- Added R, Regression, and Java Swing; adjusted Data and Backend to deliberate four-column desktop layouts.
+- Final browser verification covered 37 tools, 14 Lucide icons, all Devicon images, hover evidence, desktop group geometry, mobile two-column geometry, sticky-header clearance, and zero horizontal overflow.
+- Playwright console checks reported zero errors and zero warnings before the final skill additions; incremental checks after additions passed without broken assets or layout regressions.
+- Final node syntax and Git whitespace checks passed; the update is ready to commit and push to PR 5.

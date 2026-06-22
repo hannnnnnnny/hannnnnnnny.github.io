@@ -71,3 +71,27 @@
 - Vue's CDN/global-build pattern fits this repository because it can enhance the existing HTML without a build step.
 - Strongest portfolio-specific interactions are project filtering, AIDLC learning tabs, scroll-aware navigation, and a small KNN sketch tied to Yi Han's data and AI direction.
 - Vue should not own the whole static page in this repository. Using a hidden Vue controller keeps the page readable even if JavaScript fails, while still enabling the requested effects.
+
+## 2026-06-23 Skills Evidence Redesign
+
+### Visual audit
+- The icon wall is substantially more scannable than the previous prose cards.
+- Nested category cards and inner icon cards make the section feel like an admin dashboard rather than a personal portfolio.
+- The large three-line heading and small capability map create uneven visual weight against the dense icon wall.
+- Temporary glyphs such as AI, Pr, Tr, EX, and K are inconsistent with the brand icons.
+- Category-based active styling currently highlights multiple tools at once, which reads as a selected state without explaining why.
+- Tool buttons need a real click outcome. The strongest portfolio outcome is a pinned tool detail with links to projects that prove the skill.
+- AI and backend groups have uneven empty cells. Six balanced items per group will make scanning calmer.
+- The left capability map is worth keeping as a differentiator, but it needs more size, contrast, and evidence-focused copy.
+
+### Chosen direction
+- Use unframed category sections with individual tool tiles, avoiding cards inside cards.
+- Use Devicon for brand tools and Lucide concept icons for KNN, clustering, AI lifecycle, prompting, translation, extensions, evaluation, workflow, REST, SQL, and testing.
+- Keep original brand colors but normalize icon dimensions and label contrast.
+- Show one active tool at a time; hover previews, click pins, Escape clears.
+- Add project anchors and evidence links so skills connect to inspectable work.
+- Browser verification found that applying the existing hidden-until-intersection reveal to tool groups could leave the icon wall blank in element captures or rapid navigation. Tool groups should remain visible by default.
+- Mobile verification found the floating command button could cover tool tiles and that direct hash loads could position a section before late layout settled. Hide the keyboard-oriented command trigger on mobile and realign the hash target after window load.
+- The user confirmed MongoDB and SQLite should be represented. Split the former combined bottom group into balanced Database and Delivery groups instead of adding uneven trailing cells.
+- The user confirmed Playwright and E2E testing. Treat Playwright as the concrete browser automation tool and E2E testing as a separate delivery capability.
+- The user confirmed R for statistics and Java Swing. Use the previously documented Regression capability to keep Data and ML at a balanced eight items; give Swing a deliberate two-column tile so Backend has no accidental empty cell.
