@@ -367,7 +367,6 @@
       renova: { label: "ReNova Marketplace", href: "#project-renova" },
       study: { label: "Study Room Booking", href: "#project-study-room" },
       teacher: { label: "Teacher System", href: "#project-teacher-system" },
-      tilltally: { label: "TillTally", href: "#project-tilltally" },
       portfolio: { label: "This portfolio", href: "#top" },
       zanytalk: {
         label: "ZanyTalk forum",
@@ -415,14 +414,6 @@
       Playwright: { text: "Automates real browser flows, interaction checks, and responsive verification.", projects: ["portfolio"] },
       "E2E testing": { text: "Tests ZanyTalk user journeys with Playwright, alongside Vitest and Supertest API checks.", projects: ["zanytalk"] },
       "Google Cloud Platform (GCP)": { text: "Deployment/hosting on GCP; project evidence to be added.", projects: [] },
-      React: { text: "Builds TillTally's dashboard UI, CSV upload flows, tables, and chart pages.", projects: ["tilltally"] },
-      TypeScript: { text: "Types TillTally end to end across React, Express, and the Prisma data layer.", projects: ["tilltally"] },
-      Tailwind: { text: "Drives TillTally's responsive dashboard layout and component styling.", projects: ["tilltally"] },
-      PostgreSQL: { text: "Backs TillTally's relational model for users, businesses, orders, products, and reports.", projects: ["tilltally"] },
-      Prisma: { text: "Models the TillTally schema and runs typed, migrated queries against PostgreSQL.", projects: ["tilltally"] },
-      Docker: { text: "Containerises TillTally's client and server and runs them together via Docker Compose.", projects: ["tilltally"] },
-      Nginx: { text: "Serves TillTally behind a single-origin reverse proxy in the deployed stack.", projects: ["tilltally"] },
-      "GitHub Actions": { text: "Runs TillTally's CI pipeline for builds and checks on every push.", projects: ["tilltally"] },
     };
     const nodes = [
       { key: "Data", label: "DATA", x: 0.2, y: 0.25, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
