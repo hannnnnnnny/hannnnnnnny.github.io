@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" font-family="ui-sans-serif, system-ui, 'Segoe UI', sans-serif">
+  <rect width="1280" height="800" fill="#0a0e13"/>
+  <!-- sidebar -->
+  <rect x="0" y="0" width="232" height="800" fill="#0d141b"/>
+  <line x1="232" y1="0" x2="232" y2="800" stroke="#24313b" stroke-width="1"/>
+  <text x="36" y="74" fill="#7ee7d6" font-size="30" font-weight="700">TillTally</text>
+  <text x="36" y="100" fill="#748491" font-size="14" letter-spacing="1">RETAIL ANALYTICS</text>
+  <g font-size="16">
+    <rect x="24" y="140" width="184" height="40" rx="8" fill="#7ee7d6" opacity="0.14"/>
+    <text x="44" y="166" fill="#f4f7fb">Dashboard</text>
+    <text x="44" y="220" fill="#9aa7b1">Products</text>
+    <text x="44" y="262" fill="#9aa7b1">Inventory</text>
+    <text x="44" y="304" fill="#9aa7b1">Channels</text>
+    <text x="44" y="346" fill="#9aa7b1">Weekly report</text>
+    <text x="44" y="388" fill="#9aa7b1">Imports</text>
+  </g>
+
+  <!-- header -->
+  <text x="272" y="78" fill="#f4f7fb" font-size="30" font-weight="700">Sales Overview</text>
+  <text x="272" y="106" fill="#748491" font-size="15">Auckland Charity Store &#183; last 30 days</text>
+  <rect x="1060" y="52" width="184" height="40" rx="8" fill="#10151b" stroke="#24313b"/>
+  <text x="1082" y="78" fill="#9aa7b1" font-size="14">Import CSV</text>
+
+  <!-- KPI cards -->
+  <g>
+    <rect x="272" y="140" width="228" height="120" rx="12" fill="#10151b" stroke="#24313b"/>
+    <text x="296" y="176" fill="#748491" font-size="13" letter-spacing="1">TOTAL SALES</text>
+    <text x="296" y="218" fill="#f4f7fb" font-size="34" font-weight="800">$48,210</text>
+    <text x="296" y="244" fill="#7ee7d6" font-size="14">&#9650; 12% vs last week</text>
+
+    <rect x="516" y="140" width="228" height="120" rx="12" fill="#10151b" stroke="#24313b"/>
+    <text x="540" y="176" fill="#748491" font-size="13" letter-spacing="1">GROSS MARGIN</text>
+    <text x="540" y="218" fill="#f4f7fb" font-size="34" font-weight="800">41.6%</text>
+    <text x="540" y="244" fill="#7dd3fc" font-size="14">Healthy range</text>
+
+    <rect x="760" y="140" width="228" height="120" rx="12" fill="#10151b" stroke="#24313b"/>
+    <text x="784" y="176" fill="#748491" font-size="13" letter-spacing="1">ORDERS</text>
+    <text x="784" y="218" fill="#f4f7fb" font-size="34" font-weight="800">612</text>
+    <text x="784" y="244" fill="#9aa7b1" font-size="14">AOV $78.80</text>
+
+    <rect x="1004" y="140" width="240" height="120" rx="12" fill="#10151b" stroke="#24313b"/>
+    <text x="1028" y="176" fill="#748491" font-size="13" letter-spacing="1">LOW STOCK</text>
+    <text x="1028" y="218" fill="#f48fb1" font-size="34" font-weight="800">12</text>
+    <text x="1028" y="244" fill="#f48fb1" font-size="14">Reorder soon</text>
+  </g>
+
+  <!-- bar chart -->
+  <rect x="272" y="288" width="600" height="448" rx="12" fill="#10151b" stroke="#24313b"/>
+  <text x="296" y="328" fill="#f4f7fb" font-size="18" font-weight="700">Revenue by week</text>
+  <g stroke="#24313b" stroke-width="1">
+    <line x1="296" y1="420" x2="848" y2="420"/>
+    <line x1="296" y1="500" x2="848" y2="500"/>
+    <line x1="296" y1="580" x2="848" y2="580"/>
+    <line x1="296" y1="660" x2="848" y2="660"/>
+  </g>
+  <g fill="#7ee7d6">
+    <rect x="316" y="470" width="52" height="190" rx="4" opacity="0.55"/>
+    <rect x="392" y="430" width="52" height="230" rx="4" opacity="0.65"/>
+    <rect x="468" y="500" width="52" height="160" rx="4" opacity="0.5"/>
+    <rect x="544" y="396" width="52" height="264" rx="4" opacity="0.8"/>
+    <rect x="620" y="446" width="52" height="214" rx="4" opacity="0.6"/>
+    <rect x="696" y="372" width="52" height="288" rx="4" fill="#7dd3fc" opacity="0.85"/>
+    <rect x="772" y="412" width="52" height="248" rx="4" opacity="0.7"/>
+  </g>
+
+  <!-- channel donut -->
+  <rect x="888" y="288" width="356" height="448" rx="12" fill="#10151b" stroke="#24313b"/>
+  <text x="912" y="328" fill="#f4f7fb" font-size="18" font-weight="700">Channel mix</text>
+  <g transform="translate(1066,470)" fill="none" stroke-width="34">
+    <circle r="86" stroke="#1b2530"/>
+    <circle r="86" stroke="#7ee7d6" stroke-dasharray="270 540" transform="rotate(-90)"/>
+    <circle r="86" stroke="#7dd3fc" stroke-dasharray="150 540" stroke-dashoffset="-270" transform="rotate(-90)"/>
+    <circle r="86" stroke="#f48fb1" stroke-dasharray="120 540" stroke-dashoffset="-420" transform="rotate(-90)"/>
+  </g>
+  <g font-size="15">
+    <rect x="912" y="612" width="12" height="12" rx="3" fill="#7ee7d6"/><text x="934" y="623" fill="#9aa7b1">Shopify</text>
+    <rect x="912" y="642" width="12" height="12" rx="3" fill="#7dd3fc"/><text x="934" y="653" fill="#9aa7b1">Trade Me</text>
+    <rect x="912" y="672" width="12" height="12" rx="3" fill="#f48fb1"/><text x="934" y="683" fill="#9aa7b1">In-store</text>
+  </g>
+</svg>
