@@ -1160,6 +1160,12 @@ dd {
   color: var(--ink);
 }
 
+.skill-project-placeholder {
+  color: var(--subtle);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+}
+
 .tool-group {
   display: grid;
   gap: 0.8rem;
@@ -1180,16 +1186,25 @@ dd {
 }
 
 .tool-group-data .tool-list,
-.tool-group-backend .tool-list {
+.tool-group-delivery .tool-list {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.tool-group-database .tool-list {
+.tool-group-backend .tool-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tool-group-database .tool-list,
+.tool-group-systems .tool-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.tool-group-delivery .tool-list {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.tool-group-systems {
+  grid-column: 1 / -1;
+}
+
+.tool-group-systems .tool-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .tool-chip-wide {
@@ -1644,7 +1659,8 @@ dd {
   .tool-group-data .tool-list,
   .tool-group-backend .tool-list,
   .tool-group-database .tool-list,
-  .tool-group-delivery .tool-list {
+  .tool-group-delivery .tool-list,
+  .tool-group-systems .tool-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 

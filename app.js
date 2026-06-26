@@ -368,6 +368,11 @@
       study: { label: "Study Room Booking", href: "#project-study-room" },
       teacher: { label: "Teacher System", href: "#project-teacher-system" },
       portfolio: { label: "This portfolio", href: "#top" },
+      zanytalk: {
+        label: "ZanyTalk forum",
+        href: "https://github.com/UOA-PGCIT-S1-2026/pgcit-final-project-zany-zorillas",
+        external: true,
+      },
       github: { label: "GitHub repositories", href: "https://github.com/hannnnnnnny", external: true },
     };
     const evidence = {
@@ -387,7 +392,7 @@
       "Tool design": { text: "Turns a narrow user problem into a small interface that can be tested and improved.", projects: ["pansub", "study"] },
       Java: { text: "Implements domain logic and service layers for practical full-stack systems.", projects: ["renova", "teacher"] },
       "Spring Boot": { text: "Structures APIs, authentication, services, and transactional application flows.", projects: ["renova", "teacher"] },
-      "Node.js": { text: "Supports JavaScript services, tooling, and API practice beyond the browser.", projects: ["github"] },
+      "Node.js": { text: "Runs ZanyTalk's Express and SQLite backend plus its JavaScript service tooling.", projects: ["zanytalk"] },
       Express: { text: "Provides a lightweight route and middleware model for backend prototypes.", projects: ["github"] },
       "REST API": { text: "Connects frontend workflows to clear resource and state transitions.", projects: ["renova", "teacher"] },
       Maven: { text: "Keeps Java builds and dependencies reproducible across machines.", projects: ["renova", "teacher"] },
@@ -396,30 +401,34 @@
       Svelte: { text: "Explores component-based interfaces with a small runtime and direct reactivity.", projects: ["github"] },
       HTML5: { text: "Keeps portfolio and browser-extension structure semantic and progressively enhanced.", projects: ["pansub", "portfolio"] },
       CSS3: { text: "Handles responsive layout, visual hierarchy, interaction states, and reduced motion.", projects: ["portfolio", "pansub"] },
-      JavaScript: { text: "Drives browser interaction, state, canvas visualisation, and extension behaviour.", projects: ["pansub", "study", "portfolio"] },
+      JavaScript: { text: "Powers this portfolio's vanilla JavaScript canvas, filters, navigation, and interaction state.", projects: ["portfolio"] },
       Vite: { text: "Supports fast local iteration and reproducible frontend builds.", projects: ["study"] },
       MySQL: { text: "Grounds marketplace and administration workflows in explicit relational models.", projects: ["renova", "teacher"] },
       MongoDB: { text: "Supports document-oriented data models for flexible application prototypes.", projects: ["github"] },
       SQLite: { text: "Provides a compact local database for prototypes, scripts, and portable development workflows.", projects: ["github"] },
       SQL: { text: "Connects filters, relationships, reports, and application state to stored data.", projects: ["renova", "teacher"] },
-      Git: { text: "Keeps implementation changes reviewable, reversible, and organised by branch.", projects: ["github"] },
+      Git: { text: "Supports ZanyTalk's branch, commit, and pull-request workflow for reviewable team changes.", projects: ["zanytalk"] },
       GitHub: { text: "Makes source, READMEs, project history, and reviewable changes easy to inspect.", projects: ["github"] },
       npm: { text: "Manages JavaScript tooling and repeatable local project setup.", projects: ["study", "portfolio"] },
       Testing: { text: "Checks syntax, interactions, responsive layout, and edge states before publishing.", projects: ["portfolio", "sales"] },
       Playwright: { text: "Automates real browser flows, interaction checks, and responsive verification.", projects: ["portfolio"] },
-      "E2E testing": { text: "Verifies complete user journeys across navigation, filtering, state, and project links.", projects: ["portfolio"] },
+      "E2E testing": { text: "Tests ZanyTalk user journeys with Playwright, alongside Vitest and Supertest API checks.", projects: ["zanytalk"] },
+      "Google Cloud Platform (GCP)": { text: "Deployment/hosting on GCP; project evidence to be added.", projects: [] },
     };
     const nodes = [
-      { key: "Data", label: "DATA", x: 0.23, y: 0.28, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
-      { key: "AI", label: "AI", x: 0.68, y: 0.22, color: "#f48fb1", text: "AI tools connect user workflows with translation, search, and evaluation." },
-      { key: "Backend", label: "API", x: 0.78, y: 0.58, color: "#f2c879", text: "Backend skills make the project real: APIs, auth, services, and deployment shape." },
-      { key: "Frontend", label: "UI", x: 0.45, y: 0.72, color: "#7ee7d6", text: "Frontend turns the work into something people can actually inspect and use." },
-      { key: "Database", label: "SQL", x: 0.25, y: 0.62, color: "#a7b8c7", text: "Database thinking keeps projects grounded in schema, queries, and relationships." },
-      { key: "Practice", label: "GIT", x: 0.53, y: 0.42, color: "#dce5ec", text: "Practice ties the stack together: Git, testing, debugging, and clear READMEs." },
+      { key: "Data", label: "DATA", x: 0.2, y: 0.25, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
+      { key: "AI", label: "AI", x: 0.66, y: 0.18, color: "#f48fb1", text: "AI tools connect user workflows with translation, search, and evaluation." },
+      { key: "Backend", label: "API", x: 0.82, y: 0.47, color: "#f2c879", text: "Backend skills make the project real: APIs, auth, services, and deployment shape." },
+      { key: "Frontend", label: "UI", x: 0.56, y: 0.76, color: "#7ee7d6", text: "Frontend turns the work into something people can actually inspect and use." },
+      { key: "Database", label: "SQL", x: 0.2, y: 0.69, color: "#a7b8c7", text: "Database thinking keeps projects grounded in schema, queries, and relationships." },
+      { key: "Engineering", label: "ENG", x: 0.45, y: 0.43, color: "#dce5ec", text: "Engineering connects JavaScript services, Git workflows, and automated testing." },
+      { key: "Ops", label: "OPS", x: 0.83, y: 0.77, color: "#8ab4f8", text: "Systems and operations cover deployment, hosting, and cloud runtime concerns." },
     ];
     const links = [
-      ["Data", "AI"], ["Data", "Database"], ["AI", "Frontend"], ["AI", "Practice"],
-      ["Backend", "Database"], ["Backend", "Frontend"], ["Frontend", "Practice"], ["Data", "Practice"],
+      ["Data", "AI"], ["Data", "Database"], ["Data", "Engineering"],
+      ["AI", "Frontend"], ["AI", "Engineering"], ["Backend", "Database"],
+      ["Backend", "Frontend"], ["Backend", "Ops"], ["Frontend", "Engineering"],
+      ["Engineering", "Ops"],
     ];
     let activeKey = cards[0].dataset.skillCard || "Data";
     let activeCard = cards[0];
@@ -431,6 +440,13 @@
     const renderProjectLinks = (projectKeys) => {
       if (!projectLinks) return;
       projectLinks.replaceChildren();
+      if (!projectKeys?.length) {
+        const placeholder = document.createElement("span");
+        placeholder.className = "skill-project-placeholder";
+        placeholder.textContent = "Project evidence pending";
+        projectLinks.append(placeholder);
+        return;
+      }
       projectKeys.forEach((projectKey) => {
         const project = projects[projectKey];
         if (!project) return;
