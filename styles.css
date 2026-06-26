@@ -485,6 +485,9 @@ p {
 
 .hero-button-primary:hover,
 .hero-button-primary:focus-visible {
+  /* Pin dark text on hover; otherwise the global a:hover turns it teal
+     (teal-on-teal reads as washed-out grey). */
+  color: #080a0d;
   background: #9af0e2;
 }
 
