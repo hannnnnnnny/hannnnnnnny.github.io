@@ -1892,16 +1892,19 @@ dd {
 .marquee {
   margin: 0;
   overflow: hidden;
-  padding: 1.1rem 0;
+  padding: 1.85rem 0;
+  border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  background:
+    radial-gradient(120% 100% at 50% 0%, rgba(244, 143, 177, 0.05), transparent 60%);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 34s linear infinite;
+  animation: marquee-scroll 38s linear infinite;
 }
 
 .marquee:hover .marquee-track {
@@ -1912,19 +1915,27 @@ dd {
   display: flex;
   flex: none;
   align-items: center;
-  gap: 1.6rem;
-  padding-right: 1.6rem;
+  gap: 2rem;
+  padding-right: 2rem;
 }
 
 .marquee-group span {
   color: var(--ink);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.25rem, 2.3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: clamp(1.7rem, 3.1vw, 2.85rem);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.02em;
   white-space: nowrap;
-  opacity: 0.5;
-  transition: opacity 220ms ease, color 220ms ease;
+  opacity: 0.82;
+  transition: opacity 220ms ease, color 220ms ease, -webkit-text-stroke-color 220ms ease;
+}
+
+/* Alternate words rendered as outlines for kinetic contrast */
+.marquee-group span:nth-of-type(even) {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(154, 167, 177, 0.7);
+  opacity: 0.9;
 }
 
 .marquee-group span:hover {
@@ -1932,19 +1943,23 @@ dd {
   opacity: 1;
 }
 
+.marquee-group span:nth-of-type(even):hover {
+  -webkit-text-stroke-color: var(--teal);
+}
+
 .marquee-group i {
-  color: var(--rose);
-  font-size: 0.85rem;
-  font-style: normal;
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--rose);
+  font-size: 0;
+  transform: rotate(45deg);
+  opacity: 0.85;
 }
 
 @keyframes marquee-scroll {
   to { transform: translateX(-50%); }
-}
-
-/* Magnetic buttons */
-[data-magnetic] {
-  will-change: transform;
 }
 
 .magnetic-inner {
