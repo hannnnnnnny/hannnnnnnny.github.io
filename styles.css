@@ -14,6 +14,8 @@
   --teal: #7ee7d6;
   --rose: #f48fb1;
   --amber: #f2c879;
+  --pixel-green: #7cf0a8;
+  --pixel-purple: #b39dff;
   --focus: #f48fb1;
   --max-width: 1120px;
   --sidebar-width: 278px;
@@ -1892,11 +1894,11 @@ dd {
 .marquee {
   margin: 0;
   overflow: hidden;
-  padding: 1.85rem 0;
+  padding: 0.95rem 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   background:
-    radial-gradient(120% 100% at 50% 0%, rgba(244, 143, 177, 0.05), transparent 60%);
+    radial-gradient(120% 100% at 50% 0%, rgba(168, 140, 255, 0.06), transparent 62%);
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
   mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
@@ -1904,7 +1906,7 @@ dd {
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 38s linear infinite;
+  animation: marquee-scroll 42s linear infinite;
 }
 
 .marquee:hover .marquee-track {
@@ -1915,47 +1917,42 @@ dd {
   display: flex;
   flex: none;
   align-items: center;
-  gap: 2rem;
-  padding-right: 2rem;
+  gap: 1.45rem;
+  padding-right: 1.45rem;
 }
 
+/* Pixel-font ticker: alternating green / purple words */
 .marquee-group span {
-  color: var(--ink);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.7rem, 3.1vw, 2.85rem);
-  font-weight: 800;
-  font-style: italic;
-  letter-spacing: -0.02em;
+  color: var(--pixel-green);
+  font-family: "Press Start 2P", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: clamp(0.58rem, 0.9vw, 0.78rem);
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1.5;
   white-space: nowrap;
-  opacity: 0.82;
-  transition: opacity 220ms ease, color 220ms ease, -webkit-text-stroke-color 220ms ease;
+  opacity: 0.88;
+  transition: opacity 200ms ease, text-shadow 200ms ease;
 }
 
-/* Alternate words rendered as outlines for kinetic contrast */
 .marquee-group span:nth-of-type(even) {
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(154, 167, 177, 0.7);
-  opacity: 0.9;
+  color: var(--pixel-purple);
 }
 
 .marquee-group span:hover {
-  color: var(--teal);
   opacity: 1;
-}
-
-.marquee-group span:nth-of-type(even):hover {
-  -webkit-text-stroke-color: var(--teal);
+  text-shadow: 0 0 12px currentColor;
 }
 
 .marquee-group i {
   display: inline-block;
-  width: 7px;
-  height: 7px;
-  border-radius: 2px;
-  background: var(--rose);
+  width: 5px;
+  height: 5px;
+  border-radius: 1px;
+  background: var(--pixel-purple);
   font-size: 0;
   transform: rotate(45deg);
-  opacity: 0.85;
+  opacity: 0.7;
 }
 
 @keyframes marquee-scroll {

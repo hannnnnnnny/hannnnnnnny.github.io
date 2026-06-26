@@ -877,17 +877,24 @@
         const rect = el.getBoundingClientRect();
         const mx = event.clientX - (rect.left + rect.width / 2);
         const my = event.clientY - (rect.top + rect.height / 2);
-        // Integer translate3d keeps composited text crisp (no subpixel blur).
+        // Integer 2D translate + instant inner tracking keeps button text
+        // sharp and legible (no easing smear, no 3D-layer AA thinning).
         const tx = Math.round(mx * strength);
         const ty = Math.round(my * strength);
         el.style.transition = "transform 0s";
-        el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
-        if (inner) inner.style.transform = `translate3d(${Math.round(tx * 0.4)}px, ${Math.round(ty * 0.4)}px, 0)`;
+        el.style.transform = `translate(${tx}px, ${ty}px)`;
+        if (inner) {
+          inner.style.transition = "transform 0s";
+          inner.style.transform = `translate(${Math.round(tx * 0.35)}px, ${Math.round(ty * 0.35)}px)`;
+        }
       });
       const reset = () => {
         el.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
         el.style.transform = "";
-        if (inner) inner.style.transform = "";
+        if (inner) {
+          inner.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
+          inner.style.transform = "";
+        }
       };
       el.addEventListener("pointerleave", reset);
       el.addEventListener("blur", reset);
