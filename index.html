@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
-  <link rel="stylesheet" href="styles.css?v=20260627-pixel2">
+  <link rel="stylesheet" href="styles.css?v=20260627-tilltally">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -75,7 +75,7 @@
         </p>
 
         <ul class="hero-proof" aria-label="Profile highlights">
-          <li><strong>5</strong><span>selected projects</span></li>
+          <li><strong>6</strong><span>selected projects</span></li>
           <li><strong>Python / R / SQL</strong><span>analysis foundation</span></li>
           <li><strong>Auckland, NZ</strong><span>current location</span></li>
           <li><strong>Available</strong><span>graduate roles</span></li>
@@ -289,7 +289,39 @@
           <p class="project-filter-status" id="project-filter-status" aria-live="polite">Showing all selected projects.</p>
 
           <div class="project-list">
-            <article class="project-card project-card-featured" id="project-pansub" data-project-groups="ai fullstack" data-project-signal="AI workflow" data-role-fit="AI engineer / frontend product engineer" data-proof="Captions, translation overlay, browser constraints" data-angle="Turns an awkward study workflow into an inspectable tool.">
+            <article class="project-card project-card-featured" id="project-tilltally" data-project-groups="data fullstack" data-project-signal="Business analytics system" data-role-fit="Data / business analyst &middot; full-stack engineer" data-proof="CSV import, KPI dashboards, gross-margin and inventory analytics, channel comparison" data-angle="Connects real retail decisions - reorder, discount, slow movers - to a full-stack build.">
+          <div class="project-main">
+            <p class="project-type">Business analytics dashboard / full-stack</p>
+            <h3>TillTally &mdash; Retail Business Analytics Dashboard</h3>
+            <p>
+              A full-stack analytics platform that turns a small retailer's sales
+              and inventory CSVs into KPI dashboards, product performance, inventory
+              risk, channel comparison, and a weekly business report.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Small shops have sales and stock data but cannot easily see margins, best sellers, slow movers, or reorder risk.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>CSV import with validation, gross-margin and ABC analysis, inventory-risk rules, channel KPIs, JWT auth, and a Dockerised deployment.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Prisma</li>
+            <li>Docker</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/till-tally/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the TillTally README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-pansub" data-project-groups="ai fullstack" data-project-signal="AI workflow" data-role-fit="AI engineer / frontend product engineer" data-proof="Captions, translation overlay, browser constraints" data-angle="Turns an awkward study workflow into an inspectable tool.">
           <div class="project-main">
             <p class="project-type">AI tool / browser extension</p>
             <h3>PanSub</h3>
@@ -644,9 +676,17 @@
         <section class="tool-group" aria-labelledby="frontend-title">
           <div class="tool-group-heading">
             <h3 id="frontend-title">Frontend</h3>
-            <span>05</span>
+            <span>08</span>
           </div>
           <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="React" aria-label="React" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>React</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="TypeScript" aria-label="TypeScript" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>TypeScript</span>
+            </button>
             <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Vue" aria-label="Vue" aria-pressed="false">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="" aria-hidden="true" loading="lazy">
               <span>Vue</span>
@@ -667,14 +707,26 @@
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="" aria-hidden="true" loading="lazy">
               <span>Vite</span>
             </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Tailwind" aria-label="Tailwind CSS" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Tailwind</span>
+            </button>
           </div>
         </section>
         <section class="tool-group tool-group-database" aria-labelledby="database-title">
           <div class="tool-group-heading">
             <h3 id="database-title">Database</h3>
-            <span>04</span>
+            <span>06</span>
           </div>
           <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="PostgreSQL" aria-label="PostgreSQL" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>PostgreSQL</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="Prisma" aria-label="Prisma ORM" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Prisma</span>
+            </button>
             <button class="tool-chip" type="button" data-skill-card="Database" data-tool="MySQL" aria-label="MySQL" aria-pressed="false">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy">
               <span>MySQL</span>
@@ -736,9 +788,21 @@
         <section class="tool-group tool-group-systems" aria-labelledby="systems-title">
           <div class="tool-group-heading">
             <h3 id="systems-title">Systems / Ops</h3>
-            <span>01</span>
+            <span>04</span>
           </div>
           <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Docker" aria-label="Docker" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Docker</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Nginx" aria-label="Nginx" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Nginx</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="GitHub Actions" aria-label="GitHub Actions CI" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>GitHub Actions</span>
+            </button>
             <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Google Cloud Platform (GCP)" aria-label="Google Cloud Platform (GCP)" aria-pressed="false">
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="" aria-hidden="true" loading="lazy">
               <span>GCP</span>
