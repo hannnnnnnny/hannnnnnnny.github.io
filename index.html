@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
   <title>Yi Han | Data Analytics and AI Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260623-job-skills">
+  <link rel="stylesheet" href="styles.css?v=20260627-anton">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -28,7 +28,7 @@
     <span></span>
     <span></span>
   </div>
-  <button class="command-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette" data-command-open>
+  <button class="command-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette" data-command-open data-magnetic>
     <span>Ctrl K</span>
     <b>Explore</b>
   </button>
@@ -62,10 +62,10 @@
     <section class="hero" id="top" aria-labelledby="hero-title">
       <div class="hero-glow" aria-hidden="true"></div>
       <div class="hero-text">
-        <p class="eyebrow">Data analytics / practical AI / software</p>
-        <h1 id="hero-title">Yi Han</h1>
-        <p class="hero-statement">Data analyst building practical AI and full-stack systems.</p>
-        <p class="hero-context">
+        <p class="eyebrow hero-rise" style="--rise-delay: 0ms">Data analytics / practical AI / software</p>
+        <h1 id="hero-title" class="hero-title"><span class="reveal-line"><span class="reveal-inner" style="--rise-delay: 90ms">Yi Han</span></span></h1>
+        <p class="hero-statement hero-rise" style="--rise-delay: 230ms">Data analyst building practical AI and full-stack systems.</p>
+        <p class="hero-context hero-rise" style="--rise-delay: 340ms">
           Business Analytics graduate and Master of IT student in Auckland. I turn
           data questions into analysis workflows, AI-assisted tools, and software
           people can inspect and use.
@@ -79,13 +79,17 @@
         </ul>
 
         <div class="hero-actions" aria-label="Primary actions">
-          <a class="hero-button hero-button-primary" href="#projects">
-            <i data-lucide="briefcase-business" aria-hidden="true"></i>
-            View selected work
+          <a class="hero-button hero-button-primary" href="#projects" data-magnetic>
+            <span class="magnetic-inner">
+              <i data-lucide="briefcase-business" aria-hidden="true"></i>
+              View selected work
+            </span>
           </a>
-          <a class="hero-button hero-button-secondary" href="assets/YiHan_Resume.pdf" type="application/pdf">
-            <i data-lucide="file-text" aria-hidden="true"></i>
-            Resume PDF
+          <a class="hero-button hero-button-secondary" href="assets/YiHan_Resume.pdf" type="application/pdf" data-magnetic>
+            <span class="magnetic-inner">
+              <i data-lucide="file-text" aria-hidden="true"></i>
+              Resume PDF
+            </span>
           </a>
           <div class="hero-socials" aria-label="Contact and profiles">
             <a href="mailto:harryhaber606@gmail.com" aria-label="Email Yi Han" title="Email">
@@ -136,6 +140,24 @@
         </div>
       </aside>
     </section>
+
+    <div class="marquee" aria-hidden="true" data-marquee>
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Data Analysis</span><i>✦</i>
+          <span>Machine Learning</span><i>✦</i>
+          <span>Practical AI</span><i>✦</i>
+          <span>Full-Stack</span><i>✦</i>
+          <span>Python</span><i>✦</i>
+          <span>SQL</span><i>✦</i>
+          <span>Spring Boot</span><i>✦</i>
+          <span>Vue</span><i>✦</i>
+          <span>AIDLC</span><i>✦</i>
+          <span>Data Viz</span><i>✦</i>
+          <span>Auckland · NZ</span><i>✦</i>
+        </div>
+      </div>
+    </div>
 
     <section class="section focus-section" id="work" aria-labelledby="work-title">
       <div class="section-heading">
@@ -790,6 +812,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
-  <script src="app.js?v=20260623-job-skills" defer></script>
+  <script src="app.js?v=20260627-anton" defer></script>
 </body>
 </html>
