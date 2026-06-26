@@ -870,16 +870,19 @@
   /* ---------- Magnetic buttons ---------- */
   function initMagnetic() {
     if (!finePointer || reduceMotion) return;
-    const strength = 0.3;
+    const strength = 0.24;
     $$("[data-magnetic]").forEach((el) => {
       const inner = $(".magnetic-inner", el);
       el.addEventListener("pointermove", (event) => {
         const rect = el.getBoundingClientRect();
         const mx = event.clientX - (rect.left + rect.width / 2);
         const my = event.clientY - (rect.top + rect.height / 2);
+        // Integer translate3d keeps composited text crisp (no subpixel blur).
+        const tx = Math.round(mx * strength);
+        const ty = Math.round(my * strength);
         el.style.transition = "transform 0s";
-        el.style.transform = `translate(${mx * strength}px, ${my * strength}px)`;
-        if (inner) inner.style.transform = `translate(${mx * strength * 0.4}px, ${my * strength * 0.4}px)`;
+        el.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+        if (inner) inner.style.transform = `translate3d(${Math.round(tx * 0.4)}px, ${Math.round(ty * 0.4)}px, 0)`;
       });
       const reset = () => {
         el.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
