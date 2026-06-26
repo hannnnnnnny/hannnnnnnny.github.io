@@ -1854,12 +1854,124 @@ dd {
   opacity: 1;
 }
 
+/* ============================================================
+   Anton Skvortsov-inspired polish: hero mask-reveal,
+   kinetic marquee, and magnetic buttons.
+   ============================================================ */
+
+/* Hero entrance: masked title rise + staggered fade-up */
+.hero-title .reveal-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.js-enabled .hero-title .reveal-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  animation: hero-rise 0.95s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+.js-enabled .hero-rise {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: hero-fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+@keyframes hero-rise {
+  to { transform: translateY(0); }
+}
+
+@keyframes hero-fade-up {
+  to { opacity: 1; transform: none; }
+}
+
+/* Kinetic marquee band */
+.marquee {
+  margin: 0;
+  overflow: hidden;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--border);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.marquee-group span {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.25rem, 2.3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  opacity: 0.5;
+  transition: opacity 220ms ease, color 220ms ease;
+}
+
+.marquee-group span:hover {
+  color: var(--teal);
+  opacity: 1;
+}
+
+.marquee-group i {
+  color: var(--rose);
+  font-size: 0.85rem;
+  font-style: normal;
+}
+
+@keyframes marquee-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* Magnetic buttons */
+[data-magnetic] {
+  will-change: transform;
+}
+
+.magnetic-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
 
   .ambient-aurora span {
+    animation: none;
+  }
+
+  .js-enabled .hero-title .reveal-inner,
+  .js-enabled .hero-rise {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .marquee-track {
     animation: none;
   }
 

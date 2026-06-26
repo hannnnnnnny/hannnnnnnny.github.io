@@ -858,8 +858,43 @@
     if (window.lucide) window.lucide.createIcons();
   }
 
+  /* ---------- Kinetic marquee ---------- */
+  function initMarquee() {
+    const track = $("[data-marquee] .marquee-track");
+    const group = track && $(".marquee-group", track);
+    if (!track || !group) return;
+    // Duplicate the group so a -50% translate loops seamlessly.
+    track.appendChild(group.cloneNode(true));
+  }
+
+  /* ---------- Magnetic buttons ---------- */
+  function initMagnetic() {
+    if (!finePointer || reduceMotion) return;
+    const strength = 0.3;
+    $$("[data-magnetic]").forEach((el) => {
+      const inner = $(".magnetic-inner", el);
+      el.addEventListener("pointermove", (event) => {
+        const rect = el.getBoundingClientRect();
+        const mx = event.clientX - (rect.left + rect.width / 2);
+        const my = event.clientY - (rect.top + rect.height / 2);
+        el.style.transition = "transform 0s";
+        el.style.transform = `translate(${mx * strength}px, ${my * strength}px)`;
+        if (inner) inner.style.transform = `translate(${mx * strength * 0.4}px, ${my * strength * 0.4}px)`;
+      });
+      const reset = () => {
+        el.style.transition = "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)";
+        el.style.transform = "";
+        if (inner) inner.style.transform = "";
+      };
+      el.addEventListener("pointerleave", reset);
+      el.addEventListener("blur", reset);
+    });
+  }
+
   /* ---------- boot ---------- */
   initIcons();
+  initMarquee();
+  initMagnetic();
   initHashPosition();
   initProjectFilters();
   initLifecycleTabs();
