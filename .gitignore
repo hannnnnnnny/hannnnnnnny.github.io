@@ -1,0 +1,6 @@
+# Local tooling / editor config (not part of the published site)
+.claude/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
