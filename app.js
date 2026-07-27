@@ -867,15 +867,6 @@
     if (window.lucide) window.lucide.createIcons();
   }
 
-  /* ---------- Kinetic marquee ---------- */
-  function initMarquee() {
-    const track = $("[data-marquee] .marquee-track");
-    const group = track && $(".marquee-group", track);
-    if (!track || !group) return;
-    // Duplicate the group so a -50% translate loops seamlessly.
-    track.appendChild(group.cloneNode(true));
-  }
-
   /* ---------- Magnetic buttons ---------- */
   function initMagnetic() {
     if (!finePointer || reduceMotion) return;
@@ -912,7 +903,6 @@
 
   /* ---------- boot ---------- */
   initIcons();
-  initMarquee();
   initMagnetic();
   initHashPosition();
   initProjectFilters();

@@ -1958,74 +1958,7 @@ dd {
   to { opacity: 1; transform: none; }
 }
 
-/* Kinetic marquee band */
-.marquee {
-  margin: 0;
-  overflow: hidden;
-  padding: 0.95rem 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  background:
-    radial-gradient(120% 100% at 50% 0%, rgba(168, 140, 255, 0.06), transparent 62%);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-}
 
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 42s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-group {
-  display: flex;
-  flex: none;
-  align-items: center;
-  gap: 1.45rem;
-  padding-right: 1.45rem;
-}
-
-/* Pixel-font ticker: alternating green / purple words */
-.marquee-group span {
-  color: var(--pixel-green);
-  font-family: "Press Start 2P", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  font-size: clamp(0.58rem, 0.9vw, 0.78rem);
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0;
-  line-height: 1.5;
-  white-space: nowrap;
-  opacity: 0.88;
-  transition: opacity 200ms ease, text-shadow 200ms ease;
-}
-
-.marquee-group span:nth-of-type(even) {
-  color: var(--pixel-purple);
-}
-
-.marquee-group span:hover {
-  opacity: 1;
-  text-shadow: 0 0 12px currentColor;
-}
-
-.marquee-group i {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 1px;
-  background: var(--pixel-purple);
-  font-size: 0;
-  transform: rotate(45deg);
-  opacity: 0.7;
-}
-
-@keyframes marquee-scroll {
-  to { transform: translateX(-50%); }
-}
 
 .magnetic-inner {
   display: inline-flex;
@@ -2049,10 +1982,6 @@ dd {
     animation: none;
     opacity: 1;
     transform: none;
-  }
-
-  .marquee-track {
-    animation: none;
   }
 
   .reveal {
