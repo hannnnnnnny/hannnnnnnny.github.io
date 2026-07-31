@@ -3,81 +3,896 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yi Han's portfolio hub linking to separate software engineering and data analytics websites.">
+  <meta name="description" content="Yi Han is an Auckland-based data analyst and Master of IT student building practical AI tools, analysis workflows, and full-stack systems.">
   <meta name="theme-color" content="#050608">
   <link rel="canonical" href="https://hannnnnnnny.github.io/">
-  <meta property="og:title" content="Yi Han | Portfolio Hub">
-  <meta property="og:description" content="Choose Yi Han's software engineering portfolio or data analytics portfolio.">
+  <meta property="og:title" content="Yi Han | Data Analytics and AI Portfolio">
+  <meta property="og:description" content="Data analysis, practical AI tools, and full-stack projects from Yi Han, a Business Analytics graduate and Master of IT student in Auckland.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://hannnnnnnny.github.io/">
   <meta property="og:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yi Han | Portfolio Hub">
-  <meta name="twitter:description" content="Choose Yi Han's software engineering portfolio or data analytics portfolio.">
+  <meta name="twitter:title" content="Yi Han | Data Analytics and AI Portfolio">
+  <meta name="twitter:description" content="Data analysis, practical AI tools, and full-stack projects from Yi Han, a Business Analytics graduate and Master of IT student in Auckland.">
   <meta name="twitter:image" content="https://hannnnnnnny.github.io/assets/social-preview.svg">
-  <title>Yi Han | Portfolio Hub</title>
+  <title>Yi Han | Data Analytics and AI Portfolio</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260731-hub">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="styles.css?v=20260627-fit">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <main id="main" class="hub">
-    <section class="intro" aria-labelledby="intro-title">
-      <p class="eyebrow">Yi Han</p>
-      <h1 id="intro-title">Two focused portfolio sites for two job directions.</h1>
-      <p>
-        I am a Master of IT student at the University of Auckland with a Business
-        Analytics background. I am splitting my work into two clearer portfolios
-        so each one matches the role a recruiter is reviewing.
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="ambient-aurora" aria-hidden="true">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <button class="command-trigger" type="button" aria-haspopup="dialog" aria-controls="command-palette" data-command-open data-magnetic>
+    <span>Ctrl K</span>
+    <b>Explore</b>
+  </button>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Yi Han home">
+        <span>Yi Han</span>
+        <small>Data / AI / Software</small>
+      </a>
+      <p class="nav-note">
+        Business Analytics graduate and Master of IT student in Auckland.
       </p>
-      <div class="contact-row" aria-label="Contact links">
-        <a href="mailto:harryhaber606@gmail.com">Email</a>
+      <div class="nav-links">
+        <a href="#top" data-section-link="top">Profile</a>
+        <a href="#work" data-section-link="work">Work</a>
+        <a href="#lifecycle" data-section-link="lifecycle">AIDLC</a>
+        <a href="#projects" data-section-link="projects">Projects</a>
+        <a href="#notes" data-section-link="notes">Notes</a>
+        <a href="#skills" data-section-link="skills">Skills</a>
+        <a href="#contact" data-section-link="contact">Contact</a>
+      </div>
+      <div class="nav-meta" aria-label="Quick profile links">
+        <span>Auckland, New Zealand</span>
         <a href="https://github.com/hannnnnnnny" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/yi-han-29ab28323" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="assets/YiHan_Resume.pdf" type="application/pdf">Resume</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-text">
+        <p class="eyebrow hero-rise" style="--rise-delay: 0ms">Data analytics / practical AI / software</p>
+        <h1 id="hero-title" class="hero-title"><span class="reveal-line"><span class="reveal-inner" style="--rise-delay: 90ms">Yi Han</span></span></h1>
+        <p class="hero-statement hero-rise" style="--rise-delay: 230ms">Data analyst building practical AI and full-stack systems.</p>
+        <p class="hero-context hero-rise" style="--rise-delay: 340ms">
+          Business Analytics graduate and Master of IT student in Auckland. I turn
+          data questions into analysis workflows, AI-assisted tools, and software
+          people can inspect and use.
+        </p>
+
+        <ul class="hero-proof" aria-label="Profile highlights">
+          <li><strong>6</strong><span>selected projects</span></li>
+          <li><strong>Python / R / SQL</strong><span>analysis foundation</span></li>
+          <li><strong>Auckland, NZ</strong><span>current location</span></li>
+          <li><strong>Available</strong><span>graduate roles</span></li>
+        </ul>
+
+        <div class="hero-actions" aria-label="Primary actions">
+          <a class="hero-button hero-button-primary" href="#projects" data-magnetic>
+            <span class="magnetic-inner">
+              <i data-lucide="briefcase-business" aria-hidden="true"></i>
+              View selected work
+            </span>
+          </a>
+          <a class="hero-button hero-button-secondary" href="assets/YiHan_Resume.pdf" type="application/pdf" data-magnetic>
+            <span class="magnetic-inner">
+              <i data-lucide="file-text" aria-hidden="true"></i>
+              Resume PDF
+            </span>
+          </a>
+          <div class="hero-socials" aria-label="Contact and profiles">
+            <a href="mailto:harryhaber606@gmail.com" aria-label="Email Yi Han" title="Email">
+              <i data-lucide="mail" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/hannnnnnnny" target="_blank" rel="noopener noreferrer" aria-label="Yi Han on GitHub" title="GitHub">
+              <img class="hero-brand-icon hero-brand-icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" aria-hidden="true">
+            </a>
+            <a href="https://www.linkedin.com/in/yi-han-29ab28323" target="_blank" rel="noopener noreferrer" aria-label="Yi Han on LinkedIn" title="LinkedIn">
+              <img class="hero-brand-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg" alt="" aria-hidden="true">
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-demo" aria-labelledby="demo-title">
+        <div class="hero-demo-heading">
+          <p class="eyebrow">Interactive ML demo</p>
+          <h2 id="demo-title">See a model decide.</h2>
+          <p>A live KNN classifier built with vanilla JavaScript and Canvas.</p>
+        </div>
+        <div class="model-widget" aria-label="Interactive KNN classifier">
+          <div class="model-widget-header">
+            <span>Live KNN classifier</span>
+            <output id="knn-k-output" for="knn-k">k = 5</output>
+          </div>
+          <div class="model-canvas-wrap">
+            <canvas id="model-canvas" width="520" height="360" role="img"
+              aria-label="Interactive k-nearest-neighbours plot. Drag the probe point across three clusters to see its predicted class and decision regions update."></canvas>
+          </div>
+          <div class="knn-readout">
+            <span class="knn-pred-label">Predicted class</span>
+            <span class="knn-pred" id="knn-pred" aria-live="polite">Cluster B</span>
+            <div class="knn-votes" id="knn-votes" aria-hidden="true"></div>
+          </div>
+          <label class="knn-control" for="knn-k">
+            <span>Neighbors (k)</span>
+            <input id="knn-k" type="range" min="1" max="9" step="2" value="5" autocomplete="off">
+          </label>
+        </div>
+        <div class="demo-links" aria-label="Demo evidence">
+          <a href="https://github.com/hannnnnnnny/hannnnnnnny.github.io/blob/main/app.js" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="code-2" aria-hidden="true"></i>
+            Source
+          </a>
+          <a href="#project-video-game-sales">ML project</a>
+          <a href="#project-pansub">AI tool</a>
+        </div>
+      </aside>
+    </section>
+
+    <div class="marquee" aria-hidden="true" data-marquee>
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span>Building practical AI tools</span><i></i>
+          <span>From data questions to decisions</span><i></i>
+          <span>Full-stack, shipped end to end</span><i></i>
+          <span>Honest evaluation over hype</span><i></i>
+          <span>Open to graduate roles</span><i></i>
+          <span>Auckland &middot; New Zealand</span><i></i>
+        </div>
+      </div>
+    </div>
+
+    <section class="section focus-section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="section-label">Profile</p>
+        <h2 id="work-title">From business questions to working systems</h2>
+        <p>
+          My background connects commercial questions with technical execution. I
+          investigate data, shape useful AI workflows, and carry product ideas
+          through frontend, backend, database, and verification.
+        </p>
+      </div>
+      <div class="focus-grid">
+        <article>
+          <span class="focus-kicker">01</span>
+          <h3>Data questions</h3>
+          <p>
+            Cleaning data, comparing models, checking assumptions, and turning
+            outputs into charts or reports that a non-technical person can read.
+          </p>
+        </article>
+        <article>
+          <span class="focus-kicker">02</span>
+          <h3>AI-assisted tools</h3>
+          <p>
+            Building focused tools where AI improves a real workflow, such as
+            translation, summarisation, search, or making study material easier
+            to follow. I use AIDLC concepts to frame needs, inspect data, evaluate
+            outputs, and iterate from evidence.
+          </p>
+        </article>
+        <article>
+          <span class="focus-kicker">03</span>
+          <h3>Useful systems</h3>
+          <p>
+            Connecting frontend, backend, database, and deployment concerns so a
+            project works end to end instead of only looking complete.
+          </p>
+        </article>
       </div>
     </section>
 
-    <section class="route-grid" aria-label="Portfolio routes">
-      <article class="route-card">
-        <p class="route-label">Portfolio 01</p>
-        <h2>Software Engineering</h2>
+    <section class="section lifecycle-section" id="lifecycle" aria-labelledby="lifecycle-title">
+      <div class="section-heading">
+        <p class="section-label">AIDLC</p>
+        <h2 id="lifecycle-title">How I think about small AI projects</h2>
         <p>
-          Full-stack projects with Java, Spring Boot, Vue, TypeScript, APIs,
-          databases, and practical product workflows.
+          I have been learning AIDLC as a practical way to keep AI work grounded:
+          start with the user problem, inspect the data, build a small version,
+          evaluate it honestly, and improve it from evidence.
         </p>
-        <ul>
-          <li>KiwiCue</li>
-          <li>ReNova Marketplace</li>
-          <li>Study Room Booking System</li>
-        </ul>
-        <a class="route-link" href="https://hannnnnnnny.github.io/yi-han-software-engineer/">
-          Open software engineering site
-        </a>
-      </article>
+      </div>
+      <div class="lifecycle-layout">
+        <div class="lifecycle-steps" role="tablist" aria-label="AIDLC stages">
+          <button id="aidlc-tab-frame" class="active" type="button" role="tab" aria-controls="aidlc-panel-frame" aria-selected="true" data-lifecycle-target="frame">
+            <span>01</span>
+            Frame
+          </button>
+          <button id="aidlc-tab-data" type="button" role="tab" aria-controls="aidlc-panel-data" aria-selected="false" data-lifecycle-target="data">
+            <span>02</span>
+            Data
+          </button>
+          <button id="aidlc-tab-build" type="button" role="tab" aria-controls="aidlc-panel-build" aria-selected="false" data-lifecycle-target="build">
+            <span>03</span>
+            Build
+          </button>
+          <button id="aidlc-tab-check" type="button" role="tab" aria-controls="aidlc-panel-check" aria-selected="false" data-lifecycle-target="check">
+            <span>04</span>
+            Check
+          </button>
+        </div>
+        <div class="lifecycle-panels">
+          <article id="aidlc-panel-frame" class="active" role="tabpanel" aria-labelledby="aidlc-tab-frame" data-lifecycle-panel="frame">
+            <p class="panel-kicker">Problem first</p>
+            <h3>What would make this useful?</h3>
+            <p>
+              For a tool like PanSub, I would start by asking where students
+              actually struggle: caption timing, translation clarity, or the
+              friction of switching tools while watching a lecture.
+            </p>
+          </article>
+          <article id="aidlc-panel-data" role="tabpanel" aria-labelledby="aidlc-tab-data" data-lifecycle-panel="data">
+            <p class="panel-kicker">Data awareness</p>
+            <h3>What can be trusted?</h3>
+            <p>
+              In my analysis projects, this means checking missing values,
+              class balance, feature meaning, and whether a chart is explaining
+              something real or only making noise look tidy.
+            </p>
+          </article>
+          <article id="aidlc-panel-build" role="tabpanel" aria-labelledby="aidlc-tab-build" data-lifecycle-panel="build">
+            <p class="panel-kicker">Small working version</p>
+            <h3>Make one path work end to end.</h3>
+            <p>
+              I prefer building a thin but complete workflow first: frontend,
+              API, storage, and one clear result. It makes problems easier to
+              see than a large unfinished design.
+            </p>
+          </article>
+          <article id="aidlc-panel-check" role="tabpanel" aria-labelledby="aidlc-tab-check" data-lifecycle-panel="check">
+            <p class="panel-kicker">Evaluation</p>
+            <h3>Show the limits, then improve.</h3>
+            <p>
+              For AI and data projects, I want to get better at recording what
+              fails, what improves the result, and what a user would still need
+              before trusting the system.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-      <article class="route-card">
-        <p class="route-label">Portfolio 02</p>
-        <h2>Data Analytics</h2>
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading">
+        <p class="section-label">Projects</p>
+        <h2 id="projects-title">Selected GitHub projects</h2>
         <p>
-          Analytics dashboards, machine learning analysis, business questions,
-          and AI-assisted tools shaped around real user needs.
+          These are the projects I would show first for data analytics, AI, and
+          practical software roles. Each card links to the GitHub README so the
+          code and project notes are easy to inspect.
         </p>
-        <ul>
-          <li>Till Tally</li>
-          <li>Video Game Sales ML Analysis</li>
-          <li>PanSub</li>
+      </div>
+
+      <div class="projects-shell">
+        <div class="projects-main">
+          <div class="project-controls" aria-label="Filter selected projects">
+            <button class="active" type="button" aria-pressed="true" data-project-filter="all">All</button>
+            <button type="button" aria-pressed="false" data-project-filter="data">Data and ML</button>
+            <button type="button" aria-pressed="false" data-project-filter="ai">AI tools</button>
+            <button type="button" aria-pressed="false" data-project-filter="fullstack">Full stack</button>
+          </div>
+          <p class="project-filter-status" id="project-filter-status" aria-live="polite">Showing all selected projects.</p>
+
+          <div class="project-list">
+            <article class="project-card project-card-featured" id="project-tilltally" data-project-groups="data fullstack" data-project-signal="Business analytics system" data-role-fit="Data / business analyst &middot; full-stack engineer" data-proof="CSV import, KPI dashboards, gross-margin and inventory analytics, channel comparison" data-angle="Connects real retail decisions - reorder, discount, slow movers - to a full-stack build.">
+          <a class="project-thumb" href="https://github.com/hannnnnnnny/till-tally" target="_blank" rel="noopener noreferrer" aria-label="TillTally dashboard preview">
+            <img src="assets/previews/tilltally.svg?v=2" alt="TillTally analytics dashboard preview" loading="lazy">
+          </a>
+          <div class="project-main">
+            <p class="project-type">Business analytics dashboard / full-stack</p>
+            <h3>TillTally &mdash; Retail Business Analytics Dashboard</h3>
+            <p>
+              A full-stack analytics platform that turns a small retailer's sales
+              and inventory CSVs into KPI dashboards, product performance, inventory
+              risk, channel comparison, and a weekly business report.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Small shops have sales and stock data but cannot easily see margins, best sellers, slow movers, or reorder risk.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>CSV import with validation, gross-margin and ABC analysis, inventory-risk rules, channel KPIs, JWT auth, and a Dockerised deployment.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>React</li>
+            <li>TypeScript</li>
+            <li>Node.js</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Prisma</li>
+            <li>Docker</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/till-tally/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the TillTally README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-pansub" data-project-groups="ai fullstack" data-project-signal="AI workflow" data-role-fit="AI engineer / frontend product engineer" data-proof="Captions, translation overlay, browser constraints" data-angle="Turns an awkward study workflow into an inspectable tool.">
+          <a class="project-thumb" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="PanSub preview">
+            <img src="assets/previews/pansub.png" alt="PanSub translated-subtitle overlay preview" loading="lazy">
+          </a>
+          <div class="project-main">
+            <p class="project-type">AI tool / browser extension</p>
+            <h3>PanSub</h3>
+            <p>
+              A Chrome extension for Panopto lecture recordings that reads the
+              active caption stream and overlays translated subtitles on top of
+              the player.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Lecture videos can be hard to follow when subtitles do not match a student's preferred study language.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>Real extension workflow, browser UI constraints, caption parsing, and translation display.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Chrome Extension</li>
+            <li>JavaScript</li>
+            <li>AI Translation</li>
+            <li>Panopto</li>
+            <li>Product UX</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the PanSub README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-video-game-sales" data-project-groups="data" data-project-signal="Data evidence" data-role-fit="Data analyst / ML engineer" data-proof="Cleaning, clustering, KNN, regression, charts" data-angle="Shows modelling decisions and reportable evidence.">
+          <a class="project-thumb" href="https://github.com/hannnnnnnny/video-game-sales-ml-analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Video Game Sales ML preview">
+            <img src="assets/previews/video-game-sales.png" alt="Video game sales ML clustering chart" loading="lazy">
+          </a>
+          <div class="project-main">
+            <p class="project-type">Data analysis / machine learning</p>
+            <h3>Video Game Sales ML Analysis</h3>
+            <p>
+              A reusable analysis workflow for cleaning video game sales data,
+              training models, generating charts, and exporting metrics for a
+              readable report.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Explore which features and clusters help explain sales performance.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>Python CLI, notebooks, generated charts, model outputs, and a final report.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Python</li>
+            <li>pandas</li>
+            <li>scikit-learn</li>
+            <li>K-Means</li>
+            <li>KNN</li>
+            <li>Regression</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/video-game-sales-ml-analysis/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Video Game Sales ML Analysis README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-renova" data-project-groups="fullstack" data-project-signal="System design" data-role-fit="Full-stack engineer" data-proof="Spring Boot APIs, Vue UI, MySQL transactions" data-angle="Demonstrates product states and marketplace rules end to end.">
+          <a class="project-thumb" href="https://hannnnnnnny.github.io/ReNova-Second-Hand-C2C-Marketplace/" target="_blank" rel="noopener noreferrer" aria-label="Open the live ReNova marketplace">
+            <img src="assets/previews/renova.png" alt="ReNova marketplace storefront preview" loading="lazy">
+            <span class="thumb-badge">Live</span>
+          </a>
+          <div class="project-main">
+            <p class="project-type">Full-stack marketplace</p>
+            <h3>ReNova Second-Hand C2C Marketplace</h3>
+            <p>
+              A peer-to-peer second-hand marketplace for listing goods, browsing
+              by filters, messaging sellers, making offers, placing orders, and
+              reviewing completed trades.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Model a realistic marketplace flow with buyer, seller, listing, offer, and order states.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>Spring Boot APIs, Vue interface, MySQL data model, authentication, and transactional flows.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Vue 3</li>
+            <li>MySQL</li>
+            <li>REST API</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/ReNova-Second-Hand-C2C-Marketplace/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the ReNova Second-Hand C2C Marketplace README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-study-room" data-project-groups="fullstack" data-project-signal="Workflow UX" data-role-fit="Frontend / full-stack engineer" data-proof="Availability map, validation, booking states" data-angle="Translates a campus workflow into a usable interaction.">
+          <a class="project-thumb" href="https://github.com/hannnnnnnny/study-room-booking-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Study Room Booking preview">
+            <img src="assets/previews/study-room.png" alt="Study room booking interface preview" loading="lazy">
+          </a>
+          <div class="project-main">
+            <p class="project-type">Campus utility system</p>
+            <h3>Study Room Booking System</h3>
+            <p>
+              A study computer booking demo with validated booking details, live
+              availability states, and a visual workstation map.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Make shared campus resources easier to check and reserve before students arrive.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>Vue interface, reservation rules, status dashboard, and real-world workflow modelling.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Vue 3</li>
+            <li>Vite</li>
+            <li>JavaScript</li>
+            <li>Booking UI</li>
+            <li>State Design</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/study-room-booking-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Study Room Booking System README on GitHub">Read README</a>
+            </article>
+
+            <article class="project-card" id="project-teacher-system" data-project-groups="fullstack data" data-project-signal="Dashboard logic" data-role-fit="Full-stack data systems" data-proof="CRUD modules, analytics views, schema, reports" data-angle="Combines admin operations with reporting in one interface.">
+          <a class="project-thumb" href="https://github.com/hannnnnnnny/teacher-management-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Teacher Management System preview">
+            <img src="assets/previews/teacher.png" alt="Teacher management dashboard preview" loading="lazy">
+          </a>
+          <div class="project-main">
+            <p class="project-type">Admin dashboard / reporting</p>
+            <h3>Teacher Management System</h3>
+            <p>
+              A school administration demo for managing teachers, students,
+              courses, classes, scores, reports, accounts, and learning
+              resources.
+            </p>
+            <dl class="project-facts">
+              <div>
+                <dt>Problem</dt>
+                <dd>Bring daily administration, reporting, and resource status into one interface.</dd>
+              </div>
+              <div>
+                <dt>Evidence</dt>
+                <dd>Spring Boot backend, MySQL schema, Vue dashboard, CRUD modules, and analytics views.</dd>
+              </div>
+            </dl>
+          </div>
+          <ul class="tags" aria-label="Technologies used">
+            <li>Java</li>
+            <li>Spring Boot</li>
+            <li>Vue 3</li>
+            <li>Element Plus</li>
+            <li>MySQL</li>
+          </ul>
+          <a class="project-link" href="https://github.com/hannnnnnnny/teacher-management-system/blob/main/README.md" target="_blank" rel="noopener noreferrer" aria-label="Read the Teacher Management System README on GitHub">Read README</a>
+            </article>
+          </div>
+        </div>
+
+        <aside class="project-inspector" aria-labelledby="project-inspector-title" aria-live="polite">
+          <div class="inspector-header">
+            <p class="inspector-kicker">Selection signal</p>
+            <span class="inspector-current" data-inspector-current>PanSub</span>
+          </div>
+          <h3 id="project-inspector-title">What this proves</h3>
+          <p class="inspector-type">AI workflow</p>
+          <dl class="inspector-signals">
+            <div>
+              <dt>Role fit</dt>
+              <dd data-inspector-role>AI engineer / frontend product engineer</dd>
+            </div>
+            <div>
+              <dt>Proof</dt>
+              <dd data-inspector-proof>Captions, translation overlay, browser constraints</dd>
+            </div>
+            <div>
+              <dt>Interview angle</dt>
+              <dd data-inspector-angle>Turns an awkward study workflow into an inspectable tool.</dd>
+            </div>
+          </dl>
+          <div class="inspector-stack">
+            <span>Stack to mention</span>
+            <div class="inspector-tags" aria-label="Selected project tags"></div>
+          </div>
+          <a class="inspector-link" href="https://github.com/hannnnnnnny/pansub/blob/main/README.md" target="_blank" rel="noopener noreferrer">Inspect README</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section notes-section" id="notes" aria-labelledby="notes-title">
+      <div class="section-heading">
+        <p class="section-label">Notebook</p>
+        <h2 id="notes-title">Technical notes I want to turn into posts</h2>
+        <p>
+          Inspired by strong AI blogs, I want this site to become more than a
+          list of projects. These are the notes I would like to publish as I keep
+          learning and building.
+        </p>
+      </div>
+      <div class="note-list">
+        <article class="note-card">
+          <p class="note-meta">Planned note</p>
+          <h3>What I learned from building an AI subtitle extension</h3>
+          <p>Caption streams, browser constraints, overlay UI, and where an AI feature helps or gets in the way.</p>
+        </article>
+        <article class="note-card">
+          <p class="note-meta">Planned note</p>
+          <h3>K-Means, KNN, and model comparison on a small dataset</h3>
+          <p>How I read charts, compare outputs, and avoid pretending that every model result is equally useful.</p>
+        </article>
+        <article class="note-card">
+          <p class="note-meta">Planned note</p>
+          <h3>Turning a marketplace idea into database tables</h3>
+          <p>Listings, offers, messages, orders, reviews, and why state transitions matter in real applications.</p>
+        </article>
+        <article class="note-card">
+          <p class="note-meta">Planned note</p>
+          <h3>Writing project READMEs that help recruiters inspect the work</h3>
+          <p>What screenshots, setup steps, feature notes, and learning summaries make a project easier to trust.</p>
+        </article>
+        <article class="note-card">
+          <p class="note-meta">Planned note</p>
+          <h3>Using AIDLC thinking in a small AI project</h3>
+          <p>How planning, data checks, tool choice, evaluation, and iteration can keep an AI feature grounded.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section two-column skills-section" id="skills" aria-labelledby="skills-title">
+      <div class="skills-intro">
+        <p class="section-label">Skills</p>
+        <h2 id="skills-title">Tools I use</h2>
+        <p class="skills-lede">A working stack across data, AI, and product engineering.</p>
+        <div class="skill-map" aria-label="Capability map">
+          <div class="skill-map-header">
+            <span>Capability map</span>
+            <span id="skill-selection-state">Preview</span>
+          </div>
+          <canvas id="skill-map-canvas" width="560" height="380" aria-hidden="true"></canvas>
+          <div class="skill-evidence" aria-live="polite">
+            <div class="skill-evidence-title">
+              <span>Active tool</span>
+              <strong id="skill-active-name">Python</strong>
+            </div>
+            <p id="skill-map-status">Cleans data, compares models, and turns outputs into readable evidence.</p>
+            <div class="skill-projects">
+              <span>Evidence</span>
+              <div id="skill-project-links">
+                <a href="#project-video-game-sales">Video Game Sales ML</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skills-grid" aria-label="Tool icons by capability">
+        <section class="tool-group tool-group-data" aria-labelledby="data-title">
+          <div class="tool-group-heading">
+            <h3 id="data-title">Data and ML</h3>
+            <span>08</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="Python" aria-label="Python" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Python</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="pandas" aria-label="pandas" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>pandas</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="scikit-learn" aria-label="scikit-learn" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/scikitlearn/scikitlearn-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>scikit-learn</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="Jupyter" aria-label="Jupyter" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Jupyter</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="KNN" aria-label="KNN" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="network" aria-hidden="true"></i>
+              <span>KNN</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="K-Means" aria-label="K-Means" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="chart-scatter" aria-hidden="true"></i>
+              <span>K-Means</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="R" aria-label="R" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>R</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Data" data-tool="Regression" aria-label="Regression analysis" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="trending-up" aria-hidden="true"></i>
+              <span>Regression</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group" aria-labelledby="ai-title">
+          <div class="tool-group-heading">
+            <h3 id="ai-title">AI product work</h3>
+            <span>06</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="AIDLC" aria-label="AIDLC" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="workflow" aria-hidden="true"></i>
+              <span>AIDLC</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="Prompting" aria-label="Prompting" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="terminal" aria-hidden="true"></i>
+              <span>Prompting</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="Translation" aria-label="Translation workflows" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="languages" aria-hidden="true"></i>
+              <span>Translation</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="Extension" aria-label="Browser extensions" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="blocks" aria-hidden="true"></i>
+              <span>Extension</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="Evaluation" aria-label="AI evaluation" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="badge-check" aria-hidden="true"></i>
+              <span>Evaluation</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="AI" data-tool="Tool design" aria-label="AI tool design" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="wrench" aria-hidden="true"></i>
+              <span>Tool design</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group tool-group-backend" aria-labelledby="backend-title">
+          <div class="tool-group-heading">
+            <h3 id="backend-title">Backend</h3>
+            <span>06</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="Java" aria-label="Java" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Java</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="Spring Boot" aria-label="Spring Boot" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Spring</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="Express" aria-label="Express" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Express</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="REST API" aria-label="REST APIs" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="braces" aria-hidden="true"></i>
+              <span>REST API</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="Maven" aria-label="Maven" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Maven</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Backend" data-tool="Java Swing" aria-label="Java Swing" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="app-window" aria-hidden="true"></i>
+              <span>Java Swing</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group" aria-labelledby="frontend-title">
+          <div class="tool-group-heading">
+            <h3 id="frontend-title">Frontend</h3>
+            <span>08</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="React" aria-label="React" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>React</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="TypeScript" aria-label="TypeScript" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>TypeScript</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Vue" aria-label="Vue" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Vue</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Svelte" aria-label="Svelte" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Svelte</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="HTML5" aria-label="HTML5" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>HTML5</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="CSS3" aria-label="CSS3" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>CSS3</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Vite" aria-label="Vite" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vitejs/vitejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Vite</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Frontend" data-tool="Tailwind" aria-label="Tailwind CSS" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Tailwind</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group tool-group-database" aria-labelledby="database-title">
+          <div class="tool-group-heading">
+            <h3 id="database-title">Database</h3>
+            <span>06</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="PostgreSQL" aria-label="PostgreSQL" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>PostgreSQL</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="Prisma" aria-label="Prisma ORM" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prisma/prisma-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Prisma</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="MySQL" aria-label="MySQL" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>MySQL</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="MongoDB" aria-label="MongoDB" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>MongoDB</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="SQLite" aria-label="SQLite" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>SQLite</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Database" data-tool="SQL" aria-label="SQL" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="database" aria-hidden="true"></i>
+              <span>SQL</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group tool-group-delivery" aria-labelledby="engineering-title">
+          <div class="tool-group-heading">
+            <h3 id="engineering-title">Web / Engineering</h3>
+            <span>08</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="Node.js" aria-label="Node.js" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Node.js</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="JavaScript" aria-label="JavaScript" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>JavaScript</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="Git" aria-label="Git" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Git</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="GitHub" aria-label="GitHub" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>GitHub</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="npm" aria-label="npm" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>npm</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="Testing" aria-label="Testing" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="check-check" aria-hidden="true"></i>
+              <span>Testing</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="Playwright" aria-label="Playwright" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/playwright/playwright-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Playwright</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Engineering" data-tool="E2E testing" aria-label="End-to-end testing" aria-pressed="false">
+              <i class="tool-lucide" data-lucide="route" aria-hidden="true"></i>
+              <span>E2E testing</span>
+            </button>
+          </div>
+        </section>
+        <section class="tool-group tool-group-systems" aria-labelledby="systems-title">
+          <div class="tool-group-heading">
+            <h3 id="systems-title">Systems / Ops</h3>
+            <span>04</span>
+          </div>
+          <div class="tool-list">
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Docker" aria-label="Docker" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Docker</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Nginx" aria-label="Nginx" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>Nginx</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="GitHub Actions" aria-label="GitHub Actions CI" aria-pressed="false">
+              <img class="icon-mono" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>GitHub Actions</span>
+            </button>
+            <button class="tool-chip" type="button" data-skill-card="Ops" data-tool="Google Cloud Platform (GCP)" aria-label="Google Cloud Platform (GCP)" aria-pressed="false">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/googlecloud/googlecloud-original.svg" alt="" aria-hidden="true" loading="lazy">
+              <span>GCP</span>
+            </button>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="section-label">Contact</p>
+        <h2 id="contact-title">Open to graduate data and software roles in New Zealand.</h2>
+      </div>
+      <div class="section-copy">
+        <p>
+          I am especially interested in teams working across data analytics,
+          AI-enabled tools, and practical software development.
+        </p>
+        <ul class="contact-list">
+          <li><a href="mailto:harryhaber606@gmail.com">harryhaber606@gmail.com</a></li>
+          <li><a href="https://github.com/hannnnnnnny" target="_blank" rel="noopener noreferrer">github.com/hannnnnnnny</a></li>
+          <li><a href="https://www.linkedin.com/in/yi-han-29ab28323" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="assets/YiHan_Resume.pdf" type="application/pdf">Resume PDF</a></li>
         </ul>
-        <a class="route-link" href="https://hannnnnnnny.github.io/yi-han-data-analytics/">
-          Open data analytics site
-        </a>
-      </article>
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 Yi Han. Built as simple static GitHub Pages sites.</p>
+  <div class="command-backdrop" data-command-backdrop hidden></div>
+  <section class="command-palette" id="command-palette" role="dialog" aria-modal="true" aria-labelledby="command-title" hidden>
+    <div class="command-shell">
+      <div class="command-header">
+        <div>
+          <p class="command-kicker">Quick launch</p>
+          <h2 id="command-title">Move through the portfolio</h2>
+        </div>
+        <button type="button" class="command-close" data-command-close aria-label="Close command palette">Esc</button>
+      </div>
+      <label class="command-search">
+        <span>Search sections, projects, and links</span>
+        <input id="command-input" type="search" autocomplete="off" placeholder="Try projects, resume, PanSub, skills...">
+      </label>
+      <div class="command-list" data-command-list>
+        <button type="button" data-command-item data-command-label="Profile hero overview" data-command-target="#top">
+          <span>Profile</span><small>Start at the hero and KNN widget</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Projects GitHub work PanSub machine learning marketplace" data-command-target="#projects">
+          <span>Projects</span><small>Inspect the selected GitHub projects</small>
+        </button>
+        <button type="button" data-command-item data-command-label="AIDLC AI development lifecycle tabs process" data-command-target="#lifecycle">
+          <span>AIDLC</span><small>See the AI project thinking model</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Skills data AI backend frontend database practice" data-command-target="#skills">
+          <span>Skills</span><small>Open the capability map</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Resume PDF CV Yi Han" data-command-target="assets/YiHan_Resume.pdf">
+          <span>Resume</span><small>Open the resume PDF</small>
+        </button>
+        <button type="button" data-command-item data-command-label="Email contact harryhaber606 gmail" data-command-target="mailto:harryhaber606@gmail.com">
+          <span>Email</span><small>Start a message</small>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Yi Han. Static GitHub Pages, enhanced with a small vanilla JavaScript layer.</p>
   </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js" defer></script>
+  <script src="app.js?v=20260627-pixel" defer></script>
 </body>
 </html>

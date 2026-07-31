@@ -1,20 +1,16 @@
-# Yi Han Portfolio Hub
+# Yi Han Personal Website
 
-This repository contains the source for my GitHub Pages portfolio hub:
+This repository contains the source for my personal GitHub Pages website:
 
 https://hannnnnnnny.github.io
 
-The hub links to two independent role-specific portfolio websites:
-
-- Software Engineering: https://hannnnnnnny.github.io/yi-han-software-engineer/
-- Data Analytics: https://hannnnnnnny.github.io/yi-han-data-analytics/
-
-The hub is intentionally short. It uses plain HTML and CSS only, with no JavaScript or build step.
+The site is intentionally simple. It uses plain HTML, CSS, and a small vanilla JavaScript enhancement layer so it is easy to read, edit, and publish through GitHub Pages. The current homepage uses a dark technical theme and emphasizes data analytics, practical AI tools, and inspectable software projects.
 
 ## Structure
 
-- `index.html` contains the hub content.
-- `styles.css` contains the hub layout and visual styling.
+- `index.html` contains the page content.
+- `styles.css` contains the layout and visual styling.
+- `app.js` contains the progressive interactions, project filters, scroll state, and KNN demo.
 - `assets/` contains resume/CV PDFs, the favicon, and the social preview image.
 - `robots.txt` and `sitemap.xml` provide basic crawler metadata.
 - `.nojekyll` keeps GitHub Pages from running Jekyll on this static site.
@@ -28,11 +24,12 @@ Open `index.html` directly in a browser, or serve the folder with any static fil
 npx http-server .
 ```
 
-No build step is required.
+No build step or framework runtime is required.
 
 ## Maintenance Notes
 
 - Keep visible website text in English.
-- Keep the hub focused on routing visitors to the correct role-specific website.
+- Keep project links pointed at real GitHub repositories.
+- Keep JavaScript progressive: the core content should still be readable if scripts do not load.
 - Avoid adding heavy dependencies unless the site actually needs them.
 - Run a local preview and check responsive layouts before publishing larger visual changes.
