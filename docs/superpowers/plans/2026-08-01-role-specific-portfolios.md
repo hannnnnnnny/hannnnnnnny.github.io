@@ -33,14 +33,14 @@
 - Consumes: existing static site sections and JavaScript hooks.
 - Produces: a Data Analyst portfolio at `https://hannnnnnnny.github.io/`.
 
-- [ ] Update the hero title to `Data Analyst | Yi Han`.
-- [ ] Rewrite hero, profile, projects, skills, contact, and metadata copy for data/AI roles.
-- [ ] Remove the marquee HTML, marquee CSS, and marquee JavaScript.
-- [ ] Reduce visible project cards to TillTally, Video Game Sales ML Analysis, and PanSub.
-- [ ] Keep project filters, command palette, KNN canvas, AIDLC tabs, scroll/hover effects, and skill-map interactions.
-- [ ] Split skill icons into data-focused groups with shared stack items retained.
-- [ ] Run static text/path/link checks and a browser smoke test.
-- [ ] Commit with `feat: focus main portfolio on data analyst roles`.
+- [x] Update the hero title to `Data Analyst | Yi Han`.
+- [x] Rewrite hero, profile, projects, skills, contact, and metadata copy for data/AI roles.
+- [x] Remove the marquee HTML, marquee CSS, and marquee JavaScript.
+- [x] Reduce visible project cards to TillTally, Video Game Sales ML Analysis, and PanSub.
+- [x] Keep project filters, command palette, KNN canvas, AIDLC tabs, scroll/hover effects, and skill-map interactions.
+- [x] Split skill icons into data-focused groups with shared stack items retained.
+- [x] Run static text/path/link checks and a browser smoke test.
+- [x] Commit with `feat: focus main portfolio on data analyst roles`.
 
 ### Task 2: Independent Software Engineer Site
 
@@ -55,15 +55,15 @@
 - Consumes: the existing independent GitHub Pages software portfolio repository.
 - Produces: a Software Engineer portfolio at `https://hannnnnnnny.github.io/yi-han-software-engineer/`.
 
-- [ ] Reuse the current portfolio interaction system so the software site keeps the same quality bar.
-- [ ] Update the hero title to `Software Engineer | Yi Han`.
-- [ ] Feature ReNova, KiwiCue, and TillTally as the three software projects.
-- [ ] Replace Study Room Booking with TillTally.
-- [ ] Split skill icons into software-focused groups with shared stack items retained.
-- [ ] Keep command palette, project filters, hover effects, scroll progress, canvas/skill visualizations, and keyboard/focus states.
-- [ ] Remove any marquee/banner code.
-- [ ] Run static text/path/link checks and a browser smoke test.
-- [ ] Commit with `feat: upgrade software engineering portfolio`.
+- [x] Reuse the current portfolio interaction system so the software site keeps the same quality bar.
+- [x] Update the hero title to `Software Engineer | Yi Han`.
+- [x] Feature ReNova, KiwiCue, and TillTally as the three software projects.
+- [x] Replace Study Room Booking with TillTally.
+- [x] Split skill icons into software-focused groups with shared stack items retained.
+- [x] Keep command palette, project filters, hover effects, scroll progress, canvas/skill visualizations, and keyboard/focus states.
+- [x] Remove any marquee/banner code.
+- [x] Run static text/path/link checks and a browser smoke test.
+- [x] Commit with `feat: upgrade software engineering portfolio`.
 
 ### Task 3: Publish and Verify
 
@@ -74,7 +74,7 @@
 - Consumes: pushed `main` branches for both repositories.
 - Produces: two live GitHub Pages URLs verified after deployment.
 
-- [ ] Push both repositories to GitHub.
-- [ ] Confirm GitHub Pages builds are complete.
-- [ ] Check the live URLs for 200 responses, no broken local asset links, no old marquee text, and expected role-specific titles.
-- [ ] Report commit hashes, commands run, URLs, and remaining notes.
+- [x] Push both repositories to GitHub.
+- [x] Confirm GitHub Pages builds are complete.
+- [x] Check the live URLs for 200 responses, no broken local asset links, no old marquee text, and expected role-specific titles.
+- [x] Report commit hashes, commands run, URLs, and remaining notes.
