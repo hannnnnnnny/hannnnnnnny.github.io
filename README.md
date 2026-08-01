@@ -6,7 +6,7 @@ https://hannnnnnnny.github.io
 
 The site is intentionally simple to publish but still interactive. It uses plain HTML, CSS, and a small vanilla JavaScript enhancement layer for the command palette, project filters, skill map, scroll state, and KNN demo.
 
-The current homepage is focused on data analyst and AI-adjacent graduate roles. The selected projects are:
+The current homepage is focused on data analyst and AI-adjacent roles. The selected projects are:
 
 - TillTally
 - Video Game Sales ML Analysis
