@@ -364,8 +364,16 @@
     const projects = {
       pansub: { label: "PanSub", href: "#project-pansub" },
       sales: { label: "Video Game Sales ML", href: "#project-video-game-sales" },
+      renova: { label: "ReNova Marketplace", href: "#project-renova" },
+      study: { label: "Study Room Booking", href: "#project-study-room" },
+      teacher: { label: "Teacher System", href: "#project-teacher-system" },
       tilltally: { label: "TillTally", href: "#project-tilltally" },
       portfolio: { label: "This portfolio", href: "#top" },
+      zanytalk: {
+        label: "ZanyTalk forum",
+        href: "https://github.com/UOA-PGCIT-S1-2026/pgcit-final-project-zany-zorillas",
+        external: true,
+      },
       github: { label: "GitHub repositories", href: "https://github.com/hannnnnnnny", external: true },
     };
     const evidence = {
@@ -382,35 +390,54 @@
       Translation: { text: "Applies AI-assisted translation to a concrete lecture-caption workflow.", projects: ["pansub"] },
       Extension: { text: "Works within browser constraints, live captions, overlays, and user-controlled interaction.", projects: ["pansub"] },
       Evaluation: { text: "Treats model or AI output as evidence to inspect, not a result to accept automatically.", projects: ["sales", "pansub"] },
-      "Tool design": { text: "Turns a narrow user problem into a small interface that can be tested and improved.", projects: ["pansub", "tilltally"] },
-      "Node.js": { text: "Runs TillTally's API and data-product tooling.", projects: ["tilltally"] },
-      Express: { text: "Provides TillTally's API routes for imports, dashboards, and reports.", projects: ["tilltally"] },
+      "Tool design": { text: "Turns a narrow user problem into a small interface that can be tested and improved.", projects: ["pansub", "study"] },
+      Java: { text: "Implements domain logic and service layers for practical full-stack systems.", projects: ["renova", "teacher"] },
+      "Spring Boot": { text: "Structures APIs, authentication, services, and transactional application flows.", projects: ["renova", "teacher"] },
+      "Node.js": { text: "Runs ZanyTalk's Express and SQLite backend plus its JavaScript service tooling.", projects: ["zanytalk"] },
+      Express: { text: "Provides a lightweight route and middleware model for backend prototypes.", projects: ["github"] },
+      "REST API": { text: "Connects frontend workflows to clear resource and state transitions.", projects: ["renova", "teacher"] },
+      Maven: { text: "Keeps Java builds and dependencies reproducible across machines.", projects: ["renova", "teacher"] },
+      "Java Swing": { text: "Builds event-driven Java desktop interfaces with familiar application controls.", projects: ["github"] },
+      Vue: { text: "Builds stateful product interfaces for marketplaces, booking, and administration.", projects: ["renova", "study", "teacher"] },
+      Svelte: { text: "Explores component-based interfaces with a small runtime and direct reactivity.", projects: ["github"] },
       HTML5: { text: "Keeps portfolio and browser-extension structure semantic and progressively enhanced.", projects: ["pansub", "portfolio"] },
       CSS3: { text: "Handles responsive layout, visual hierarchy, interaction states, and reduced motion.", projects: ["portfolio", "pansub"] },
       JavaScript: { text: "Powers this portfolio's vanilla JavaScript canvas, filters, navigation, and interaction state.", projects: ["portfolio"] },
-      SQL: { text: "Connects filters, relationships, reports, and application state to stored data.", projects: ["tilltally", "sales"] },
-      Git: { text: "Keeps project history reviewable across the portfolio and selected repositories.", projects: ["github"] },
+      Vite: { text: "Supports fast local iteration and reproducible frontend builds.", projects: ["study"] },
+      MySQL: { text: "Grounds marketplace and administration workflows in explicit relational models.", projects: ["renova", "teacher"] },
+      MongoDB: { text: "Supports document-oriented data models for flexible application prototypes.", projects: ["github"] },
+      SQLite: { text: "Provides a compact local database for prototypes, scripts, and portable development workflows.", projects: ["github"] },
+      SQL: { text: "Connects filters, relationships, reports, and application state to stored data.", projects: ["renova", "teacher"] },
+      Git: { text: "Supports ZanyTalk's branch, commit, and pull-request workflow for reviewable team changes.", projects: ["zanytalk"] },
       GitHub: { text: "Makes source, READMEs, project history, and reviewable changes easy to inspect.", projects: ["github"] },
-      npm: { text: "Manages JavaScript tooling and repeatable local project setup.", projects: ["tilltally", "portfolio"] },
-      Testing: { text: "Checks syntax, interactions, responsive layout, and edge states before publishing.", projects: ["portfolio", "sales", "tilltally"] },
+      npm: { text: "Manages JavaScript tooling and repeatable local project setup.", projects: ["study", "portfolio"] },
+      Testing: { text: "Checks syntax, interactions, responsive layout, and edge states before publishing.", projects: ["portfolio", "sales"] },
       Playwright: { text: "Automates real browser flows, interaction checks, and responsive verification.", projects: ["portfolio"] },
+      "E2E testing": { text: "Tests ZanyTalk user journeys with Playwright, alongside Vitest and Supertest API checks.", projects: ["zanytalk"] },
+      "Google Cloud Platform (GCP)": { text: "Deployment/hosting on GCP; project evidence to be added.", projects: [] },
       React: { text: "Builds TillTally's dashboard UI, CSV upload flows, tables, and chart pages.", projects: ["tilltally"] },
       TypeScript: { text: "Types TillTally end to end across React, Express, and the Prisma data layer.", projects: ["tilltally"] },
       Tailwind: { text: "Drives TillTally's responsive dashboard layout and component styling.", projects: ["tilltally"] },
       PostgreSQL: { text: "Backs TillTally's relational model for users, businesses, orders, products, and reports.", projects: ["tilltally"] },
       Prisma: { text: "Models the TillTally schema and runs typed, migrated queries against PostgreSQL.", projects: ["tilltally"] },
       Docker: { text: "Containerises TillTally's client and server and runs them together via Docker Compose.", projects: ["tilltally"] },
+      Nginx: { text: "Serves TillTally behind a single-origin reverse proxy in the deployed stack.", projects: ["tilltally"] },
       "GitHub Actions": { text: "Runs TillTally's CI pipeline for builds and checks on every push.", projects: ["tilltally"] },
     };
     const nodes = [
       { key: "Data", label: "DATA", x: 0.2, y: 0.25, color: "#7dd3fc", text: "Data work anchors the site: cleaning, modelling, charts, and evidence." },
       { key: "AI", label: "AI", x: 0.66, y: 0.18, color: "#f48fb1", text: "AI tools connect user workflows with translation, search, and evaluation." },
-      { key: "Product", label: "APP", x: 0.78, y: 0.58, color: "#7ee7d6", text: "Data product skills turn analysis into dashboards, imports, APIs, and reports." },
-      { key: "Shared", label: "TOOLS", x: 0.28, y: 0.72, color: "#dce5ec", text: "Shared tools keep the work reproducible, reviewable, and easier to inspect." },
+      { key: "Backend", label: "API", x: 0.82, y: 0.47, color: "#f2c879", text: "Backend skills make the project real: APIs, auth, services, and deployment shape." },
+      { key: "Frontend", label: "UI", x: 0.56, y: 0.76, color: "#7ee7d6", text: "Frontend turns the work into something people can actually inspect and use." },
+      { key: "Database", label: "SQL", x: 0.2, y: 0.69, color: "#a7b8c7", text: "Database thinking keeps projects grounded in schema, queries, and relationships." },
+      { key: "Engineering", label: "ENG", x: 0.45, y: 0.43, color: "#dce5ec", text: "Engineering connects JavaScript services, Git workflows, and automated testing." },
+      { key: "Ops", label: "OPS", x: 0.83, y: 0.77, color: "#8ab4f8", text: "Systems and operations cover deployment, hosting, and cloud runtime concerns." },
     ];
     const links = [
-      ["Data", "AI"], ["Data", "Product"], ["Data", "Shared"],
-      ["AI", "Product"], ["AI", "Shared"], ["Product", "Shared"],
+      ["Data", "AI"], ["Data", "Database"], ["Data", "Engineering"],
+      ["AI", "Frontend"], ["AI", "Engineering"], ["Backend", "Database"],
+      ["Backend", "Frontend"], ["Backend", "Ops"], ["Frontend", "Engineering"],
+      ["Engineering", "Ops"],
     ];
     let activeKey = cards[0].dataset.skillCard || "Data";
     let activeCard = cards[0];
@@ -840,6 +867,15 @@
     if (window.lucide) window.lucide.createIcons();
   }
 
+  /* ---------- Kinetic marquee ---------- */
+  function initMarquee() {
+    const track = $("[data-marquee] .marquee-track");
+    const group = track && $(".marquee-group", track);
+    if (!track || !group) return;
+    // Duplicate the group so a -50% translate loops seamlessly.
+    track.appendChild(group.cloneNode(true));
+  }
+
   /* ---------- Magnetic buttons ---------- */
   function initMagnetic() {
     if (!finePointer || reduceMotion) return;
@@ -876,6 +912,7 @@
 
   /* ---------- boot ---------- */
   initIcons();
+  initMarquee();
   initMagnetic();
   initHashPosition();
   initProjectFilters();
